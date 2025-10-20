@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+*{box-sizing:border-box}
+
+.container{max-width:var(--max); margin:0 auto; padding:0 20px}
+.btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:999px; border:1px solid var(--line); background:#fff; font-weight:600}
+
+/* 헤더 */
+    .topbar{border-bottom:1px solid var(--line); background:#fff}
+    .topbar .wrap{display:flex; align-items:center; gap:16px; padding:12px 0}
+    .logo{display:flex; align-items:center; gap:20px; font-weight:1000; font-size:30px}
+    .logo-dot{width:10px; height:10px; border-radius:50%; background:linear-gradient(135deg,var(--brand),var(--brand-2))}
+    .spacer{flex:1}
+    .search{position:relative; width:min(775px,100%)}
+    .search input{width:100%; padding:12px 44px; border-radius:999px; border:1px solid var(--line); outline:none}
+    .search svg{position:absolute; top:50%; transform:translateY(-50%); fill:#94a3b8}
+    .search .ico-left{left:14px; width:20px}
+    .search .ico-right{right:14px; width:20px}
+    .quick{display:none}
+    @media (min-width:1000px){.quick{display:flex; gap:8px}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

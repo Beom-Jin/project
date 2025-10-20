@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+
+	*{box-sizing:border-box}
+	.container{max-width:var(--max); margin:0px auto; padding:0 20px}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:999px; border:1px solid var(--line); background:#fff; font-weight:600}
+
+/* 푸터 */
+    footer{margin-top:50px; border-top:1px solid var(--line); background:#fff}
+    .foot-wrap{display:grid; gap:16px; grid-template-columns:1.2fr 1fr; padding:24px 0}
+    @media (max-width:900px){.foot-wrap{grid-template-columns:1fr}}
+    .links{display:flex; flex-wrap:wrap; gap:12px}
+    .links a{color:var(--ink-2)}
+    .copy{color:var(--muted); font-size:14px}
+ 

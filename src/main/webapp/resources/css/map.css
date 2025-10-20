@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+
+@font-face {
+    font-family: 'KyoboHandwriting2019';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+.container {
+	 display: flex;
+ 	 justify-content: center;
+}
+
+.title {
+	/* display: inline-block;
+	margin-top: 220px;
+	text-align: center; */
+	
+	display: inline-block;
+	position: sticky;
+	top: 220px;
+	text-align: center;
+}
+
+#title_text1,  #title_text2{
+	font-family: "KyoboHandwriting2019";
+}
+
+#title_text1 {
+	font-size: 40px;
+}
+#title_text2 {
+	font-size: 30px;
+}
+
+.mapbody{
+	float: left;
+}
