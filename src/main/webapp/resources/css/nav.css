@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+    /* 내비 */
+    nav{border-bottom:1px solid var(--line); background:#fff;}
+    .nav-wrap{display:flex; gap:18px; padding:12px 0; overflow:auto; align-items: center; justify-content: center;}
+    .nav-link{white-space:nowrap; padding:10px 14px; border-radius:999px; background:var(--pill); color:var(--ink-2); font-weight:600;}

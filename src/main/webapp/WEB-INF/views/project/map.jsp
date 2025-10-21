@@ -5,6 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="/resources/css/top.css" rel="stylesheet">
+<link href="/resources/css/bottom.css" rel="stylesheet">
+<link href="/resources/css/mainHomePage.css" rel="stylesheet">
 
 <link href="/resources/css/map.css" rel="stylesheet">
 
