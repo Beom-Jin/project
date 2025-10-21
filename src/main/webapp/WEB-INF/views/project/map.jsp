@@ -7,14 +7,13 @@
 <title>Insert title here</title>
 
 <link href="/resources/css/map.css" rel="stylesheet">
-
 </head>
 <body>
 	<jsp:include page="top.jsp"></jsp:include>
 	
 	<div class="container">
 		<div class="mapbody">
-			<img alt="" id="w_map" src="/resources/images/map-su.png" usemap="#use_map-su">
+			<img alt="" id="w_map" src="/resources/images/map/map-su.png" usemap="#use_map-su">
 			<map name="use_map-su">
 	   			<area onmouseover="on_mouse_area('Gyeonggi')" onmouseout="off_mouse_area()" target="_self" id="Gyeonggi" alt="경기도" href="" coords="305,145,297,199,332,227,326,291,219,325,195,253,269,235,250,185,200,198,170,189,238,98,264,113" shape="poly">
 	   			<area onmouseover="on_mouse_area('Seoul')" onmouseout="off_mouse_area()" target="_self" id="Seoul" alt="서울" href="" coords="207,218,220,208,235,197,241,221,240,230,218,234" shape="poly">
@@ -37,6 +36,8 @@
 		</div>
 		 <div class="title">
 			<span id="title_text1">놀러갈곳</span><br><span id="title_text2"> 여행지 확인하기</span>
+			<img alt="" id="title_img1" src="/resources/images/example/home1.jpg">
+			<img alt="" id="title_img2" src="/resources/images/example/home2.jpg">
 		</div>
 	</div>
 	
@@ -48,14 +49,16 @@
 		let element = document.getElementById(area);
 		let altText = element.alt;
 		
-		document.querySelector('#w_map').src = "/resources/images/map-su_" + area + ".png";
+		document.querySelector('#w_map').src = "/resources/images/map/map-su_" + area + ".png";
+		document.getElementById('title_img1').src = "/resources/images/example/" + area + "1.jpg";
+		document.getElementById('title_img2').src = "/resources/images/example/" + area + "2.jpg";
 		element.href = "http://localhost:8090/showDetail?area=" + altText;
 		document.getElementById('title_text1').textContent = altText;
 	}
 	
 	function off_mouse_area()
 	{
-		document.querySelector('#w_map').src = '/resources/images/map-su.png';
+		document.querySelector('#w_map').src = '/resources/images/map/map-su.png';
 	}
 	</script>
 </body>

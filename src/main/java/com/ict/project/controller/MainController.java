@@ -9,6 +9,12 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class MainController
 {
+	@GetMapping("/showMain")
+	public ModelAndView goMain()
+	{
+		return new ModelAndView("project/mainHomePage");
+		
+	}
 	
 	@GetMapping("/showMap")
 	public ModelAndView goMap()
@@ -22,4 +28,12 @@ public class MainController
 	{
 		return new ModelAndView("project/detail");
 	}
+	
+	
+	@GetMapping("/showTheme")
+	public ModelAndView goTheme()
+	{
+		return new ModelAndView("project/theme");
+	}
+	
 }

@@ -17,8 +17,8 @@
   <!-- 내비 -->
   <nav>
     <div class="nav-wrap" role="navigation" aria-label="주요 카테고리">
-      <a class="nav-link" href="/showMap" target="_blank">지역별 여행</a>
-      <a class="nav-link" href="#">테마별 여행</a>
+      <a class="nav-link" href="/showMap" target="_self">지역별 여행</a>
+      <a class="nav-link" href="/showTheme">테마별 여행</a>
       <a class="nav-link" href="#">축제 ⦁ 행사</a>
       <a class="nav-link" href="#">고객 지원</a>
       <a class="nav-link" href="#">마이 페이지</a>
@@ -50,10 +50,6 @@
         <p id="content_p">잘 알려진 핫플레이스부터 현지인이 사랑하는 스폿까지, 여행 큐레이션으로 가볍게 떠나보세요.</p>
         <div class="chips">
           <span class="chip">#서울야경</span><span class="chip">#감성카페</span><span class="chip">#한옥스테이</span><span class="chip">#가을단풍</span>
-        </div>
-        <div style="display:flex; gap:10px; margin-top:8px">
-          <a class="btn primary" href="#">추천 코스 보기</a>
-          <a class="btn" href="#">지역별 탐색</a>
         </div>
       </div>
     </div>

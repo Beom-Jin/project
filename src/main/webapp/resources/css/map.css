@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 
+
 @font-face {
     font-family: 'KyoboHandwriting2019';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff') format('woff');
@@ -14,14 +15,17 @@
 }
 
 .title {
-	/* display: inline-block;
-	margin-top: 220px;
-	text-align: center; */
-	
 	display: inline-block;
-	position: sticky;
-	top: 220px;
+	margin-top: 240px;
 	text-align: center;
+	height: 450px;
+	border: 4px inset skyblue;
+	border-radius: 20px;
+}
+
+#title_img1, #title_img2 {	
+	width: 300px;
+	height: 150px;
 }
 
 #title_text1,  #title_text2{
@@ -29,6 +33,7 @@
 }
 
 #title_text1 {
+	margin-top: 20px;
 	font-size: 40px;
 }
 #title_text2 {
