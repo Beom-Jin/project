@@ -5,17 +5,18 @@
 <head>
 <meta charset="UTF-8">
 <title>마이페이지</title>
-<link href="../resources/css/common.css" rel="stylesheet">
 <link href="../resources/css/top.css" rel="stylesheet">
 <link href="../resources/css/nav.css" rel="stylesheet">
 <link href="../resources/css/bottom.css" rel="stylesheet">
 <link href="../resources/css/mainHomePage.css" rel="stylesheet">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
 <style type="text/css">
 	h2{
 		text-align: center;
 	}
+	
 
 </style>
 
@@ -23,7 +24,10 @@
 <body>
 	<jsp:include page="../top.jsp"></jsp:include>
 	<jsp:include page="../nav.jsp"></jsp:include>
+	<br>
 	<h2>마이 페이지</h2>
+	<br>
+	<br>
 	<section class="container">
 		<div class="grid cols-4">
 			<a href="/showInformationUpdateForm">

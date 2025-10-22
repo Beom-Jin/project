@@ -49,8 +49,6 @@
 						class="chip">#한옥스테이</span><span class="chip">#가을단풍</span>
 				</div>
 				<div style="display: flex; gap: 10px; margin-top: 8px">
-					<a class="btn primary" href="#">추천 코스 보기</a> <a class="btn"
-						href="#">지역별 탐색</a>
 				</div>
 			</div>
 		</div>
