@@ -91,13 +91,7 @@ a{color:inherit; text-decoration:none}
   <h2 class="page-title">우리의 것이 가장 세계적인 것이다 한류 여행<span aria-hidden="true">😊</span></h2>
 
   <!-- 상단 배너 (비워둔 그래픽 영역 + 텍스트 + 버튼) -->
-  <section class="hero" aria-label="프로모션 배너">
-    <div class="msg">
-      <div class="title">내 마음을 알록달록 물들일 가을 여행!</div>
-      <div class="desc" style="color:var(--ink-2); margin-top:4px;">2025 단풍 지도</div>
-    </div>
-    <a href="#" class="btn" aria-label="자세히 보기">→</a>
-  </section>
+  
 
   <!-- 카드 8개 (이미지 칸은 플레이스홀더) -->
   <section class="grid cols-4" aria-label="추천 장소 목록">
