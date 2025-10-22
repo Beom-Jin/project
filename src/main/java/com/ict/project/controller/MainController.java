@@ -29,6 +29,7 @@ public class MainController
 		return new ModelAndView("project/detail");
 	}
 	
+<<<<<<< HEAD
 	
 	@GetMapping("/showTheme")
 	public ModelAndView goTheme()
@@ -36,4 +37,38 @@ public class MainController
 		return new ModelAndView("project/theme");
 	}
 	
+=======
+	@GetMapping("/showSupport")
+	public ModelAndView goSupport()
+	{
+		return new ModelAndView("project/support");
+	}
+	
+	@GetMapping("/showMyPage")
+	public ModelAndView goMyPage()
+	{
+		return new ModelAndView("project/myPage/MyPage");
+	}
+	
+	@GetMapping("/showInformationUpdateForm")
+	public ModelAndView goInformationUpdateForm() {
+		return new ModelAndView("project/myPage/InformationUpdateForm");
+	}
+	@GetMapping("/showBookmark")
+	public ModelAndView goBookmark() {
+		return new ModelAndView("project/myPage/Bookmark");
+	}
+	@GetMapping("/showTravelReview")
+	public ModelAndView goTravelReview() {
+		return new ModelAndView("project/myPage/TravelReview");
+	}
+	@GetMapping("/showQuestion")
+	public ModelAndView goQuestion() {
+		return new ModelAndView("project/myPage/Question");
+	}
+	@GetMapping("/showTravelReviewDetail")
+	public ModelAndView goTravelReviewDetail() {
+		return new ModelAndView("project/myPage/TravelReviewDetail");
+	}
+>>>>>>> origin/chh-0612
 }
