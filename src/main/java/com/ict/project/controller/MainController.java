@@ -68,4 +68,38 @@ public class MainController
 	public ModelAndView goTravelReviewDetail() {
 		return new ModelAndView("project/myPage/TravelReviewDetail");
 	}
+	
+	@GetMapping("/supCategory")
+	public ModelAndView goCategory() {
+		return new ModelAndView("project/supCategory");
+	}
+	
+	@GetMapping("/supTravel")
+	public ModelAndView goTravel() {
+		return new ModelAndView("project/supTravel");
+	}
+	
+	@GetMapping("/supCustomer")
+	public ModelAndView goCustomer() {
+		return new ModelAndView("project/supCustomer");
+	}
+	
+	@GetMapping("/supMember")
+	public ModelAndView goMember() {
+		return new ModelAndView("project/supMember");
+	}
+	
+	@GetMapping("/supThema")
+	public ModelAndView goThema() {
+		return new ModelAndView("project/supThema");
+	}
+	
+	
+	
+	
+	
+	@GetMapping("/mainHomePage")
+	public ModelAndView goHomePage() {
+		return new ModelAndView("project/mainHomePage");
+	}
 }
