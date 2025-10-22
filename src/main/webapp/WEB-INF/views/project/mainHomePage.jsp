@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>VisitKorea 스타일 데모</title>
 
-<link href="/resources/css/common.css" rel="stylesheet">
 <link href="/resources/css/top.css" rel="stylesheet">
 <link href="/resources/css/nav.css" rel="stylesheet">
 <link href="/resources/css/mainHomePage.css" rel="stylesheet">
@@ -16,21 +15,7 @@
 </head>
 <body>
 	<jsp:include page="top.jsp"></jsp:include>
-<<<<<<< HEAD
-	
-  <!-- 내비 -->
-  <nav>
-    <div class="nav-wrap" role="navigation" aria-label="주요 카테고리">
-      <a class="nav-link" href="/showMap" target="_self">지역별 여행</a>
-      <a class="nav-link" href="/showTheme">테마별 여행</a>
-      <a class="nav-link" href="#">축제 ⦁ 행사</a>
-      <a class="nav-link" href="#">고객 지원</a>
-      <a class="nav-link" href="#">마이 페이지</a>
-    </div>
-  </nav>
-=======
 	<jsp:include page="nav.jsp"></jsp:include>
->>>>>>> origin/chh-0612
 
 	<!-- 히어로 -->
 	<div class="container hero">
@@ -197,7 +182,6 @@
 				</div>
 			</div>
 
-<<<<<<< HEAD
       <div class="content">
         <span class="k-badge" id="content_day">가을여행주간 · 10.15–11.10</span>
         <h1 id="content_h1">단풍 물든 코리아: 지금 가기 좋은 국내 명소</h1>
@@ -208,21 +192,6 @@
       </div>
     </div>
   </div>
-=======
-			<div class="grid cols-2">
-				<article class="card">
-					<div class="thumb">
-						<img
-							src="https://img.etoday.co.kr/pto_db/2019/07/20190726153503_1350707_1200_876.jpg"
-							alt="비빔밥 축제">
-					</div>
-					<div class="meta">
-						<span class="tag">전주</span>
-						<div class="title">비빔밥 축제</div>
-						<p class="desc">먹거리 공연 체험이 모두 한자리에</p>
-					</div>
-				</article>
->>>>>>> origin/chh-0612
 
 				<article class="card">
 					<div class="thumb">

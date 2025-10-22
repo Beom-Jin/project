@@ -29,7 +29,6 @@ public class MainController
 		return new ModelAndView("project/detail");
 	}
 	
-<<<<<<< HEAD
 	
 	@GetMapping("/showTheme")
 	public ModelAndView goTheme()
@@ -37,7 +36,6 @@ public class MainController
 		return new ModelAndView("project/theme");
 	}
 	
-=======
 	@GetMapping("/showSupport")
 	public ModelAndView goSupport()
 	{
@@ -70,5 +68,4 @@ public class MainController
 	public ModelAndView goTravelReviewDetail() {
 		return new ModelAndView("project/myPage/TravelReviewDetail");
 	}
->>>>>>> origin/chh-0612
 }
