@@ -25,31 +25,28 @@ public class RestMainController {
 	
 	@RequestMapping(value="/showTourList", produces = "application/json; charset=utf-8")
 	@ResponseBody
-	public List<TboardVO> getTourList(HttpServletRequest request) {
+	//public List<TboardVO> getTourList(HttpServletRequest request) {
+	public Map<String, Object> getTourList(HttpServletRequest request) {
 		try {
 			int count = tourService.getTotalCount();
 			String cPage = request.getParameter("cPage");
 			
 			paging.setPageInfo(count, cPage);
 			System.out.println("count : " + count + ", cPage : " + cPage);
-			List<TboardVO> list = tourService.getTourList();	
-			List<TboardVO> list1 = tourService.getTourListPage(paging.getNumPerPage(), paging.getOffset());
+			//List<TboardVO> list = tourService.getTourList();	
+			List<TboardVO> list = tourService.getTourListPage(paging.getNumPerPage(), paging.getOffset());
 
-//			Map<String, Integer> map = new HashMap<String, Integer>(); 
-//			map.put("limit", limit);
-//			map.put("offset", offset);
-			
-			// paging 확인 필요 
-			//mv.addObject("paging", paging);
+			Map<String, Object> map = new HashMap<>();
+
+			map.put("list", list);
+			map.put("paging", paging);
 			
 //			int i = 0;
 //			for (TboardVO k : list) {
 //				System.out.println("getB_content : " + list.get(i).getB_content());
 //				i++;
-//			}		
-			
-			
-			return list; 
+//			}					
+			return map; 
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
