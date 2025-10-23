@@ -64,6 +64,8 @@ header{border-bottom:1px solid var(--line); background:#fff; box-shadow:var(--sh
 <body>
 
 <header>
+  <h2>확인용</h2>
+  
   <div class="header-wrap">
     <div class="header-logo"><a href="/gotitle">VisitKorea</a></div>
     <a href="/gotitle" class="home-btn">홈으로</a>
