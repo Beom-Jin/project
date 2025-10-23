@@ -63,10 +63,12 @@
 				method : "post",
 				dataType : "json",  
 				success : function(data) {
-					console.log("받은 데이터:", data); 			    	
-			    	const rows = data;
-			    	 
-					let table = "<table>";
+					console.log("받은 데이터:", data); 	
+					
+			    	const rows = data.list;
+			    	const paging = data.paging; 
+					
+			    	let table = "<table>";
 			    	table += "<thead>";
 			    	table += "<tr>";
 			    	table += "<th>b_title</th><th>b_img</th><th>b_content</th><th>b_loc</th><th>b_time</th><th>b_url</th><th>b_hits</th>" ;
@@ -87,9 +89,38 @@
 						table += '<td><a href="' + obj.b_url + '" target="_blank">' + obj.b_url + '</a></td>';
 						table +="<td>"+ obj.b_hits +"</td>";
 						table +="</tr>";													
-					 });
-						
+					 });						
  			    	 table += "</tbody>";
+ 			    	
+ 			    	 table += "<tfoot><tr><td colspan='7'><ol class='paging'>";
+
+					 // 이전 버튼
+					 if (paging.beginBlock <= paging.pagePerBlock) {
+						 table += "<li class='disable'>이전으로</li>";
+					 } else {
+						 table += "<li><a href='#' class='page-link' data-page='" + (paging.beginBlock - paging.pagePerBlock) + "'>이전으로</a></li>";
+					 }
+				
+					 // 블록 안의 페이지 번호
+					 for (let k = paging.beginBlock; k <= paging.endBlock; k++) {
+						 if (k === paging.nowPage) {
+						 	 table += "<li class='now'>" + k + "</li>";
+						 } else {
+							 table += "<li><a href='#' " + k + ">" + k + "</a></li>";
+						 }
+					 }
+				
+					 // 다음 버튼
+					 if (paging.endBlock >= paging.totalPage) {
+						 table += "<li class='disable'>다음으로</li>";
+					 } else {
+						 table += "<li><a href='/showTourList?cPage=' " + (paging.endBlock + 1) + ">다음으로</a></li>";
+						 // <li><a href="/bbs_list?cPage=${paging.endBlock + 1}">다음으로</a></li>
+					 }				
+					 table += "</ol></td></tr></tfoot>";
+ 			    	 
+ 			    	 
+ 			    	 
 			    	 table += "</table>";	
 			    	 $(".table-container").append(table);
 				},
