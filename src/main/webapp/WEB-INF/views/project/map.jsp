@@ -5,6 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="/resources/css/top.css" rel="stylesheet">
+<link href="/resources/css/bottom.css" rel="stylesheet">
+<link href="/resources/css/mainHomePage.css" rel="stylesheet">
 
 <link href="/resources/css/map.css" rel="stylesheet">
 </head>
@@ -35,9 +38,12 @@
 			</map>
 		</div>
 		 <div class="title">
-			<span id="title_text1">놀러갈곳</span><br><span id="title_text2"> 여행지 확인하기</span>
-			<img alt="" id="title_img1" src="/resources/images/example/home1.jpg">
-			<img alt="" id="title_img2" src="/resources/images/example/home2.jpg">
+			<span id="title_text1">놀러갈곳</span><br>
+			<span id="title_text2"> 여행지 확인하기</span>
+			<div class="title_img_body">
+				<img alt="" id="title_img1" src="/resources/images/example/home1.jpg">
+				<img alt="" id="title_img2" src="/resources/images/example/home2.jpg">
+			</div>
 		</div>
 	</div>
 	

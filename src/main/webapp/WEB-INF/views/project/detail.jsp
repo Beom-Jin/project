@@ -6,7 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<link href="/resources/css/top.css" rel="stylesheet">
+<link href="/resources/css/bottom.css" rel="stylesheet">
+<link href="/resources/css/mainHomePage.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="/resources/css/detail.css" rel="stylesheet">
 
@@ -18,23 +20,22 @@
 	<jsp:include page="top.jsp"></jsp:include>
 
 	<!-- Tab 구성 부분 -->
-	<div class="tab">
-	  <a href="#item_img"><button class="tablinks"> <span id="tab_text">사진보기</span></button></a>
-	  <a href="#item_tap"><button class="tablinks"> <span id="tab_text">상세정보 </span></button></a>
-	  <a href="#map"><button class="tablinks"> <span id="tab_text">댓글 </span></button></a>
-	</div>
-	
 	<div class="container">
+		<div class="tab">
+		  <a href="#item_img"><button class="tablinks"> <span id="tab_text">사진보기</span></button></a>
+		  <a href="#item_tap"><button class="tablinks"> <span id="tab_text">상세정보 </span></button></a>
+		  <a href="#map"><button class="tablinks"> <span id="tab_text">지도</span></button></a>
+		</div>
 		<div class="detail_title">
 			<p><h1>${area}</h1></p>
 			<p><h2> ${area} 여행지 리스트 </h2>	</p>
-			<p><h3>${area} 의 관광지 간략한 소개</h1></p>
+			<p id="item_img"><h3>${area} 의 관광지 간략한 소개</h1></p>
 		</div>
 		
 		<div class="detail_body" id="location_picture">
 			<div class="detail_body_item">
 				<div>
-					<img alt="" id="item_img" src="/resources/images/bear.jpg">
+					<img alt="" src="/resources/images/bear.jpg">
 					<div>
 						<div id="item_tap"><span><h2> 상세정보 </h2></span></div><hr><br>
 						<div id="item_body">

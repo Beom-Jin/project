@@ -62,11 +62,12 @@ th, td {
   background-color: #778899;
   display: flex;
   justify-content: center;
-  position: sticky;
+  position:sticky;
   top: 0;
   left: 0;
   right: 0;
   z-index: 2;
+
 }
 
 .tab button {
