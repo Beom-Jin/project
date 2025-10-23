@@ -23,19 +23,22 @@
 			<div class="bg" aria-hidden="false">
 				<div class="slide-container">
 					<div class="slide_pic fade">
-						<a href="이미지 클릭시 이동할 주소"><img alt=""
-							src="/resources/images/photo-1.jpg"></a>
+						<a href="이미지 클릭시 이동할 주소">
+							<img alt="" src="/resources/images/photo-1.jpg">
+						</a>
 					</div>
 					<div class="slide_pic fade">
-						<a href="이미지 클릭시 이동할 주소"><img alt=""
-							src="/resources/images/photo-2.jpg"></a>
+						<a href="이미지 클릭시 이동할 주소">
+							<img alt="" src="/resources/images/photo-2.jpg">
+						</a>
 					</div>
 					<div class="slide_pic fade">
-						<a href="이미지 클릭시 이동할 주소"><img alt=""
-							src="/resources/images/photo-3.jpg"></a>
+						<a href="이미지 클릭시 이동할 주소">
+							<img alt="" src="/resources/images/photo-3.jpg">
+						</a>
 					</div>
-					<a class="prev" onclick="plusSlides(-1)">&#10094;</a> <a
-						class="next" onclick="plusSlides(1)">&#10095;</a>
+					<a class="prev" onclick="plusSlides(-1)">&#10094;</a> 
+					<a class="next" onclick="plusSlides(1)">&#10095;</a>
 				</div>
 			</div>
 
@@ -45,73 +48,76 @@
 				<p id="content_p">잘 알려진 핫플레이스부터 현지인이 사랑하는 스폿까지, 여행 큐레이션으로 가볍게
 					떠나보세요.</p>
 				<div class="chips">
-					<span class="chip">#서울야경</span><span class="chip">#감성카페</span><span
-						class="chip">#한옥스테이</span><span class="chip">#가을단풍</span>
-				</div>
-				<div style="display: flex; gap: 10px; margin-top: 8px">
+					<span class="chip">#서울야경</span>
+					<span class="chip">#감성카페</span>
+					<span class="chip">#한옥스테이</span>
+					<span class="chip">#가을단풍</span>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<!-- 오늘의 추천 -->
+	<!-- 지역별 여행 -->
 	<section class="container">
 		<div class="sec-head">
-			<h2>오늘의 추천</h2>
-			<a href="#">전체 보기</a>
+			<h2>지역별 여행지 추천</h2>
+			<a href="/showMap">지역별 지도 보기</a>
 		</div>
 		<div class="grid cols-4">
-			<article class="card">
-				<div class="thumb">
-					<img
-						src="https://korean.visitseoul.net/data/kukudocs/seoul2133/20220518/202205181617250471.jpg"
-						alt="북촌 한옥 골목">
-				</div>
-				<div class="meta">
-					<span class="tag">서울</span>
-					<div class="title">북촌 한옥 골목 산책</div>
-					<p class="desc">전통과 현대가 공존하는 골목길. 카페·전통체험으로 반나절 코스 추천.</p>
-				</div>
-			</article>
+			<a href="http://localhost:8090/showDetail?area=%EC%84%9C%EC%9A%B8">
+				<article class="card">
+					<div class="thumb">
+						<img src="/resources/images/example/Seoul2.jpg" alt="">
+					</div>
+					<div class="meta">
+						<span class="tag">서울</span>
+						<div class="title">광화문</div>
+						<p class="desc">'빛이 퍼져나간다' 는 의미를 지닌 민주주의와 역사적 사건이 얽힌 대한민국의 상징적인 공간.</p>
+					</div>
+				</article>
+			</a>
 
-			<article class="card">
-				<div class="thumb">
-					<img
-						src="https://www.visitbusan.net/uploadImgs/files/cntnts/20191229160529389"
-						alt="광안리 해변">
-				</div>
-				<div class="meta">
-					<span class="tag">부산</span>
-					<div class="title">광안리 해변 드라이브</div>
-					<p class="desc">해변 산책 후 근처 맛집까지. 야경이 아름다운 광안대교 뷰.</p>
-				</div>
-			</article>
-
-			<article class="card">
-				<div class="thumb">
-					<img
-						src="https://api.cdn.visitjeju.net/photomng/imgpath/201804/30/729e9473-9590-4923-aec0-e72a3fe7d18d.jpg"
-						alt="제주 오름">
-				</div>
-				<div class="meta">
-					<span class="tag">제주</span>
-					<div class="title">새벽 오름 라이트 코스</div>
-					<p class="desc">가벼운 등산과 일출 포인트 소개. 초보자도 즐길 수 있어요.</p>
-				</div>
-			</article>
-
-			<article class="card">
-				<div class="thumb">
-					<img
-						src="https://www.snowfestival.net/asset/images/travel/travel_s01_img01.jpg"
-						alt="대관령 양떼목장">
-				</div>
-				<div class="meta">
-					<span class="tag">강원</span>
-					<div class="title">대관령 양떼목장</div>
-					<p class="desc">초록 초원과 구름 바다. 가족과 함께 힐링 산책.</p>
-				</div>
-			</article>
+			<a href="http://localhost:8090/showDetail?area=%EB%B6%80%EC%82%B0">
+				<article class="card">
+					<div class="thumb">
+						<img
+							src="/resources/images/example/Busan2.jpg" alt="">
+					</div>
+					<div class="meta">
+						<span class="tag">부산</span>
+						<div class="title">청사포 다릿돌 전망대</div>
+						<p class="desc">바다 위를 걷는 듯한 경험과 함께 수려한 해안 경관, 일출, 낙조를 감상 할 수 있는 공간.</p>
+					</div>
+				</article>
+			</a>
+			
+			<a href="http://localhost:8090/showDetail?area=%EC%A0%9C%EC%A3%BC">
+				<article class="card">
+					<div class="thumb">
+						<img
+							src="/resources/images/example/Jeju2.jpg" alt="">
+					</div>
+					<div class="meta">
+						<span class="tag">제주</span>
+						<div class="title">성산일출봉</div>
+						<p class="desc">수성화산활동으로 만들어진 응회구, 99개의 기암괴석, 화산활동으로 빚어진 독특한 지층.</p>
+					</div>
+				</article>
+			</a>
+			
+			<a href="http://localhost:8090/showDetail?area=%EA%B0%95%EC%9B%90%EB%8F%84">
+				<article class="card">
+					<div class="thumb">
+						<img
+							src="/resources/images/example/Gangwon2.jpg" alt="">
+					</div>
+					<div class="meta">
+						<span class="tag">강원</span>
+						<div class="title">대관령 양떼목장</div>
+						<p class="desc">강원도 평창군에 위치한 '한국의 알프스', 하늘 아래 첫 동네라는 표현에 걸맞은 천혜의 설경.</p>
+					</div>
+				</article>
+			</a>
 		</div>
 	</section>
 
@@ -161,51 +167,49 @@
 	</section>
 
 	<!-- 축제 · 행사 -->
-	<section class="container">
-		<div class="sec-head">
-			<h2>축제 · 행사</h2>
-			<a href="#">캘린더 보기</a>
-		</div>
-		<div class="strip">
-			<!-- 왼쪽 큰 카드(샘플 이미지) -->
-			<div class="big">
-				<div class="thumb">
-					<img src="https://img.hankyung.com/photo/202411/ZN.38596435.1.jpg"
-						alt="불꽃축제">
-				</div>
-				<div class="overlay" aria-hidden="true"></div>
-				<div class="caption">
-					<div style="font-weight: 800; font-size: 20px">불꽃 축제 2025</div>
-					<div style="opacity: .9">10.28 · 부산 광안리 해변</div>
-				</div>
-			</div>
+        <section class="container">
+            <div class="sec-head">
+                <h2>축제 · 행사</h2>
+                <a href="#">캘린더 보기</a>
+            </div>
+            <div class="strip">
+                <!-- 왼쪽 큰 카드(샘플 이미지) -->
+                <div class="big">
+                    <div class="thumb">
+                        <img src="https://img.hankyung.com/photo/202411/ZN.38596435.1.jpg" alt="불꽃축제" />
+                    </div>
+                    <div class="overlay" aria-hidden="true"></div>
+                    <div class="caption">
+                        <div style="font-weight: 800; font-size: 20px">불꽃 축제 2025</div>
+                        <div style="opacity: 0.9">10.28 · 부산 광안리 해변</div>
+                    </div>
+                </div>
 
-      <div class="content">
-        <span class="k-badge" id="content_day">가을여행주간 · 10.15–11.10</span>
-        <h1 id="content_h1">단풍 물든 코리아: 지금 가기 좋은 국내 명소</h1>
-        <p id="content_p">잘 알려진 핫플레이스부터 현지인이 사랑하는 스폿까지, 여행 큐레이션으로 가볍게 떠나보세요.</p>
-        <div class="chips">
-          <span class="chip">#서울야경</span><span class="chip">#감성카페</span><span class="chip">#한옥스테이</span><span class="chip">#가을단풍</span>
-        </div>
-      </div>
-    </div>
-  </div>
+                <div class="grid cols-2">
+                    <article class="card">
+                        <div class="thumb">
+                            <img src="https://img.etoday.co.kr/pto_db/2019/07/20190726153503_1350707_1200_876.jpg" alt="비빔밥 축제" />
+                        </div>
+                        <div class="meta">
+                            <span class="tag">전주</span>
+                            <div class="title">비빔밥 축제</div>
+                            <p class="desc">먹거리 공연 체험이 모두 한자리에</p>
+                        </div>
+                    </article>
 
-				<article class="card">
-					<div class="thumb">
-						<img
-							src="http://www.adinews.co.kr/news/photo/202211/60223_108486_229.jpg"
-							alt="탈춤 페스티벌">
-					</div>
-					<div class="meta">
-						<span class="tag">안동</span>
-						<div class="title">탈춤 페스티벌</div>
-						<p class="desc">월영교 야간 산책과 함께 즐기는 공연</p>
-					</div>
-				</article>
-			</div>
-		</div>
-	</section>
+                    <article class="card">
+                        <div class="thumb">
+                            <img src="http://www.adinews.co.kr/news/photo/202211/60223_108486_229.jpg" alt="탈춤 페스티벌" />
+                        </div>
+                        <div class="meta">
+                            <span class="tag">안동</span>
+                            <div class="title">탈춤 페스티벌</div>
+                            <p class="desc">월영교 야간 산책과 함께 즐기는 공연</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
 
 	<jsp:include page="bottom.jsp"></jsp:include>
 
