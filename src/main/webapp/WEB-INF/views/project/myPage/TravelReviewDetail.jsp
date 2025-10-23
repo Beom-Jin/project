@@ -15,7 +15,7 @@
 	table{
 		width: var(--max);
 		height: 600px;
-		border-radius: 5px;
+		border-collapse: collapse;
 		border : 1px solid black;
 		margin: auto;
 	}
