@@ -11,12 +11,17 @@
 
 .container {
 	 display: flex;
- 	 justify-content: center;
+}
+
+.mapbody{
+	float: left;
 }
 
 .title {
+	position:sticky;
 	display: inline-block;
-	margin-top: 240px;
+	top: 150px;
+	margin-left: 70px;
 	text-align: center;
 	height: 450px;
 	border: 4px inset skyblue;
@@ -40,6 +45,8 @@
 	font-size: 30px;
 }
 
-.mapbody{
-	float: left;
+.title_img_body {
+	margin-top: 20px;
+	margin-left: 30px;
+	margin-right: 30px;
 }
