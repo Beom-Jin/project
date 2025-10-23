@@ -99,72 +99,72 @@ a{color:inherit; text-decoration:none}
     <article class="card">
       <div class="thumb" aria-hidden="true"></div>
       <div class="meta">
-        <div class="place">대야수목원</div>
-        <span class="tag">전북 완주군</span>
+        <div class="place">가족 여행1</div>
+        <span class="tag">지역1</span>
       </div>
     </article>
     <!-- 2 -->
     <article class="card">
       <div class="thumb" aria-hidden="true"></div>
       <div class="meta">
-        <div class="place">완도수목원</div>
-        <span class="tag">전남 완도군</span>
+        <div class="place">가족 여행2</div>
+        <span class="tag">지역2</span>
       </div>
     </article>
     <!-- 3 -->
     <article class="card">
       <div class="thumb" aria-hidden="true"></div>
       <div class="meta">
-        <div class="place">선운사(고창)</div>
-        <span class="tag">전북 고창군</span>
+        <div class="place">가족 여행3</div>
+        <span class="tag">지역3</span>
       </div>
     </article>
     <!-- 4 -->
     <article class="card">
       <div class="thumb" aria-hidden="true"></div>
       <div class="meta">
-        <div class="place">마이산도립공원</div>
-        <span class="tag">전북 진안군</span>
+        <div class="place">가족 여행4</div>
+        <span class="tag">지역4</span>
       </div>
     </article>
     <!-- 5 -->
     <article class="card">
       <div class="thumb" aria-hidden="true"></div>
       <div class="meta">
-        <div class="place">순천만국가정원</div>
-        <span class="tag">전남 순천시</span>
+        <div class="place">가족 여행5</div>
+        <span class="tag">지역5</span>
       </div>
     </article>
     <!-- 6 -->
     <article class="card">
       <div class="thumb" aria-hidden="true"></div>
       <div class="meta">
-        <div class="place">백사골계곡</div>
-        <span class="tag">전북 남원시</span>
+        <div class="place">가족 여행6</div>
+        <span class="tag">지역6</span>
       </div>
     </article>
     <!-- 7 -->
     <article class="card">
       <div class="thumb" aria-hidden="true"></div>
       <div class="meta">
-        <div class="place">백양사</div>
-        <span class="tag">전남 장성군</span>
+        <div class="place">가족 여행7</div>
+        <span class="tag">지역7</span>
       </div>
     </article>
     <!-- 8 -->
     <article class="card">
       <div class="thumb" aria-hidden="true"></div>
       <div class="meta">
-        <div class="place">피아골계곡</div>
-        <span class="tag">전남 구례군</span>
+        <div class="place">가족 여행8</div>
+        <span class="tag">지역8</span>
       </div>
     </article>
   </section>
 
   <!-- 하단 이동 버튼 -->
   <div class="footer-cta">
-    <a class="ghost-btn" href="#" role="button" aria-label="여행지도에서 더 많은 추천테마 보기">
-      여행지도에서 더 많은 추천테마 보기 →
+    <a class="ghost-btn" href="#" role="button" aria-label="지역별 여행 보기">
+     지역별 여행 보기
     </a>
   </div>
 </main>
