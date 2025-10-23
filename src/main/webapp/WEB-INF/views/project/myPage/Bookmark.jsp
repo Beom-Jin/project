@@ -15,7 +15,7 @@
 	table {
 		margin : auto;
 		border: 1px solid black;
-		border-radius: 5px;
+		border-collapse: collapse;
 	}
 	
 	th, td{
