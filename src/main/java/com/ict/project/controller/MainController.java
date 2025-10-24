@@ -153,7 +153,16 @@ public class MainController
 	{
 		return new ModelAndView("project/support");
 	}
-	
+	@GetMapping("/showNotice")
+	public ModelAndView goNotice()
+	{
+		return new ModelAndView("project/notice");
+	}
+	@GetMapping("/showFAQ")
+	public ModelAndView goFAQ() 
+	{
+		return new ModelAndView("project/faq");
+	}
 	@GetMapping("/showMyPage")
 	public ModelAndView goMyPage()
 	{
