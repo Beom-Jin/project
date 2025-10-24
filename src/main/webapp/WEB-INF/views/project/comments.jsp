@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Comments</title>
 
-<link href="resources/css/comments.css?v=1" rel="stylesheet">
+<link href="resources/css/comments.css" rel="stylesheet">
 
 </head>
 <body>
@@ -78,7 +78,7 @@
 <script type="text/javascript">
 	function commentsWrite()
 	{
-		location.href = "/컨트롤러 댓글쓰기 화면으로 이동";
+		location.href = "/writeComments";
 	}
 
 </script>
