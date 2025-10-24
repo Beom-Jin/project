@@ -8,7 +8,7 @@ public class Paging {
 	private int nowBlock = 1;
 	
 	// 페이지당 게시물의 수 
-	private int numPerPage = 4;
+	private int numPerPage = 3;   // 4 -> 5
 	// 한 블럭의 수 
 	private int pagePerBlock = 3;
 	

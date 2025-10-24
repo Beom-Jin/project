@@ -107,16 +107,19 @@ public class MainController
 		List<TboardVO> list = MapperUtil.convertToTboardList(apiList);
 
 		// 확인
-		//for (TboardVO t : list) {
-		//    System.out.println(t.getB_title() + " / " + t.getB_content() + " / " + t.getB_img());
-		//}		
-		int result = tourService.goCreateDB(list);
+		for (TboardVO t : list) {
+		    System.out.println(t.getB_title() + " / " + t.getB_content() + " / " + t.getB_img());
+		}		
 		
-		mv.addObject("list", list);		
-		mv.addObject("resilt", result);		
-		mv.setViewName("eventForm");	
+		return null;
 		
-		return mv;
+		//int result = tourService.goCreateDB(list);
+		
+		//mv.addObject("list", list);		
+		//mv.addObject("resilt", result);		
+		//mv.setViewName("eventForm");	
+		
+		//return mv;
 	}
 
 	@GetMapping("/showList")
