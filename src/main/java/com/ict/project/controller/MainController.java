@@ -217,7 +217,7 @@ public class MainController
 		return new ModelAndView("project/myPage/TravelReviewDetail");
 	}
 	
-<<<<<<< HEAD
+
 	@GetMapping("/supCategory")
 	public ModelAndView goCategory() {
 		return new ModelAndView("project/supCategory");
@@ -251,7 +251,7 @@ public class MainController
 	public ModelAndView goHomePage() {
 		return new ModelAndView("project/mainHomePage");
 	}
-=======
+
 	
 	@GetMapping("/eventMap")
 	public ModelAndView goEventMap()
@@ -299,5 +299,5 @@ public class MainController
 	}	
 	
 
->>>>>>> ae68cb3eeb2b5b84e52a59207241aca189b9941d
+
 }
