@@ -29,14 +29,18 @@ public class RestMainController {
 	public Map<String, Object> getTourList(HttpServletRequest request) {
 		try {
 			int count = tourService.getTotalCount();
-			String cPage = request.getParameter("cPage");
+			String cPage = request.getParameter("cPage");  
+			String numPage = request.getParameter("numPage"); 
+			String b_theme = request.getParameter("categoryData");
+			System.out.println("count : " + count + ", cPage : " + cPage + ", numPage : " + numPage + ", b_theme : " + b_theme);
 			
-			//cPage = "3";   // 임의로 지정
-			paging.setPageInfo(count, cPage);
-			//System.out.println("count : " + count + ", cPage : " + cPage);
+			paging.setNumPerPage(Integer.parseInt(numPage));
+			
+			paging.setPageInfo(count, cPage);			
 			//System.out.println("totalBlock : " + paging.getTotalBlock() + ", beginBlock : " + paging.getBeginBlock() + ", endBlock : " + paging.getEndBlock());
 			//List<TboardVO> list = tourService.getTourList();	
-			List<TboardVO> list = tourService.getTourListPage(paging.getNumPerPage(), paging.getOffset());
+			//List<TboardVO> list = tourService.getTourListPage(paging.getNumPerPage(), paging.getOffset());
+			List<TboardVO> list = tourService.getTourListPage(paging.getNumPerPage(), paging.getOffset(), Integer.parseInt(b_theme));
 
 			Map<String, Object> map = new HashMap<>();
 
