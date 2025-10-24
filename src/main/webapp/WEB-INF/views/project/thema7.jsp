@@ -87,6 +87,8 @@ a{color:inherit; text-decoration:none}
 </head>
 <body>
 
+<jsp:include page="top.jsp"></jsp:include>
+
 <main class="container">
   <h2 class="page-title">우리의 것이 가장 세계적인 것이다 한류 여행<span aria-hidden="true">😊</span></h2>
 
@@ -168,6 +170,8 @@ a{color:inherit; text-decoration:none}
     </a>
   </div>
 </main>
+
+<jsp:include page="bottom.jsp"></jsp:include>
 
 </body>
 </html>

@@ -32,12 +32,6 @@ a{color:inherit; text-decoration:none}
 img{max-width:100%; display:block}
 .container{max-width:var(--max); margin:0 auto; padding:0 20px}
 
-/* 헤더 */
-header{border-bottom:1px solid var(--line); background:#fff; box-shadow:var(--shadow);}
-.header-wrap{display:flex; align-items:center; justify-content:space-between; padding:16px 24px; max-width:var(--max); margin:0 auto;}
-.header-logo{display:flex; align-items:center; font-weight:900; font-size:28px; gap:8px;}
-.header-logo::before{content:""; width:14px; height:14px; border-radius:50%; background:linear-gradient(135deg,var(--brand),var(--brand-2)); display:inline-block;}
-.home-btn{font-size:14px; background:var(--brand); color:#fff; padding:8px 16px; border-radius:999px; font-weight:600}
 
 /* 타이틀 */
 .page-title{text-align:center; font-size:34px; font-weight:900; margin:50px 0 30px}
@@ -63,14 +57,7 @@ header{border-bottom:1px solid var(--line); background:#fff; box-shadow:var(--sh
 </head>
 <body>
 
-<header>
-  <h2>확인용</h2>
-  
-  <div class="header-wrap">
-    <div class="header-logo"><a href="/gotitle">VisitKorea</a></div>
-    <a href="/gotitle" class="home-btn">홈으로</a>
-  </div>
-</header>
+<jsp:include page="top.jsp"></jsp:include>
 
 <div class="container">
   <h1 class="page-title">테마별 여행 추천</h1>
@@ -110,6 +97,8 @@ header{border-bottom:1px solid var(--line); background:#fff; box-shadow:var(--sh
   <!-- 컨텐츠 영역 -->
   <div class="theme-display" id="theme-display"></div>
 </div>
+
+<jsp:include page="bottom.jsp"></jsp:include>
 
 <script>
 /* ========= ✅ 추가: 테마 → 상세 JSP 매핑 ========= */
