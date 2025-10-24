@@ -31,8 +31,10 @@ public class RestMainController {
 			int count = tourService.getTotalCount();
 			String cPage = request.getParameter("cPage");
 			
+			//cPage = "3";   // 임의로 지정
 			paging.setPageInfo(count, cPage);
-			System.out.println("count : " + count + ", cPage : " + cPage);
+			//System.out.println("count : " + count + ", cPage : " + cPage);
+			//System.out.println("totalBlock : " + paging.getTotalBlock() + ", beginBlock : " + paging.getBeginBlock() + ", endBlock : " + paging.getEndBlock());
 			//List<TboardVO> list = tourService.getTourList();	
 			List<TboardVO> list = tourService.getTourListPage(paging.getNumPerPage(), paging.getOffset());
 
@@ -41,12 +43,8 @@ public class RestMainController {
 			map.put("list", list);
 			map.put("paging", paging);
 			
-//			int i = 0;
-//			for (TboardVO k : list) {
-//				System.out.println("getB_content : " + list.get(i).getB_content());
-//				i++;
-//			}					
-			return map; 
+			return map;
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
