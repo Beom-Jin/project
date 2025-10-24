@@ -24,7 +24,7 @@
 		<div class="tab">
 		  <a href="#item_img"><button class="tablinks"> <span id="tab_text">사진보기</span></button></a>
 		  <a href="#item_tap"><button class="tablinks"> <span id="tab_text">상세정보 </span></button></a>
-		  <a href="#map"><button class="tablinks"> <span id="tab_text">지도</span></button></a>
+		  <a href="#item_tap2"><button class="tablinks"> <span id="tab_text">지도</span></button></a>
 		</div>
 		<div class="detail_title">
 			<p><h1>${area}</h1></p>
@@ -32,7 +32,7 @@
 			<p id="item_img"><h3>${area} 의 관광지 간략한 소개</h1></p>
 		</div>
 		
-		<div class="detail_body" id="location_picture">
+		<div class="detail_body">
 			<div class="detail_body_item">
 				<div>
 					<img alt="" src="/resources/images/bear.jpg">
@@ -87,10 +87,13 @@
 				        <div id="pagination"></div>
 					</div>
 				</div>
+				
+				<jsp:include page="comments.jsp"></jsp:include>
+				
 			</div>
 		</div>
 	</div>
-
+	<hr>
 	<jsp:include page="bottom.jsp"></jsp:include>
 
 	<!-- =============================== 카카오맵 ==================================  -->

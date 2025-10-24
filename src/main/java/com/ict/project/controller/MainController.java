@@ -30,6 +30,13 @@ public class MainController
 		
 	}
 	
+	@GetMapping("/writeComments")
+	public ModelAndView goWriteComments()
+	{
+		return new ModelAndView("project/writeComments");
+		
+	}
+	
 	@GetMapping("/showMap")
 	public ModelAndView goMap()
 	{
