@@ -86,12 +86,11 @@ a{color:inherit; text-decoration:none}
 </style>
 </head>
 <body>
+  <jsp:include page="top.jsp"></jsp:include>
 
 <main class="container">
   <h2 class="page-title">의료 관광 <span aria-hidden="true">😊</span></h2>
 
-  <!-- 상단 배너 (비워둔 그래픽 영역 + 텍스트 + 버튼) -->
-  
 
   <!-- 카드 8개 (이미지 칸은 플레이스홀더) -->
   <section class="grid cols-4" aria-label="추천 장소 목록">
@@ -168,6 +167,9 @@ a{color:inherit; text-decoration:none}
     </a>
   </div>
 </main>
+
+
+<jsp:include page="bottom.jsp"></jsp:include>
 
 </body>
 </html>
