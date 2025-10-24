@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>고객지원</title>
+<title>공지사항</title>
 <link href="/resources/css/top.css" rel="stylesheet">
 <link href="/resources/css/nav.css" rel="stylesheet">
 <link href="/resources/css/bottom.css" rel="stylesheet">
@@ -18,8 +18,6 @@
 	<jsp:include page="top.jsp"></jsp:include>
 	<jsp:include page="nav.jsp"></jsp:include>
 	
-	<a href="/showNotice">공지사항 보기</a>
-	<a href="/showFAQ">자주 묻는 질문 보기</a>
 	
 	<jsp:include page="bottom.jsp"></jsp:include>
 </body>
