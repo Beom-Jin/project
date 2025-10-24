@@ -6,18 +6,46 @@
 <head>
 <meta charset="UTF-8">
 <style>
-.table-container {
-  width: 90%;
-  margin: 40px auto;
+body {
   font-family: "Segoe UI", sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+}
+
+/* 전체 콘텐츠 래퍼 */
+.main-container {
+  width: 90%;
+  margin: 100px auto 60px;
+}
+
+/* 드롭다운 */
+.dropdown-controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.dropdown-controls select {
+  padding: 5px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* 테이블 */
+.table-container {
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 thead {
@@ -42,6 +70,7 @@ td img {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+/* 페이징 */
 tfoot {
   background-color: #fafafa;
   text-align: center;
@@ -68,7 +97,6 @@ tfoot {
   background-color: #4a90e2;
   color: #fff;
   font-weight: bold;
-  cursor: default;
 }
 
 .paging li:hover:not(.now):not(.disable) {
@@ -80,17 +108,54 @@ tfoot {
   cursor: not-allowed;
   border-color: #eee;
 }
+
+/* 지도 */
+#map {
+  width: 100%;
+  height: 400px;
+  margin-top: 25px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+
+
 </style>
 <title>Event Form</title>
 </head>
 <body>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		
 	<script type="text/javascript"
-		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6d94238101cfb7c23687adf0e173a7da"></script>
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9e684ace65f4252ccaf39ed6a6b1bef1&libraries=services"></script>
 	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		
 	<jsp:include page="top.jsp"></jsp:include>		
+		  
+	<!-- 우측 상단 드롭다운 -->
+	<div class="dropdown-controls">
+	  <label for="perPageSelect">한 페이지:</label>
+	  <select id="perPageSelect">
+	    <option value="3">3개</option>
+	    <option value="5">5개</option>
+	    <option value="10">10개</option>
+	  </select>
+	  
+	  <label for="categorySelect">분류:</label>
+	  <select id="categorySelect">
+	    <option value="1">전체1</option>
+	    <option value="2">분류2</option>
+	    <option value="3">분류3</option>
+	    <option value="4">분류4</option>
+	    <option value="5">분류5</option>
+	    <option value="6">분류6</option>
+	    <option value="7">분류7</option>
+	  </select>
 
- 	<div class="table-container"></div>
+	</div> 	
+
+	<div class="table-container"></div>	
 
 	<a class="nav-link" href="/createDB">데이터 생성</a>
 	<a class="nav-link" href="/showList">데이터 조회</a>
@@ -100,20 +165,160 @@ tfoot {
 
 	<jsp:include page="bottom.jsp"></jsp:include>
 
-	<script type="text/javascript">	
+	<script type="text/javascript">		
+		let numPage = 3; // 기본값
+		let categoryData = 1; // 기본값
 		
 		$(document).ready(function() {		
-			loadTourList1(1);	
-			// 내일 작업
-			//fn_go_map(list.b_lat, list.b_lon);
-			console.log("list :", ${list});
-		});		
-
+		    // 드롭다운 변경 시 한 페이지 항목 수 변경하고 1페이지로 다시 로드
+		    const sel = document.getElementById('perPageSelect');
+		    const category = document.getElementById('categorySelect');
+		    
+		    console.log("sel :", sel.value);
+		    console.log("category :", category.value);
+		    
+		    if (sel) {
+		      sel.value = String(numPage); // 초기값 일치
+		      
+		      sel.addEventListener('change', function() {
+		        numPage = parseInt(this.value, 10) || 3;
+		        console.log("numPage :", numPage);
+		        loadTourList(1); // 변경되면 1페이지로 재호출
+	          });
+			}
+		    
+		    //const category = document.getElementById('categorySelect');
+		    
+		    if (category) {
+		    	category.value = String(categoryData); // 초기값 일치		        
+		        
+		    	category.addEventListener('change', function() {		    	
+			    	categoryData = parseInt(this.value, 10) || 1;
+			        console.log("categoryData :", categoryData);
+		        	loadTourList(1); // 변경되면 1페이지로 재호출
+	          });
+			}
+		    
+			loadTourList(1);
+		});	
+		    
+		    
 		function fn_go_page(pageNo){
-			loadTourList1(pageNo);	
+			loadTourList(pageNo);	
 		}		
 		
+		
 		function loadTourList(pageNo) {
+			//console.log(pageNo);
+			
+			const params = { cPage : pageNo,  numPage : numPage, categoryData : categoryData };
+			 
+			$(".table-container").empty(); // 초기화 작업		    
+			$.ajax({
+				url : "/showTourList", 
+				method : "post",
+				data : params,
+				dataType : "json",  
+				success : function(data) {			    	
+					
+					const list = data.list;
+			    	const paging = data.paging; 					
+			    	
+			    	let table = "<table>";
+			    	table += "<thead>";
+			    	table += "<tr>";
+			    	table += "<th>b_title</th><th>b_img</th><th>b_content</th><th>b_loc</th><th>b_time</th><th>b_url</th><th>b_hits</th>" ;
+			    	table += "</tr>";
+			    	table += "</thead>";
+			    	table += "<tbody>";
+			    	$.each(list, function(i, obj) {
+						table +="<tr>";
+						table +="<td>"+ obj.b_title +"</td>";						
+						table +="<td><img src='" + obj.b_img + "' style='width:100px; height:auto; border-radius:8px;'/></td>";
+						table +="<td>"+ obj.b_content.substring(0, 30) + "</td>";
+						//table +="<a href='javascript:void(0);' onclick='fn_go_map(" + obj.b_lat + "," + obj.b_lon + "); '><td>"+ obj.b_loc +"</td></a>";
+						table +="<td><a href='javascript:void(0);' onclick='fn_go_map(\"" + obj.b_lat + "\", \"" + obj.b_lon + "\", \"" + 0 +"\")'>" + obj.b_loc + "</a></td>";
+						table +="<td>"+ obj.b_time +"</td>";
+						table += '<td><a href="' + obj.b_url + '" target="_blank">' + obj.b_url + '</a></td>';
+						table +="<td>"+ obj.b_hits +"</td>";
+						table +="</tr>";													
+					 });						
+ 			    	 table += "</tbody>";
+ 			    	
+ 			    	 table += "<tfoot><tr><td colspan='7'><ol class='paging'>";
+
+					 // 이전 버튼					 
+					 if (paging.beginBlock <= paging.pagePerBlock) {
+						 table += "<li class='disable'>이전으로</li>";						 
+					 } else {
+						 table += "<li><a href='javascript:void(0);' onclick='fn_go_page(" + (paging.beginBlock - paging.pagePerBlock) + "); '>이전으로</a></li>";
+					 }
+				
+					 // 블록 안의 페이지 번호
+					 for (let k = paging.beginBlock; k <= paging.endBlock; k++) {
+						 if (k === paging.nowPage) {
+							 table += "<li class='now'><a href='javascript:void(0);' onclick='fn_go_page(" + k + "); '>" + k + "</a></li>";
+						 } else {
+							 table += "<li><a href='javascript:void(0);' onclick='fn_go_page(" + k + "); '>" + k + "</a></li>";
+						 }
+					 }
+				
+					 // 다음 버튼
+					 if (paging.endBlock >= paging.totalPage) {
+						 table += "<li class='disable'>다음으로</li>";
+					 } else {
+						 table += "<li><a href='javascript:void(0);' onclick='fn_go_page(" + (paging.endBlock + 1) + "); '>다음으로</a></li>";
+					 }				
+					 table += "</ol></td></tr></tfoot>"; 			    	 
+ 			    	 
+			    	 table += "</table>";	
+			    	 $(".table-container").append(table);
+
+			    	 fn_go_map(list[0].b_lat, list[0].b_lon, 1);
+				},
+				error : function() {
+					alert("읽기실패");
+				}
+			});			
+		}
+		
+		function fn_go_map(b_lat, b_lon, first) {
+			console.log("b_lat:", b_lat, "b_lon:", b_lon, "first:", first);
+			let lat = b_lat;
+			let lon = b_lon;
+
+			if(first === 1){
+				navigator.geolocation.getCurrentPosition(function(position) {					
+					lat = position.coords.latitude;
+					lon = position.coords.longitude;					
+					
+					geo_map(lat, lon);
+				});
+			}else{
+				geo_map(lat, lon);
+			}
+			 
+		}
+		
+	    function geo_map(lat, lon) {
+	    	let h = new kakao.maps.LatLng(lat, lon);
+			var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+			mapOption = {
+				//center : new kakao.maps.LatLng(lat, lon), // 지도의 중심좌표
+				//level : 3  // 지도의 확대 레벨
+				center : h , 
+				level : 3  // 지도의 확대 레벨
+				
+			};
+	
+			// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+			var map = new kakao.maps.Map(mapContainer, mapOption);
+		}
+		
+		
+		
+		
+		function loadTourListOld(pageNo) {
 
 			const params = { cPage: pageNo };
 
@@ -209,6 +414,7 @@ tfoot {
 					}
 
 					$(".table-container table tfoot .paging").html(pagingHtml);
+					
 				},
 
 				error: function (xhr, status, error) {
@@ -217,94 +423,6 @@ tfoot {
 				},
 			});
 		}		
-		
-		function loadTourList1(pageNo) {
-			console.log(pageNo);
-			
-			const params = { cPage: pageNo };
-			 
-			$(".table-container").empty(); // 초기화 작업		    
-			$.ajax({
-				url : "/showTourList", 
-				method : "post",
-				data : params,
-				dataType : "json",  
-				success : function(data) {
-					//console.log("받은 데이터:", data); 	
-					
-			    	const list = data.list;
-			    	const paging = data.paging; 
-					
-			    	let table = "<table>";
-			    	table += "<thead>";
-			    	table += "<tr>";
-			    	table += "<th>b_title</th><th>b_img</th><th>b_content</th><th>b_loc</th><th>b_time</th><th>b_url</th><th>b_hits</th>" ;
-			    	table += "</tr>";
-			    	table += "</thead>";
-			    	table += "<tbody>";
-			    	$.each(list, function(i, obj) {
-						table +="<tr>";
-						table +="<td>"+ obj.b_title +"</td>";						
-						table +="<td><img src='" + obj.b_img + "' style='width:100px; height:auto; border-radius:8px;'/></td>";
-						table +="<td>"+ obj.b_content.substring(0, 30) + "</td>";
-						//table +="<a href='javascript:void(0);' onclick='fn_go_map(" + obj.b_lat + "," + obj.b_lon + "); '><td>"+ obj.b_loc +"</td></a>";
-						table +="<td><a href='javascript:void(0);' onclick='fn_go_map(\"" + obj.b_lat + "\", \"" + obj.b_lon + "\")'>" + obj.b_loc + "</a></td>";
-						table +="<td>"+ obj.b_time +"</td>";
-						table += '<td><a href="' + obj.b_url + '" target="_blank">' + obj.b_url + '</a></td>';
-						table +="<td>"+ obj.b_hits +"</td>";
-						table +="</tr>";													
-					 });						
- 			    	 table += "</tbody>";
- 			    	
- 			    	 table += "<tfoot><tr><td colspan='7'><ol class='paging'>";
-
-					 // 이전 버튼					 
-					 if (paging.beginBlock <= paging.pagePerBlock) {
-						 table += "<li class='disable'>이전으로</li>";						 
-					 } else {
-						 table += "<li><a href='javascript:void(0);' onclick='fn_go_page(" + (paging.beginBlock - paging.pagePerBlock) + "); '>이전으로</a></li>";
-					 }
-				
-					 // 블록 안의 페이지 번호
-					 for (let k = paging.beginBlock; k <= paging.endBlock; k++) {
-						 if (k === paging.nowPage) {
-							 table += "<li class='now'><a href='javascript:void(0);' onclick='fn_go_page(" + k + "); '>" + k + "</a></li>";
-						 } else {
-							 table += "<li><a href='javascript:void(0);' onclick='fn_go_page(" + k + "); '>" + k + "</a></li>";
-						 }
-					 }
-				
-					 // 다음 버튼
-					 if (paging.endBlock >= paging.totalPage) {
-						 table += "<li class='disable'>다음으로</li>";
-					 } else {
-						 table += "<li><a href='javascript:void(0);' onclick='fn_go_page(" + (paging.endBlock + 1) + "); '>다음으로</a></li>";
-					 }				
-					 table += "</ol></td></tr></tfoot>"; 			    	 
- 			    	 
-			    	 table += "</table>";	
-			    	 $(".table-container").append(table);
-				},
-				error : function() {
-					alert("읽기실패");
-				}
-			});			
-		}
-		
-		function fn_go_map(b_lat, b_lon) {
-			console.log("b_lat:", b_lat, "b_lon:", b_lon);
-			var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-			mapOption = {
-				//center : new kakao.maps.LatLng(b_lat, b_lon), // 지도의 중심좌표
-				center : new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-				level : 3
-			// 지도의 확대 레벨
-			};
-
-			// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
-			var map = new kakao.maps.Map(mapContainer, mapOption);			 
-			 
-		}
 		
 	</script>
 </body>
