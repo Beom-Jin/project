@@ -9,12 +9,6 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class MainController
 {
-	@GetMapping("/showMain")
-	public ModelAndView goMain()
-	{
-		return new ModelAndView("project/mainHomePage");
-		
-	}
 	
 	@GetMapping("/showMap")
 	public ModelAndView goMap()
@@ -28,14 +22,107 @@ public class MainController
 	{
 		return new ModelAndView("project/detail");
 	}
-	
-	
-	@GetMapping("/showTheme")
-	public ModelAndView goTheme()
-	{
-		return new ModelAndView("project/theme");
+
+	@GetMapping("/LoginForm")
+	public String showLoginForm() {
+		return "project/loginForm";
 	}
 	
+<<<<<<< HEAD
+	@GetMapping("/RegistrationForm")
+	public String showRegistrationForm() {
+		return "project/registrationForm";
+	}
+	
+	
+
+	@GetMapping("/showthema")
+	public ModelAndView gothema()
+	{
+		return new ModelAndView("project/thema");
+	}
+	
+
+	@GetMapping("/gotitle")
+	public ModelAndView gotitle()
+	{
+		return new ModelAndView("project/mainHomePage");
+	}
+	
+
+	@GetMapping("/gothema")
+	public ModelAndView gotothema()
+	{
+		return new ModelAndView("project/thema");
+	}
+	
+	@GetMapping("/gofestival")
+	public ModelAndView gofestival()
+	{
+		return new ModelAndView("project/festival");
+	}
+	
+	
+	@GetMapping("/findidorpassword")
+	public ModelAndView findidorpassword()
+	{
+		return new ModelAndView("project/findidpassword");
+	}
+	
+	
+
+	@GetMapping("/membersJoinForm")
+	public ModelAndView domembersJoinForm()
+	{
+		return new ModelAndView("project/registrationForm");
+	}
+	
+	@GetMapping("/thema1")
+	public ModelAndView goThemadetail()
+	{
+		return new ModelAndView("project/thema1");
+	}
+	
+	@GetMapping("/thema2")
+	public ModelAndView goThemadetail1()
+	{
+		return new ModelAndView("project/thema2");
+	}
+	
+	
+	@GetMapping("/thema3")
+	public ModelAndView goThemadetail2()
+	{
+		return new ModelAndView("project/thema3");
+	}
+	
+	@GetMapping("/thema4")
+	public ModelAndView goThemadetail3()
+	{
+		return new ModelAndView("project/thema4");
+	}
+	
+	@GetMapping("/thema5")
+	public ModelAndView goThemadetail4()
+	{
+		return new ModelAndView("project/thema5");
+	}
+	
+	@GetMapping("/thema6")
+	public ModelAndView goThemadetail5()
+	{
+		return new ModelAndView("project/thema6");
+	}
+	
+	@GetMapping("/thema7")
+	public ModelAndView goThemadetail6()
+	{
+		return new ModelAndView("project/thema7");
+	}
+	
+	
+	
+=======
 	@GetMapping("/showSupport")
 	public ModelAndView goSupport()
 	{
@@ -68,4 +155,5 @@ public class MainController
 	public ModelAndView goTravelReviewDetail() {
 		return new ModelAndView("project/myPage/TravelReviewDetail");
 	}
+>>>>>>> 1b6b8653903709dc1c8ccaf1d2a2a5270f951665
 }
