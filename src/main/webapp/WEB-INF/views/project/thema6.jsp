@@ -87,6 +87,8 @@ a{color:inherit; text-decoration:none}
 </head>
 <body>
 
+<jsp:include page="top.jsp"></jsp:include>
+
 <main class="container">
   <h2 class="page-title">내 차 함께 어디로든 가자 차박여행<span aria-hidden="true">😊</span></h2>
 
@@ -169,5 +171,6 @@ a{color:inherit; text-decoration:none}
   </div>
 </main>
 
+<jsp:include page="bottom.jsp"></jsp:include>
 </body>
 </html>
