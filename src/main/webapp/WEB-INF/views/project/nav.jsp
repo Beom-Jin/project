@@ -8,6 +8,7 @@
 </head>
 <body>
 	<!-- 내비 -->
+	
 	<nav>
 		<div class="nav-wrap" role="navigation" aria-label="주요 카테고리">
 			<a class="nav-link" href="/showMap" target="_self">지역별 여행</a>
