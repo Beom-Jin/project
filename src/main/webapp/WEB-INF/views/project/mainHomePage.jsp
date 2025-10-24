@@ -16,6 +16,7 @@
 <body>
 	<jsp:include page="top.jsp"></jsp:include>
 	<jsp:include page="nav.jsp"></jsp:include>
+	<link href="/resources/css/popup.css" rel="stylesheet">
 
 	<!-- 히어로 -->
 	<div class="container hero">
@@ -268,6 +269,35 @@
  setInterval(() => showSlides(slideIndex += 1), 2000); 
  /*=============================슬라이더 끝==============================  */
   </script>
+
+    <!-- 공지 안내 팝업 (가운데 크게) -->
+<div id="popupNotice" class="mini-popup center hidden" role="dialog" aria-label="공지 안내">
+  <button class="popup-close" onclick="closePopup('popupNotice')" aria-label="닫기">×</button>
+  <h3>공지 안내</h3>
+  <p>
+    10월 25일(금) 오전 2시~4시 시스템 점검이 예정되어 있습니다.<br />
+    이용에 불편을 드려 죄송합니다.
+  </p>
+  <div class="mini-footer">
+    <label><input type="checkbox" id="hideNotice" /> 오늘 하루 보지 않기</label>
+    <button class="btn-primary" onclick="closePopup('popupNotice')">확인</button>
+  </div>
+</div>
+
+<!-- 광고 팝업 (오른쪽 하단) -->
+<div id="popupAd" class="mini-popup right hidden" role="region" aria-label="광고 팝업">
+  <button class="popup-close" onclick="closePopup('popupAd')" aria-label="닫기">×</button>
+  <h3> 추천 여행지 </h3>
+  <a href="https://www.visitkorea.or.kr/" target="_blank" rel="noopener">
+    <img src="/resources/images/popupimage1.jpg" alt="광고 배너" onerror="this.style.display='none'" />
+  </a>
+  <div class="mini-footer">
+    <label><input type="checkbox" id="hideAd" /> 오늘 하루 보지 않기</label>
+  </div>
+</div>
+  
+  
+  <script src="/resources/js/popup.js"></script>
 
 </body>
 </html>
