@@ -43,12 +43,17 @@ public class TourDAO {
 		}
 	}
 	
-	public List<TboardVO> getTourListPage(int limit, int offset) {
+	public List<TboardVO> getTourListPage(int limit, int offset, int b_theme) {
 		try {
 			Map<String, Integer> map = new HashMap<String, Integer>(); 
 			map.put("limit", limit);
 			map.put("offset", offset);
-			return sessionTemplate.selectList("tour.listpage", map);			
+			map.put("b_theme", b_theme);
+			System.out.println();
+			if(b_theme == 1)
+				return sessionTemplate.selectList("tour.listpage", map);
+			else
+				return sessionTemplate.selectList("tour.listpageThema", map);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;

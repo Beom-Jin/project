@@ -22,7 +22,11 @@
     </select>
 		
 	<select id="listpage" parameterType="map" resultType="com.ict.project.vo.TboardVO">
-     	select * from tboard order by b_idx desc limit #{limit} offset #{offset}      
+     	select * from tboard order by b_idx asc limit #{limit} offset #{offset}      
+    </select>
+
+	<select id="listpageThema" parameterType="map" resultType="com.ict.project.vo.TboardVO">
+     	select * from tboard where b_theme = #{b_theme} order by b_idx   asc limit #{limit} offset #{offset}      
     </select>
 		
 </mapper>
