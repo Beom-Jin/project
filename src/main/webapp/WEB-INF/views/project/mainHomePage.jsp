@@ -11,12 +11,13 @@
 <link href="/resources/css/nav.css" rel="stylesheet">
 <link href="/resources/css/mainHomePage.css" rel="stylesheet">
 <link href="/resources/css/slider.css" rel="stylesheet">
+<link href="/resources/css/popup.css" rel="stylesheet">
 
 </head>
 <body>
 	<jsp:include page="top.jsp"></jsp:include>
 	<jsp:include page="nav.jsp"></jsp:include>
-	<link href="/resources/css/popup.css" rel="stylesheet">
+	
 
 	<!-- 히어로 -->
 	<div class="container hero">

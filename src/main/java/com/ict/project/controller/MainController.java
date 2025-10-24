@@ -292,8 +292,8 @@ public class MainController
 	}
 
 	@GetMapping("/showList")
-	public ModelAndView eventList()
-	{
+	public ModelAndView eventList()	{
+		
 		System.out.println("Controller showList");
 		return new ModelAndView("project/eventForm");
 	}	

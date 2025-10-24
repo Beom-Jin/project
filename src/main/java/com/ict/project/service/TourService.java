@@ -9,7 +9,7 @@ public interface TourService {
 	public List<TboardVO> getTourList(); 	
 	
 	int getTotalCount();
-	public List<TboardVO> getTourListPage(int limit, int offset);
+	public List<TboardVO> getTourListPage(int limit, int offset, int b_theme);
 	
 	
 }
