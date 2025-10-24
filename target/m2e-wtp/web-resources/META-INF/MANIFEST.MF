@@ -1,5 +1,9 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: ICT
+=======
+Built-By: ict-21
+>>>>>>> 0f3c74052ced55f78add4ec9d781231f02c00ee6
 Build-Jdk: 11.0.0.2
 Created-By: Maven Integration for Eclipse
 
