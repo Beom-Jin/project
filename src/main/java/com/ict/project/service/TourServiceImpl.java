@@ -45,9 +45,9 @@ public class TourServiceImpl implements TourService{
 	}
 
 	@Override
-	public List<TboardVO> getTourListPage(int limit, int offset) {
+	public List<TboardVO> getTourListPage(int limit, int offset, int b_theme) {
 		try {
-			return tourDAO.getTourListPage(limit, offset);
+			return tourDAO.getTourListPage(limit, offset, b_theme);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
