@@ -30,6 +30,13 @@ public class MainController
 		
 	}
 	
+	@GetMapping("/writeComments")
+	public ModelAndView goWriteComments()
+	{
+		return new ModelAndView("project/writeComments");
+		
+	}
+	
 	@GetMapping("/showMap")
 	public ModelAndView goMap()
 	{
@@ -146,7 +153,16 @@ public class MainController
 	{
 		return new ModelAndView("project/support");
 	}
-	
+	@GetMapping("/showNotice")
+	public ModelAndView goNotice()
+	{
+		return new ModelAndView("project/notice");
+	}
+	@GetMapping("/showFAQ")
+	public ModelAndView goFAQ() 
+	{
+		return new ModelAndView("project/faq");
+	}
 	@GetMapping("/showMyPage")
 	public ModelAndView goMyPage()
 	{
@@ -157,18 +173,23 @@ public class MainController
 	public ModelAndView goInformationUpdateForm() {
 		return new ModelAndView("project/myPage/InformationUpdateForm");
 	}
+	
 	@GetMapping("/showBookmark")
-	public ModelAndView goBookmark() {
+	public ModelAndView goBookmark()
+	{
 		return new ModelAndView("project/myPage/Bookmark");
 	}
+	
 	@GetMapping("/showTravelReview")
 	public ModelAndView goTravelReview() {
 		return new ModelAndView("project/myPage/TravelReview");
 	}
+	
 	@GetMapping("/showQuestion")
 	public ModelAndView goQuestion() {
 		return new ModelAndView("project/myPage/Question");
 	}
+	
 	@GetMapping("/showTravelReviewDetail")
 	public ModelAndView goTravelReviewDetail() {
 		return new ModelAndView("project/myPage/TravelReviewDetail");
