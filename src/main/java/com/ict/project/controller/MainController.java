@@ -195,6 +195,10 @@ public class MainController
 		return new ModelAndView("project/myPage/TravelReviewDetail");
 	}
 	
+<<<<<<< HEAD
+=======
+
+>>>>>>> a583e14 (save)
 	@GetMapping("/supCategory")
 	public ModelAndView goCategory() {
 		return new ModelAndView("project/supCategory");
@@ -228,6 +232,10 @@ public class MainController
 	public ModelAndView goHomePage() {
 		return new ModelAndView("project/mainHomePage");
 	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> a583e14 (save)
 	
 	@GetMapping("/eventMap")
 	public ModelAndView goEventMap()
@@ -268,11 +276,15 @@ public class MainController
 	}
 
 	@GetMapping("/showList")
-	public ModelAndView eventList()
-	{
+	public ModelAndView eventList()	{
+		
 		System.out.println("Controller showList");
 		return new ModelAndView("project/eventForm");
 	}	
 	
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a583e14 (save)
 }
