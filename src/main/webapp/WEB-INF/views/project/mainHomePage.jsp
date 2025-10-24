@@ -125,9 +125,15 @@
 	<section class="container">
 		<div class="sec-head">
 			<h2>테마별 여행</h2>
-			<a href="#">더 알아보기</a>
+			<a href="/gothema">더 알아보기</a>
 		</div>
+		
+		
+		
 		<div class="grid cols-3">
+			
+			
+			<a href="/gothema">
 			<article class="card">
 				<div class="thumb hero">
 					<img
@@ -139,7 +145,9 @@
 					<p class="desc">펫프렌드리 숙소·식당·공원 추천</p>
 				</div>
 			</article>
-
+			</a>
+			
+			<a href="/gothema">
 			<article class="card">
 				<div class="thumb hero">
 					<img
@@ -151,7 +159,9 @@
 					<p class="desc">차량 접근 용이한 캠핑지 모음</p>
 				</div>
 			</article>
-
+			</a>
+			
+			<a href="/gothema">
 			<article class="card">
 				<div class="thumb hero">
 					<img
@@ -163,6 +173,9 @@
 					<p class="desc">드라마·예능 촬영지 따라가기</p>
 				</div>
 			</article>
+			</a>
+			
+			
 		</div>
 	</section>
 
