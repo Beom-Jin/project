@@ -221,6 +221,7 @@ public class MainController
 	{
 		return new ModelAndView("project/myPage/TravelReviewUpdateForm");
 	}
+	
 	@GetMapping("/supCategory")
 	public ModelAndView goCategory() {
 		return new ModelAndView("project/supCategory");
