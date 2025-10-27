@@ -76,6 +76,10 @@ public class MainController
 		return new ModelAndView("project/mainHomePage");
 	}
 	
+	
+
+	
+	
 
 	@GetMapping("/gothema")
 	public ModelAndView gotothema()
@@ -95,6 +99,24 @@ public class MainController
 	{
 		return new ModelAndView("project/findidpassword");
 	}
+	
+
+	@GetMapping("/findpassword")
+	public ModelAndView findpassword()
+	{
+		return new ModelAndView("project/myPage/findpassword");
+	}
+	
+	
+	
+	@GetMapping("/getid")
+	public ModelAndView getid()
+	{
+		return new ModelAndView("project/findid");
+	}
+	
+	
+	
 	
 	
 
@@ -195,10 +217,7 @@ public class MainController
 		return new ModelAndView("project/myPage/TravelReviewDetail");
 	}
 	
-<<<<<<< HEAD
-=======
 
->>>>>>> a583e14 (save)
 	@GetMapping("/supCategory")
 	public ModelAndView goCategory() {
 		return new ModelAndView("project/supCategory");
@@ -232,10 +251,7 @@ public class MainController
 	public ModelAndView goHomePage() {
 		return new ModelAndView("project/mainHomePage");
 	}
-<<<<<<< HEAD
-=======
 
->>>>>>> a583e14 (save)
 	
 	@GetMapping("/eventMap")
 	public ModelAndView goEventMap()
@@ -283,8 +299,5 @@ public class MainController
 	}	
 	
 
-<<<<<<< HEAD
-=======
 
->>>>>>> a583e14 (save)
 }
