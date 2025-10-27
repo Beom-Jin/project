@@ -61,10 +61,9 @@
 		</tbody>
 		<tfoot>
 		<tr>
-		<td colspan="3">
-		<a href="/showTravelReview"><input type="button" class="btn" value="목록으로"></a>
-		<a href="/TravelReviewUpdateForm"><input type="button" class="btn" value="수정하기"></a>
-		<a href="/TravelReviewDelete"><input type="button" class="btn" value="삭제하기"></a>
+		<td colspan="2">
+		<a href="/TravelReviewUpdateOk"><input type="button" class="btn" value="수정완료"></a>
+		<a href="/showTravelReviewDetail"><input type="button" class="btn" value="수정취소"></a>
 		</tr>
 		</tfoot>
 		</table>

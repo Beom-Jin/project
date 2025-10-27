@@ -216,8 +216,11 @@ public class MainController
 	public ModelAndView goTravelReviewDetail() {
 		return new ModelAndView("project/myPage/TravelReviewDetail");
 	}
-	
-
+	@GetMapping("/TravelReviewUpdateForm")
+	public ModelAndView goTravelReviewUpdateForm()
+	{
+		return new ModelAndView("project/myPage/TravelReviewUpdateForm");
+	}
 	@GetMapping("/supCategory")
 	public ModelAndView goCategory() {
 		return new ModelAndView("project/supCategory");
