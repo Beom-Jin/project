@@ -101,31 +101,31 @@ a{color:inherit; text-decoration:none}
     <article class="card">
       <div class="thumb" aria-hidden="true"></div>
       <div class="meta">
-        <div class="place">대야수목원</div>
-        <span class="tag">전북 완주군</span>
+        <div class="place">차박여행1</div>
+        <span class="tag">차박여행1</span>
       </div>
     </article>
     <!-- 2 -->
     <article class="card">
       <div class="thumb" aria-hidden="true"></div>
       <div class="meta">
-        <div class="place">완도수목원</div>
-        <span class="tag">전남 완도군</span>
+        <div class="place">차박여행2</div>
+        <span class="tag">차박여행2</span>
       </div>
     </article>
     <!-- 3 -->
     <article class="card">
       <div class="thumb" aria-hidden="true"></div>
       <div class="meta">
-        <div class="place">선운사(고창)</div>
-        <span class="tag">전북 고창군</span>
+        <div class="place">차박여행3</div>
+        <span class="tag">차박여행3</span>
       </div>
     </article>
     <!-- 4 -->
     <article class="card">
       <div class="thumb" aria-hidden="true"></div>
       <div class="meta">
-        <div class="place">마이산도립공원</div>
+        <div class="place">차</div>
         <span class="tag">전북 진안군</span>
       </div>
     </article>

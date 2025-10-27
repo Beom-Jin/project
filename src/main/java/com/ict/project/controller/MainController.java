@@ -76,6 +76,10 @@ public class MainController
 		return new ModelAndView("project/mainHomePage");
 	}
 	
+	
+
+	
+	
 
 	@GetMapping("/gothema")
 	public ModelAndView gotothema()
@@ -95,6 +99,24 @@ public class MainController
 	{
 		return new ModelAndView("project/findidpassword");
 	}
+	
+
+	@GetMapping("/findpassword")
+	public ModelAndView findpassword()
+	{
+		return new ModelAndView("project/myPage/findpassword");
+	}
+	
+	
+	
+	@GetMapping("/getid")
+	public ModelAndView getid()
+	{
+		return new ModelAndView("project/findid");
+	}
+	
+	
+	
 	
 	
 
