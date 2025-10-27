@@ -10,15 +10,21 @@
 		  -->
 		  
 		<!-- DB정보 넣기 -->
-		<!-- DB 접속 -->
+		  
 		<bean id="datasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 			<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
 			<property name="url" value="jdbc:mysql://localhost:3306/ictedu_db"></property>
 			<property name="username" value="ictedu"></property>
 			<property name="password" value="1111"></property>
 		</bean>
-		
-		
+		<!-- DB 접속
+		<bean id="datasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+			<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
+			<property name="url" value="jdbc:mysql://192.168.0.32:3306/team_project"></property>
+			<property name="username" value="pdm"></property>
+			<property name="password" value="1234"></property>
+		</bean>
+		-->
 		
 		<!-- mybatis:config = mapper위치 지정-->
 		<bean id="factoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
