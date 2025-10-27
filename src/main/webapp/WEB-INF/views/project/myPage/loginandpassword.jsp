@@ -1,11 +1,13 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+
 <!doctype html>
 <html lang="ko">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VisitKorea - 비밀번호 찾기</title>
+  <title>visitkorea - 비밀번호 찾기</title>
   <style>
     :root{
       --bg:#ffffff;
@@ -44,26 +46,13 @@
       background:#fff;
     }
     .brand{
-  text-align:center;
-  font-weight:800;
-  font-size:40px;
-  letter-spacing:.5px;
-  margin:0 0 8px;
-  color:#000;            /* 검정색으로 변경 */
-}
-
-/* 파란 점 추가 */
-.brand::before{
-  content:"";
-  display:inline-block;
-  width:12px;            /* 점 크기 조절 */
-  height:12px;
-  background:#1f6feb;    /* 파란색 */
-  border-radius:50%;
-  margin-right:10px;
-  vertical-align:middle; /* 텍스트 세로 정렬 */
-  transform:translateY(-1px); /* 미세 높이 보정(옵션) */
-}
+      text-align:center;
+      font-weight:800;
+      font-size:40px;
+      letter-spacing:.5px;
+      margin:0 0 8px;
+      color:var(--brand);
+    }
     .subtitle{
       text-align:center;
       margin:0 0 28px;
@@ -149,7 +138,7 @@
 <body>
   <main class="wrap">
     <section class="card" aria-labelledby="title">
-   <h1 id="title" class="brand">VisitKorea</h1>
+      <h1 id="title" class="brand">visitkorea</h1>
       <p class="subtitle">비밀번호를 찾고자 하는 아이디를 입력해주세요.</p>
 
       <form action="#" method="post" autocomplete="on" novalidate>
@@ -162,15 +151,11 @@
           <input class="input" type="text" name="userId"
                  placeholder="아이디 또는 단체 아이디" inputmode="email" />
         </label>
-		
-		
-		
-     <!-- <button type="submit" class="btn">다음</button> -->
-		
-        <button type="button" class="btn" onclick="location.href='/findpassword'">다음</button>
-        
+
+        <button type="submit" class="btn">다음</button>
+
         <p class="help">
-          아이디가 기억나지 않는다면? <a href="/getid">아이디 찾기</a>
+          아이디가 기억나지 않는다면? <a href="#">아이디 찾기</a>
         </p>
       </form>
 
