@@ -101,64 +101,64 @@ a{color:inherit; text-decoration:none}
     <article class="card">
       <div class="thumb" aria-hidden="true"></div>
       <div class="meta">
-        <div class="place">대야수목원</div>
-        <span class="tag">전북 완주군</span>
+        <div class="place">축제1</div>
+        <span class="tag">축제1</span>
       </div>
     </article>
     <!-- 2 -->
     <article class="card">
       <div class="thumb" aria-hidden="true"></div>
       <div class="meta">
-        <div class="place">완도수목원</div>
-        <span class="tag">전남 완도군</span>
+        <div class="place">축제2</div>
+        <span class="tag">축제2</span>
       </div>
     </article>
     <!-- 3 -->
     <article class="card">
       <div class="thumb" aria-hidden="true"></div>
       <div class="meta">
-        <div class="place">선운사(고창)</div>
-        <span class="tag">전북 고창군</span>
+        <div class="place">축제3</div>
+        <span class="tag">축제3</span>
       </div>
     </article>
     <!-- 4 -->
     <article class="card">
       <div class="thumb" aria-hidden="true"></div>
       <div class="meta">
-        <div class="place">마이산도립공원</div>
-        <span class="tag">전북 진안군</span>
+        <div class="place">축제4</div>
+        <span class="tag">축제4</span>
       </div>
     </article>
     <!-- 5 -->
     <article class="card">
       <div class="thumb" aria-hidden="true"></div>
       <div class="meta">
-        <div class="place">순천만국가정원</div>
-        <span class="tag">전남 순천시</span>
+        <div class="place">축제5</div>
+        <span class="tag">축제5</span>
       </div>
     </article>
     <!-- 6 -->
     <article class="card">
       <div class="thumb" aria-hidden="true"></div>
       <div class="meta">
-        <div class="place">백사골계곡</div>
-        <span class="tag">전북 남원시</span>
+        <div class="place">축제6</div>
+        <span class="tag">축제6</span>
       </div>
     </article>
     <!-- 7 -->
     <article class="card">
       <div class="thumb" aria-hidden="true"></div>
       <div class="meta">
-        <div class="place">백양사</div>
-        <span class="tag">전남 장성군</span>
+        <div class="place">축제7</div>
+        <span class="tag">축제7</span>
       </div>
     </article>
     <!-- 8 -->
     <article class="card">
       <div class="thumb" aria-hidden="true"></div>
       <div class="meta">
-        <div class="place">피아골계곡</div>
-        <span class="tag">전남 구례군</span>
+        <div class="place">축제8</div>
+        <span class="tag">축제8</span>
       </div>
     </article>
   </section>

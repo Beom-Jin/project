@@ -14,7 +14,7 @@
 <body>
 	<jsp:include page="top.jsp"></jsp:include>
 	
-	<div class="container">
+	<div class="map_container">
 		<div class="mapbody">
 			<img alt="" id="w_map" src="/resources/images/map/map-su.png" usemap="#use_map-su">
 			<map name="use_map-su">
