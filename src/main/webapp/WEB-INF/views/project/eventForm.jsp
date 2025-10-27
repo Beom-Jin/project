@@ -131,7 +131,8 @@ tfoot {
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 		
-	<jsp:include page="top.jsp"></jsp:include>		
+	<jsp:include page="top.jsp"></jsp:include>	
+	<jsp:include page="nav.jsp"></jsp:include>	
 		  
 	<!-- 우측 상단 드롭다운 -->
 	<div class="dropdown-controls">
@@ -159,6 +160,8 @@ tfoot {
 
 	<a class="nav-link" href="/createDB">데이터 생성</a>
 	<a class="nav-link" href="/showList">데이터 조회</a>
+	<a class="nav-link" href="/tourInsert">데이터 추가</a>
+	<a class="nav-link" href="/tourUpdate">데이터 변경</a>
 	
 	<!-- 지도를 표시할 div 입니다 -->
 	<div id="map" style="width: 100%; height: 350px;"></div>
@@ -223,6 +226,12 @@ tfoot {
 					
 					const list = data.list;
 			    	const paging = data.paging; 					
+
+			    	// 데이터 없을 때 처리
+		            if (list.length === 0) {
+		                $(".table-container").html("<p style='text-align:center; margin-top:20px;'>조회된 데이터가 없습니다.</p>");
+		                return;
+		            }			    	
 			    	
 			    	let table = "<table>";
 			    	table += "<thead>";
@@ -301,13 +310,13 @@ tfoot {
 		}
 		
 	    function geo_map(lat, lon) {
-	    	let h = new kakao.maps.LatLng(lat, lon);
+	    	//let h = new kakao.maps.LatLng(lat, lon);
 			var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 			mapOption = {
-				//center : new kakao.maps.LatLng(lat, lon), // 지도의 중심좌표
-				//level : 3  // 지도의 확대 레벨
-				center : h , 
+				center : new kakao.maps.LatLng(lat, lon), // 지도의 중심좌표
 				level : 3  // 지도의 확대 레벨
+				//center : h , 
+				//level : 3  // 지도의 확대 레벨
 				
 			};
 	

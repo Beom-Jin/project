@@ -25,14 +25,13 @@ public class RestMainController {
 	
 	@RequestMapping(value="/showTourList", produces = "application/json; charset=utf-8")
 	@ResponseBody
-	//public List<TboardVO> getTourList(HttpServletRequest request) {
 	public Map<String, Object> getTourList(HttpServletRequest request) {
 		try {
 			int count = tourService.getTotalCount();
 			String cPage = request.getParameter("cPage");  
 			String numPage = request.getParameter("numPage"); 
 			String b_theme = request.getParameter("categoryData");
-			System.out.println("count : " + count + ", cPage : " + cPage + ", numPage : " + numPage + ", b_theme : " + b_theme);
+			//System.out.println("count : " + count + ", cPage : " + cPage + ", numPage : " + numPage + ", b_theme : " + b_theme);
 			
 			paging.setNumPerPage(Integer.parseInt(numPage));
 			
@@ -48,6 +47,34 @@ public class RestMainController {
 			map.put("paging", paging);
 			
 			return map;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	@RequestMapping(value="/insertTour", produces = "application/json; charset=utf-8")
+	@ResponseBody
+	public String getTourInsert() {
+		try {
+			System.out.println("getTourInsert");
+			
+			return null;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
+	@RequestMapping(value="/updateTour", produces = "application/json; charset=utf-8")
+	@ResponseBody
+	public String getTourUpdate() {
+		try {
+			System.out.println("getTourUpdate");
+			
+			return null;
 			
 		} catch (Exception e) {
 			e.printStackTrace();

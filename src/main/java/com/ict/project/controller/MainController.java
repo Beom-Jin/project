@@ -262,11 +262,24 @@ public class MainController
 	}
 
 	@GetMapping("/showList")
-	public ModelAndView eventList()	{
-		
-		System.out.println("Controller showList");
+	public ModelAndView eventList()
+	{
 		return new ModelAndView("project/eventForm");
 	}	
+
+	@GetMapping("/tourInsert")
+	public ModelAndView tourInsert()
+	{
+		return new ModelAndView("project/board/insertForm");
+	}	
+
+	@GetMapping("/tourUpdate")
+	public ModelAndView tourUpdate()
+	{
+		return new ModelAndView("project/board/updateForm");
+	}	
+	
+	
 	
 
 
