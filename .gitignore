@@ -1,53 +1,9 @@
-# Spring Project Ignore
-
-# ========================
-#  Maven Build
-# ========================
-target/
-!.mvn/wrapper/maven-wrapper.jar
-.mvn/wrapper/maven-wrapper.properties
-
-# ========================
-#  Eclipse / STS
-# ========================
-.classpath
+/target/
+/.settings/
+/.classpath
 .project
-.settings/
-.apt_generated/
-.springBeans
-.factorypath
-.buildpath
-bin/
-tmp/
-.recommenders/
-
-# ========================
-#  IntelliJ IDEA
-# ========================
-.idea/
-*.iml
-*.iws
-out/
-
-# ========================
-#  VS Code
-# ========================
-.vscode/
-
-# ========================
-#  Logs & Temp
-# ========================
 *.log
-*.tmp
-*.bak
-
-# ========================
-#  OS Files
-# ========================
-.DS_Store
-Thumbs.db
-
-# ========================
-#  Tomcat / Servers
-# ========================
-Servers/
+*.class
+/bin/
+/build/
+/out/
