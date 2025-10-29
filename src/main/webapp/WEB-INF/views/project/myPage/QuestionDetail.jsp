@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>여행 후기 수정하기</title>
+<title>질문 보기</title>
 <link href="../resources/css/common.css" rel="stylesheet">
 <link href="../resources/css/top.css" rel="stylesheet">
 <link href="../resources/css/nav.css" rel="stylesheet">
@@ -31,7 +30,7 @@
 		text-align: center;
 	}
 	input{
-		text-align: center;
+		justify-content: center;
 	}
 </style>
 </head>
@@ -40,45 +39,52 @@
 	<jsp:include page="../nav.jsp"></jsp:include>
 	<h2>여행 후기</h2>
 	<section class="container">
-	<form method="post">
+		<form method="post">
 	<table>
 		<tbody>
 			<tr>
-				<th>글 제목</th>
-				<td><input type="text" name="r_title" value="${rVO.r_title}"></td>
+				<th>질문 제목</th>
+				<td>${qVO.q_title}</td>
 			</tr>
 			<tr>
-				<th>글 작성자</th>
+				<th>질문 작성자</th>
 				<td>admin</td>
 			</tr>
 			<tr>
-				<th>글 작성일</th>
+				<th>질문 작성일</th>
 				<td>2025-10-21</td>
 			</tr>
 			<tr>
-				<th>내용</th>
-				<td><textarea name="r_content" cols="40" rows="50">${rVO.r_content}</textarea></td>
+				<th>질문내용</th>
+				<td>${qVO.q_content}</td>
 			</tr>
+		
 		</tbody>
 		<tfoot>
 		<tr>
-		<td colspan="2">
-		<input type="hidden" name="r_idx" value="${rVO.r_idx}">
-		<input type="button" class="btn" value="수정완료" onclick="travelReviewUpdateOk(this.form)">
-		<input type="button" class="btn" value="수정취소" onclick="showTravelReviewDetail(this.form)">
+		<td colspan="3">
+		<input type="hidden" name="r_idx" value="${qVO.q_idx}">
+		<input type="button" class="btn" value="목록으로" onclick="showQuestionList(this.form)">
+		<input type="button" class="btn" value="수정하기" onclick="QuestionUpdate(this.form)">
+		<input type="button" class="btn" value="삭제하기" onclick="QuestionDelete(this.form)">
 		</tr>
 		</tfoot>
 		</table>
 		</form>
 	</section>
 	<script type="text/javascript">
-		function travelReviewUpdateOk(f){
-			f.action="/TravelReviewUpdateOk"
+		function showQuestionList(f){
+			f.action="/showQuestionList"
 			f.submit();
 		}
 		
-		function showTravelReviewDetail(f){
-			f.action="/showTravelReviewDetail"
+		function QuestionUpdate(f){
+			f.action="/QuestionUpdateForm"
+			f.submit();
+		}
+		
+		function QuestionDelete(f){
+			f.action="/QuestionDelete"
 			f.submit();
 		}
 	</script>

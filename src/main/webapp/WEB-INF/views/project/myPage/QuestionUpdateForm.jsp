@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>여행 후기 수정하기</title>
+<title>질문 수정하기</title>
 <link href="../resources/css/common.css" rel="stylesheet">
 <link href="../resources/css/top.css" rel="stylesheet">
 <link href="../resources/css/nav.css" rel="stylesheet">
@@ -44,41 +44,41 @@
 	<table>
 		<tbody>
 			<tr>
-				<th>글 제목</th>
-				<td><input type="text" name="r_title" value="${rVO.r_title}"></td>
+				<th>질문 제목</th>
+				<td><input type="text" name="q_title" value="${qVO.q_title}"></td>
 			</tr>
 			<tr>
-				<th>글 작성자</th>
+				<th>질문 작성자</th>
 				<td>admin</td>
 			</tr>
 			<tr>
-				<th>글 작성일</th>
-				<td>2025-10-21</td>
+				<th>질문 작성일</th>
+				<td>${qVO.q_regdate}</td>
 			</tr>
 			<tr>
-				<th>내용</th>
-				<td><textarea name="r_content" cols="40" rows="50">${rVO.r_content}</textarea></td>
+				<th>질문내용</th>
+				<td><textarea name="q_content" cols="40" rows="50">${qVO.q_content}</textarea></td>
 			</tr>
 		</tbody>
 		<tfoot>
 		<tr>
 		<td colspan="2">
-		<input type="hidden" name="r_idx" value="${rVO.r_idx}">
-		<input type="button" class="btn" value="수정완료" onclick="travelReviewUpdateOk(this.form)">
-		<input type="button" class="btn" value="수정취소" onclick="showTravelReviewDetail(this.form)">
+		<input type="hidden" name="q_idx" value="${qVO.q_idx}">
+		<input type="button" class="btn" value="수정완료" onclick="QuestionUpdateOk(this.form)">
+		<input type="button" class="btn" value="수정취소" onclick="showQuestionDetail(this.form)">
 		</tr>
 		</tfoot>
 		</table>
 		</form>
 	</section>
 	<script type="text/javascript">
-		function travelReviewUpdateOk(f){
-			f.action="/TravelReviewUpdateOk"
+		function QuestionUpdateOk(f){
+			f.action="/QuestionUpdateOk"
 			f.submit();
 		}
 		
-		function showTravelReviewDetail(f){
-			f.action="/showTravelReviewDetail"
+		function showQuestionDetail(f){
+			f.action="/showQuestionDetail"
 			f.submit();
 		}
 	</script>
