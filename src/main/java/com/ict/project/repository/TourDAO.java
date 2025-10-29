@@ -60,5 +60,33 @@ public class TourDAO {
 		}		
 	}
 	
+	public int getTourInsert(TboardVO vo) {
+		try {
+			return sessionTemplate.insert("tour.insertVO", vo);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		}
+	}
+
+	public TboardVO getTourUpdatePre(String b_idx) {
+		try {
+			System.out.println("b_idx : " + b_idx);
+			return sessionTemplate.selectOne("tour.detail", Integer.valueOf(b_idx));
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}		
+	}
+
+	public int getTourUpdate(TboardVO vo) {
+		try {
+			System.out.println("b_idx : " + vo.getB_idx());
+			return sessionTemplate.update("tour.update", vo);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		}
+	}
 
 }
