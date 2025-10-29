@@ -16,8 +16,25 @@ public class TboardVO {
 //	b_hits     rating
 //	b_like_active    ? 	
 	private int b_idx, b_like, b_hits, b_like_active;
-	private String	b_title, b_content,	b_loc,	b_lat,	b_lon,	b_img,	b_theme, b_time, b_tel,	b_url;
+	private String	b_title, b_content,	b_loc,	b_lat,	b_lon,	b_img,	b_theme, b_time, b_tel,	b_url, b_local, b_addr;
 	
+	
+	public String getB_addr()
+	{
+		return b_addr;
+	}
+	public void setB_addr(String b_addr)
+	{
+		this.b_addr = b_addr;
+	}
+	public String getB_local()
+	{
+		return b_local;
+	}
+	public void setB_local(String b_local)
+	{
+		this.b_local = b_local;
+	}
 	public int getB_idx() {
 		return b_idx;
 	}

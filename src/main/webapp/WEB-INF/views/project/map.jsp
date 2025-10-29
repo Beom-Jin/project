@@ -55,10 +55,10 @@
 		let element = document.getElementById(area);
 		let altText = element.alt;
 		
-		document.querySelector('#w_map').src = "/resources/images/map/map-su_" + area + ".png";
+		document.getElementById('w_map').src = "/resources/images/map/map-su_" + area + ".png";
 		document.getElementById('title_img1').src = "/resources/images/example/" + area + "1.jpg";
 		document.getElementById('title_img2').src = "/resources/images/example/" + area + "2.jpg";
-		element.href = "http://localhost:8090/showDetail?area=" + altText;
+		element.href = "/getLocalList?local=" + altText;
 		document.getElementById('title_text1').textContent = altText;
 	}
 	

@@ -24,5 +24,27 @@
 	<select id="listpage" parameterType="map" resultType="com.ict.project.vo.TboardVO">
      	select * from tboard order by b_idx desc limit #{limit} offset #{offset}      
     </select>
+    
+    
+    
+    <!-- ========================= 테스트용 =============================== -->
+    
+    <select id="testlist"  resultType="com.ict.project.vo.TdetailVO">
+    	select * from testdetail where d_title = #{area}
+  	</select>
+  	
+    <select id="comment"  resultType="com.ict.project.vo.TcommnetVO">
+    	select * from testcomments where detail_board = #{detail_board}
+  	</select>
+  	
+  	<insert id="insertcomment" parameterType="com.ict.project.vo.TcommnetVO">
+	    insert into testcomments (detail_board, com_img, com_id, com_time, com_text) 
+	    values(#{detail_board}, #{com_img}, #{com_id}, now(), #{com_text})
+	</insert> 	
+  	
+    <select id="locallist"  resultType="com.ict.project.vo.TdetailVO">
+    	select * from testdetail where d_local = #{local}
+  	</select>
+  	
 		
 </mapper>
