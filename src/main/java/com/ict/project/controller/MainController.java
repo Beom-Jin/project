@@ -16,6 +16,8 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.ict.project.common.MapperUtil;
 import com.ict.project.common.RestApiComm;
+import com.ict.project.service.CommentService;
+import com.ict.project.service.DetailService;
 import com.ict.project.service.TourService;
 import com.ict.project.vo.MakeupAPIVO;
 import com.ict.project.vo.TboardVO;
@@ -26,9 +28,14 @@ import com.ict.project.vo.TdetailVO;
 @Controller
 public class MainController
 {
-	@Autowired 
-	private TourService tourService;
+//	@Autowired 
+//	private TourService tourService;
 	
+	@Autowired
+	private DetailService detailService;
+	
+	@Autowired
+	private CommentService commentService;
 	
 	
 	@GetMapping("/showMain")
@@ -56,7 +63,7 @@ public class MainController
 	{
 		try {
 			ModelAndView mv = new ModelAndView();
-			List<TdetailVO> list = tourService.getLocalList(local);	
+			List<TdetailVO> list = detailService.getLocalList(local);	
 			mv.addObject("list", list);
 			mv.setViewName("project/localList");
 			return mv;
@@ -71,8 +78,8 @@ public class MainController
 	{
 		try {
 			ModelAndView mv = new ModelAndView();
-			TdetailVO tvo = tourService.getTourList(area);
-			List<TcommnetVO> comList = tourService.getComment(tvo.getD_title());
+			TdetailVO tvo = detailService.getTourList(area);
+			List<TcommnetVO> comList = commentService.getComment(tvo.getD_title());
 			mv.addObject("tvo", tvo);
 			mv.addObject("comList", comList);
 			mv.setViewName("project/detail");
@@ -89,7 +96,7 @@ public class MainController
 	{
 		try {
 			ModelAndView mv = new ModelAndView();
-			int result = tourService.writeComment(tcvo);
+			int result = commentService.writeComment(tcvo);
 			mv.setViewName("redirect:/showDetail");
 			return mv;
 		} catch (Exception e) {

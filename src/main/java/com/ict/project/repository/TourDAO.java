@@ -56,46 +56,4 @@ public class TourDAO {
 			return null;
 		}		
 	}
-	
-	
-	// ========================= 테스트용 함수 ====================================
-	public TdetailVO getTourList(String area)
-	{
-		try {
-			return sessionTemplate.selectOne("tour.testlist", area);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
-		}
-	}
-	
-	public List<TcommnetVO> getComment(String detail_board)
-	{
-		try {
-			return sessionTemplate.selectList("tour.comment", detail_board);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
-		}
-	}
-	
-	public int writeComment(TcommnetVO tcvo)
-	{
-		try {
-			return sessionTemplate.insert("tour.insertcomment", tcvo);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return 0;
-		}
-	}
-	
-	public List<TdetailVO> getLocalList(String local)
-	{
-		try {
-			return sessionTemplate.selectList("tour.locallist", local);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
-		}
-	}
 }
