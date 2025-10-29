@@ -188,8 +188,6 @@ public class TourController
 		return new ModelAndView("project/faq");
 	}
 	
-<<<<<<< HEAD
-=======
 	@GetMapping("/showInformationUpdateForm")
 	public ModelAndView goInformationUpdateForm() {
 		return new ModelAndView("project/myPage/InformationUpdateForm");
@@ -216,7 +214,6 @@ public class TourController
 		return new ModelAndView("project/myPage/TravelReviewDetail");
 	}
 	
->>>>>>> 3fd3639 (메인에서 pull로 받고 commit)
 	@GetMapping("/supCategory")
 	public ModelAndView goCategory() {
 		return new ModelAndView("project/supCategory");
@@ -250,10 +247,6 @@ public class TourController
 	public ModelAndView goHomePage() {
 		return new ModelAndView("project/mainHomePage");
 	}
-<<<<<<< HEAD
-
-=======
->>>>>>> 3fd3639 (메인에서 pull로 받고 commit)
 	
 	@GetMapping("/eventMap")
 	public ModelAndView goEventMap()
