@@ -33,7 +33,7 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 	
-	
+
 	<!-- 한글 설정 -->
 	<filter>
 		<filter-name>encodingFilter</filter-name>
@@ -56,9 +56,12 @@
 	<!-- 시작페이지 설정 (옵션) -->
 	<welcome-file-list>
 		<!-- <welcome-file>/WEB-INF/views/project/comments.jsp</welcome-file> -->
-		<welcome-file>/WEB-INF/views/project/mainHomePage.jsp</welcome-file>
+		<!--  <welcome-file>/WEB-INF/views/project/mainHomePage.jsp</welcome-file>  -->
+		<welcome-file>/WEB-INF/views/project/supCategory.jsp</welcome-file>
 
 	</welcome-file-list>
+	
+	
 	
 
 </web-app>
