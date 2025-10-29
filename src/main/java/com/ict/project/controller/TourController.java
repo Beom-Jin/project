@@ -113,15 +113,12 @@ public class TourController
 	}
 	
 	
-	
-	
-	
-
-	@GetMapping("/membersJoinForm")
-	public ModelAndView domembersJoinForm()
-	{
-		return new ModelAndView("project/registrationForm");
-	}
+	// ✅ 중복 매핑 제거: /membersJoinForm은 MemberController에서 처리
+	// @GetMapping("/membersJoinForm")  <- 삭제됨
+	// public ModelAndView domembersJoinForm()
+	// {
+	//     return new ModelAndView("project/registrationForm");
+	// }
 	
 	@GetMapping("/thema1")
 	public ModelAndView goThemadetail()
