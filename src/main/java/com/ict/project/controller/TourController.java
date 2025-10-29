@@ -12,10 +12,8 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.ict.project.common.MapperUtil;
 import com.ict.project.common.RestApiComm;
-import com.ict.project.service.ReviewService;
 import com.ict.project.service.TourService;
 import com.ict.project.vo.MakeupAPIVO;
-import com.ict.project.vo.ReviewVO;
 import com.ict.project.vo.TboardVO;
 
 
@@ -188,31 +186,7 @@ public class TourController
 		return new ModelAndView("project/faq");
 	}
 	
-	@GetMapping("/showInformationUpdateForm")
-	public ModelAndView goInformationUpdateForm() {
-		return new ModelAndView("project/myPage/InformationUpdateForm");
-	}
 	
-	@GetMapping("/showBookmark")
-	public ModelAndView goBookmark()
-	{
-		return new ModelAndView("project/myPage/Bookmark");
-	}
-	
-	@GetMapping("/showTravelReview")
-	public ModelAndView goTravelReview() {
-		return new ModelAndView("project/myPage/TravelReview");
-	}
-	
-	@GetMapping("/showQuestion")
-	public ModelAndView goQuestion() {
-		return new ModelAndView("project/myPage/Question");
-	}
-	
-	@GetMapping("/showTravelReviewDetail")
-	public ModelAndView goTravelReviewDetail() {
-		return new ModelAndView("project/myPage/TravelReviewDetail");
-	}
 	
 	@GetMapping("/supCategory")
 	public ModelAndView goCategory() {
