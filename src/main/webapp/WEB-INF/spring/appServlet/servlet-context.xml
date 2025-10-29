@@ -14,7 +14,12 @@
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
-
+	
+	<!-- WEB-INF는 보안 영역으로, WAS(Web Application Server)는 이 폴더 내의 파일에 대해 브라우저가 직접 접근하는 것을 기본적으로 차단합니다. 
+	JSP 파일은 View Resolver를 통해 내부 접근이 가능하지만,
+	 .js, .css, .png와 같은 정적 리소스는 이 안에 두면 안 됩니다 -->	
+	<resources mapping="/js/**" location="/resources/js/" />
+	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
