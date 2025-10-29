@@ -43,18 +43,47 @@
 			</tr>
 		</thead>
 		<tbody>
+		<c:choose>
+		<c:when test="${empty rList}">
 			<tr>
-				<td>1</td>
-				<td><a href="/showTravelReviewDetail">후기 1번</a></td>
-				<td>2025-10-21</td>
+				<td colspan="3">
+					후기가 없습니다.
+				</td>
 			</tr>
+		</c:when>
+		<c:otherwise>
+		<c:forEach varStatus="v" var="r" items="${rList}">
+			<tr>
+				<td>${v.count}</td>
+				<td><a href="/showTravelReviewDetail?r_idx=${r.r_idx}">${r.r_title}</a></td>
+				<td>${r.r_regdate.subString(0,10) }</td>
+			</tr>
+		</c:forEach>
+		</c:otherwise>
+		</c:choose>
 		</tbody>
 		<tfoot>
-		<!-- 페이징 추가 -->
+		<tr>
+			<td>
+					<!-- 페이징 추가 -->
+			</td>
+			<td colspan="2">
+				<button  onclick="review_write()">후기 작성하기</button>
+				<button  onclick="goMyPage()">마이 페이지 가기</button>
+			</td>
+		</tr>
 		</tfoot>
 		</table>
 	</section>
-	
+	<script type="text/javascript">
+		function review_write(){
+			location.href="/TravelReviewWriteForm";
+		}
+		
+		function goMyPage(){
+			location.href="/showMyPage";
+		}
+	</script>
 	<jsp:include page="../bottom.jsp"></jsp:include>
 </body>
 </html>

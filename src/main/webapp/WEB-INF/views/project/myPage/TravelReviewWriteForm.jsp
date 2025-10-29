@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>여행 후기 수정하기</title>
+<title>여행 후기 보기</title>
 <link href="../resources/css/common.css" rel="stylesheet">
 <link href="../resources/css/top.css" rel="stylesheet">
 <link href="../resources/css/nav.css" rel="stylesheet">
@@ -38,47 +37,38 @@
 <body>
 <jsp:include page="../top.jsp"></jsp:include>
 	<jsp:include page="../nav.jsp"></jsp:include>
-	<h2>여행 후기</h2>
+	<h2>여행 후기 쓰기</h2>
 	<section class="container">
-	<form method="post">
 	<table>
+		<form method="get">
 		<tbody>
 			<tr>
 				<th>글 제목</th>
-				<td><input type="text" name="r_title" value="${rVO.r_title}"></td>
-			</tr>
-			<tr>
-				<th>글 작성자</th>
-				<td>admin</td>
-			</tr>
-			<tr>
-				<th>글 작성일</th>
-				<td>2025-10-21</td>
+				<td>
+					<input type="text" name="r_title">
+				</td>
 			</tr>
 			<tr>
 				<th>내용</th>
-				<td><textarea name="r_content" cols="40" rows="50">${rVO.r_content}</textarea></td>
+				<td>
+					<textarea name="r_content" rows="8" cols="50">
+					</textarea>
+				</td>
 			</tr>
 		</tbody>
+		</form>
 		<tfoot>
 		<tr>
 		<td colspan="2">
-		<input type="hidden" name="r_idx" value="${rVO.r_idx}">
-		<input type="button" class="btn" value="수정완료" onclick="travelReviewUpdateOk(this.form)">
-		<input type="button" class="btn" value="수정취소" onclick="showTravelReviewDetail(this.form)">
+		<input type="button" class="btn" value="작성완료" onclick="travelReviewWriteOk(this.form)">
+		<input type="button" class="btn" value="목록으로" onclick="showTravelReview">
 		</tr>
 		</tfoot>
 		</table>
-		</form>
 	</section>
 	<script type="text/javascript">
-		function travelReviewUpdateOk(f){
-			f.action="/TravelReviewUpdateOk"
-			f.submit();
-		}
-		
-		function showTravelReviewDetail(f){
-			f.action="/showTravelReviewDetail"
+		function travelReviewWriteOk(f){
+			f.action="/TravelReviewWriteOk";
 			f.submit();
 		}
 	</script>

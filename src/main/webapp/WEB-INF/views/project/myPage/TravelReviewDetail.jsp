@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +30,7 @@
 		text-align: center;
 	}
 	input{
-		text-align: center;
+		justify-content: center;
 	}
 </style>
 </head>
@@ -40,11 +39,12 @@
 	<jsp:include page="../nav.jsp"></jsp:include>
 	<h2>여행 후기</h2>
 	<section class="container">
+		<form method="post">
 	<table>
 		<tbody>
 			<tr>
 				<th>글 제목</th>
-				<td>1</td>
+				<td>${rVO.r_title}</td>
 			</tr>
 			<tr>
 				<th>글 작성자</th>
@@ -56,20 +56,38 @@
 			</tr>
 			<tr>
 				<th>내용</th>
-				<td>여행지 내용 어쩌구</td>
+				<td>${rVO.r_content}</td>
 			</tr>
+		
 		</tbody>
 		<tfoot>
 		<tr>
 		<td colspan="3">
-		<a href="/showTravelReview"><input type="button" class="btn" value="목록으로"></a>
-		<a href="/TravelReviewUpdateForm"><input type="button" class="btn" value="수정하기"></a>
-		<a href="/TravelReviewDelete"><input type="button" class="btn" value="삭제하기"></a>
+		<input type="hidden" name="r_idx" value="${rVO.r_idx}">
+		<input type="button" class="btn" value="목록으로" onclick="showTravelReview(this.form)">
+		<input type="button" class="btn" value="수정하기" onclick="travelReviewUpdate(this.form)">
+		<input type="button" class="btn" value="삭제하기" onclick="travelReviewDelete(this.form)">
 		</tr>
 		</tfoot>
 		</table>
+		</form>
 	</section>
-	
+	<script type="text/javascript">
+		function showTravelReview(f){
+			f.action="/showTravelReview"
+			f.submit();
+		}
+		
+		function travelReviewUpdate(f){
+			f.action="/TravelReviewUpdateForm"
+			f.submit();
+		}
+		
+		function travelReviewDelete(f){
+			f.action="/TravelReviewDelete"
+			f.submit();
+		}
+	</script>
 	<jsp:include page="../bottom.jsp"></jsp:include>
 </body>
 </html>
