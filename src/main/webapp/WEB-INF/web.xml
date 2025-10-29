@@ -57,7 +57,7 @@
 	<welcome-file-list>
 		<!-- <welcome-file>/WEB-INF/views/project/comments.jsp</welcome-file> -->
 		<!--  <welcome-file>/WEB-INF/views/project/mainHomePage.jsp</welcome-file>  -->
-		<welcome-file>/WEB-INF/views/project/supCategory.jsp</welcome-file>
+		<welcome-file>/WEB-INF/views/project/mainHomePage.jsp</welcome-file>
 
 	</welcome-file-list>
 	
