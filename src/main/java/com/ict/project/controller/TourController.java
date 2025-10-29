@@ -18,7 +18,7 @@ import com.ict.project.vo.TboardVO;
 
 
 @Controller
-public class MainController
+public class TourController
 {
 	@Autowired 
 	private TourService tourService;
@@ -87,7 +87,7 @@ public class MainController
 	@GetMapping("/eventMap")
 	public ModelAndView goEventMap()
 	{
-		return new ModelAndView("project/eventForm");
+		return new ModelAndView("project/board/eventForm");
 	}	
 	
 	@GetMapping("/createDB")
@@ -125,7 +125,7 @@ public class MainController
 	@GetMapping("/showList")
 	public ModelAndView eventList()
 	{
-		return new ModelAndView("project/eventForm");
+		return new ModelAndView("project/board/eventForm");
 	}	
 
 	@GetMapping("/tourInsert")
