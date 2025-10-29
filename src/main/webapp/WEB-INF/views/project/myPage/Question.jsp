@@ -41,37 +41,24 @@
 		</thead>
 		<tbody>
 		<!-- 번호에 해당하는 td 는 varStatus v로 반복문. 제목, 일자 td 는 변수 k에 의한 DB에서의 데이터 입력 -->
-			<tr>
-				<td>1</td>
-				<td>질문 있습니다.</td>
-				<td>2025-10-21</td>
-			</tr>
-			<tr>
-				<td>2</td>
-				<td>질문 있습니다.</td>
-				<td>2025-10-21</td>
-			</tr>
-			<tr>
-				<td>3</td>
-				<td>질문 있습니다.</td>
-				<td>2025-10-21</td>
-			</tr>
-			<tr>
-				<td>4</td>
-				<td>질문 있습니다.</td>
-				<td>2025-10-21</td>
-			</tr>
-			<tr>
-				<td>5</td>
-				<td>질문 있습니다.</td>
-				<td>2025-10-21</td>
-			</tr>
-			<tr>
-				<td>6</td>
-				<td>질문 있습니다.</td>
-				<td>2025-10-21</td>
-			</tr>
-		
+			<c:choose>
+				<c:when test="${empty qList}">
+					<tr>
+						<td colspan="3">
+							질문 내역이 없습니다.
+						</td>
+					</tr>
+				</c:when>
+				<c:otherwise>
+				<c:forEach var="q" items="${qList}" varStatus="v">
+				<tr>
+					<td>${v.count}</td>
+					<td><a href="/showQuestionDetail?q_idx=${q.q_idx}">${q.q_title}</a></td>
+					<td>${q.q_regdate}</td>
+				</tr>
+				</c:forEach>
+				</c:otherwise>
+			</c:choose>
 		</tbody>
 		<tfoot>
 			<!-- 페이징 -->
