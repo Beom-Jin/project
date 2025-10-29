@@ -6,32 +6,47 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.ict.project.common.MapperUtil;
 import com.ict.project.common.RestApiComm;
+import com.ict.project.service.CommentService;
+import com.ict.project.service.DetailService;
 import com.ict.project.service.TourService;
 import com.ict.project.vo.MakeupAPIVO;
 import com.ict.project.vo.TboardVO;
+import com.ict.project.vo.TcommnetVO;
+import com.ict.project.vo.TdetailVO;
 
 
 @Controller
 public class TourController
 {
-	@Autowired 
-	private TourService tourService;
+//	@Autowired 
+//	private TourService tourService;
+	
+	@Autowired
+	private DetailService detailService;
+	
+	@Autowired
+	private CommentService commentService;
+	
 	
 	@GetMapping("/showMain")
 	public ModelAndView goMain()
 	{
 		return new ModelAndView("project/mainHomePage");
-		
 	}
 	
-	@GetMapping("/writeComments")
-	public ModelAndView goWriteComments()
+	
+	@PostMapping("/writeComments")
+	public ModelAndView goWriteComments(@ModelAttribute("area") String area)
 	{
 		return new ModelAndView("project/writeComments");
 		
@@ -43,11 +58,51 @@ public class TourController
 		return new ModelAndView("project/map");
 	}
 	
-	
-	@GetMapping("/showDetail")
-	public ModelAndView goDetail(@ModelAttribute("area") String area)
+	@GetMapping("/getLocalList")
+	public ModelAndView getLocalList(String local)
 	{
-		return new ModelAndView("project/detail");
+		try {
+			ModelAndView mv = new ModelAndView();
+			List<TdetailVO> list = detailService.getLocalList(local);	
+			mv.addObject("list", list);
+			mv.setViewName("project/localList");
+			return mv;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	@RequestMapping("/showDetail") 
+	public ModelAndView testShowDetail(String area)
+	{
+		try {
+			ModelAndView mv = new ModelAndView();
+			TdetailVO tvo = detailService.getTourList(area);
+			List<TcommnetVO> comList = commentService.getComment(tvo.getD_title());
+			mv.addObject("tvo", tvo);
+			mv.addObject("comList", comList);
+			mv.setViewName("project/detail");
+			return mv;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		
+	}
+	
+	@PostMapping("/comWriteOk")
+	public ModelAndView WriteComment(TcommnetVO tcvo, @ModelAttribute("area") String area)
+	{
+		try {
+			ModelAndView mv = new ModelAndView();
+			int result = commentService.writeComment(tcvo);
+			mv.setViewName("redirect:/showDetail");
+			return mv;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@GetMapping("/LoginForm")
