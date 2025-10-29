@@ -78,9 +78,6 @@ public class TourController
 	
 	
 
-	
-	
-
 	@GetMapping("/gothema")
 	public ModelAndView gotothema()
 	{
