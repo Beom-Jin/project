@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html lang="ko">
 <head>
@@ -9,8 +8,8 @@
   <title>VisitKorea - 비밀번호 찾기</title>
   <style>
     :root{
-      --brand:#1f6feb;
-      --brand-d:#1b61d3;
+      --brand:#1f6feb;     /* 상단 파란 줄 및 포인트 */
+      --brand-d:#1b61d3;   /* hover */
       --bg:#ffffff;
       --text:#111827;
       --muted:#6b7280;
@@ -26,6 +25,8 @@
       margin:0; background:var(--bg); color:var(--text);
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Noto Sans KR,"Malgun Gothic",sans-serif;
     }
+
+    /* 상단 바 + 단계 탭 */
     .topbar{ background:var(--brand); color:#fff; }
     .topbar .inner{
       max-width:1080px; margin:0 auto; padding:12px 16px;
@@ -43,10 +44,13 @@
       padding:8px 12px; border-radius:10px; opacity:.95;
     }
     .tab.active{ background:#0f58d9; color:#fff; opacity:1; }
+
+    /* 본문 */
     .wrap{ max-width:980px; margin:28px auto 56px; padding:0 16px; }
     .path{ color:#9aa1a9; font-size:13px; text-align:right; margin-top:-6px; }
     h1.title{ font-size:22px; margin:10px 0 8px; font-weight:800; }
     .desc{ color:var(--muted); margin:0 0 16px; }
+
     .panel{
       border:1px solid var(--line); border-radius:16px; background:var(--panel);
       box-shadow:var(--shadow); padding:18px 22px; margin-bottom:18px;
@@ -55,25 +59,7 @@
     .radio{ display:flex; align-items:center; gap:10px; font-weight:700; }
     .sub{ color:var(--muted); font-size:14px; margin:4px 0 0 26px; }
     .divider{ height:1px; background:#eef1f4; margin:12px 0; }
-    
-    /* 입력 필드 추가 */
-    .input-group{ margin:16px 0; }
-    .input-group label{ display:block; font-weight:700; margin-bottom:8px; color:var(--text); }
-    .input{ 
-      width:100%; height:40px; padding:0 12px; border:1px solid var(--line); 
-      border-radius:10px; background:var(--input); font-size:15px;
-    }
-    .input:focus{ 
-      outline:none; border-color:var(--brand); 
-      box-shadow:0 0 0 4px rgba(31,111,235,.15); background:#fff; 
-    }
-    
-    .info-box{
-      background:#f1f5f9; border-radius:10px; padding:16px; margin-bottom:16px;
-    }
-    .info-box .label{ font-size:13px; color:var(--muted); margin-bottom:4px; }
-    .info-box .value{ font-size:18px; font-weight:700; color:var(--text); }
-    
+
     .footer-actions{ display:flex; justify-content:center; margin-top:22px; }
     .btn{
       min-width:180px; height:46px; border:none; border-radius:12px;
@@ -81,54 +67,54 @@
       box-shadow:0 6px 20px rgba(31,111,235,.25);
     }
     .btn:hover{ background:var(--brand-d); }
-    
+
+    /* 입력폼(옵션) */
+    .input{ height:40px; padding:0 12px; border:1px solid var(--line); border-radius:10px; background:var(--input); }
+    .input:focus{ outline:none; border-color:var(--brand); box-shadow:0 0 0 4px rgba(31,111,235,.15); background:#fff; }
+
     @media (max-width:640px){
       .tabs{ display:none; }
     }
   </style>
 </head>
 <body>
+  <!-- 상단 파란 줄 -->
   <header class="topbar">
     <div class="inner">
-      <div class="brand">VisitKorea</div>
-      <nav class="tabs" aria-label="계정 복구"></nav>
+       <div class="brand">VisitKorea</div>
+      <nav class="tabs" aria-label="계정 복구">
+       
+      </nav>
     </div>
   </header>
-  
+
   <main class="wrap">
+    
     <h1 class="title">비밀번호 찾기</h1>
-    <p class="desc">본인 확인을 위해 정보를 입력해주세요.</p>
-    
-    <!-- 아이디 표시 -->
-    <div class="info-box">
-      <div class="label">아이디</div>
-      <div class="value">${m_id}</div>
-    </div>
-    
-    <!-- 인증 방법 선택 -->
+    <p class="desc">비밀번호를 찾을 방법을 선택해 주세요.</p>
+
+    <!-- 상단 인증 선택 패널 -->
     <section class="panel">
-      <form action="/resetPassword" method="post">
-        <input type="hidden" name="m_id" value="${m_id}">
-        
-        <div class="input-group">
-          <label for="m_name">이름</label>
-          <input type="text" name="m_name" id="m_name" class="input" 
-                 placeholder="가입 시 입력한 이름" autocomplete="off" required>
-        </div>
-        
-        <div class="input-group">
-          <label for="m_email">이메일</label>
-          <input type="email" name="m_email" id="m_email" class="input" 
-                 placeholder="가입 시 입력한 이메일" autocomplete="off" required>
-        </div>
-        
-        <div class="divider"></div>
-        
-        <div class="footer-actions">
-          <button class="btn" type="submit">비밀번호 재설정</button>
-        </div>
-      </form>
+      <label class="radio">
+        <input type="radio" name="how" checked>
+        <span>회원정보에 등록한 휴대전화로 인증 <span style="color:#9aa1a9; font-weight:500;">(+** *-**-****)</span></span>
+      </label>
+
+      <div class="divider"></div>
+
+      <label class="radio">
+        <input type="radio" name="how">
+        <span>본인확인 이메일로 인증 <span style="color:#9aa1a9; font-weight:500;">(st******@j*******.naver.com)</span></span>
+      </label>
     </section>
+
+
+    <div class="footer-actions">
+      <button class="btn" type="button">다음</button>
+    </div>
   </main>
 </body>
 </html>
+
+
+    

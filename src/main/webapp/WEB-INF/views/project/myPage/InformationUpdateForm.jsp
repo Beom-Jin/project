@@ -60,7 +60,7 @@ li {
 		<form>
 		<!-- value에 기존 데이터를 입력 받을 수 있도록 하는 기능 필요 -->
 			<ul>
-				<li><label>ID</label> <input type="text" value="" disabled>
+				<li><label>ID</label> <input type="text" value="" readonly>
 				</li>
 				<li><label>회원명</label> <input type="text" value=""></li>
 				<li><label>성별</label> <input type="text" value=""></li>
