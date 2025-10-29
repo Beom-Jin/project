@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="member">
+
+	<!-- 일반 회원가입 -->
+	<insert id="insert" parameterType="com.ict.project.vo.MemberVO">
+		INSERT INTO member (
+		m_name, m_email, m_id, m_pw, m_tel,
+		m_gender, m_age, m_hobby1, m_hobby2, m_hobby3, m_hobby4, m_auth
+		) VALUES (
+		#{m_name}, #{m_email}, #{m_id}, #{m_pw}, #{m_tel},
+		#{m_gender}, #{m_age},
+		#{m_hobby1}, #{m_hobby2}, #{m_hobby3}, #{m_hobby4},
+		COALESCE(#{m_auth}, 'user')
+		)
+	</insert>
+
+	<!-- ID로 회원 조회 -->
+	<select id="selectById" parameterType="String"
+		resultType="com.ict.project.vo.MemberVO">
+		SELECT * FROM member WHERE m_id = #{m_id}
+	</select>
+
+	<!-- 전화번호로 회원 조회 (SNS 로그인용) -->
+	<select id="selectByPhone"
+		parameterType="com.ict.project.vo.MemberVO"
+		resultType="com.ict.project.vo.MemberVO">
+		SELECT * FROM member WHERE m_tel = #{m_phone}
+	</select>
+
+	<!-- 카카오 정보 업데이트 -->
+	<update id="updateKakaoInfo"
+		parameterType="com.ict.project.vo.MemberVO">
+		UPDATE member SET
+		sns_provider = #{sns_provider},
+		sns_email_kakao = #{sns_email_kakao},
+		sns_id = #{sns_id}
+		WHERE m_idx = #{m_idx}
+	</update>
+
+	<!-- 네이버 정보 업데이트 -->
+	<update id="updateNaverInfo"
+		parameterType="com.ict.project.vo.MemberVO">
+		UPDATE member SET
+		sns_provider = #{sns_provider},
+		sns_email_naver = #{sns_email_naver},
+		sns_id = #{sns_id}
+		WHERE m_idx = #{m_idx}
+	</update>
+
+	<!-- 카카오 회원 신규 가입 -->
+	<insert id="insertKakao"
+		parameterType="com.ict.project.vo.MemberVO">
+		INSERT INTO member (
+		m_id, m_name, m_email, m_tel, sns_provider, sns_email_kakao, sns_id, m_auth
+		) VALUES (
+		#{m_id}, #{m_name}, #{sns_email_kakao}, #{m_phone}, #{sns_provider},
+		#{sns_email_kakao}, #{sns_id}, #{m_auth}
+		)
+	</insert>
+
+	<!-- 네이버 회원 신규 가입 -->
+	<insert id="insertNaver"
+		parameterType="com.ict.project.vo.MemberVO">
+		INSERT INTO member (
+		m_id, m_name, m_email, m_tel, sns_provider, sns_email_naver, sns_id, m_auth
+		) VALUES (
+		#{m_id}, #{m_name}, #{sns_email_naver}, #{m_phone}, #{sns_provider},
+		#{sns_email_naver}, #{sns_id}, #{m_auth}
+		)
+	</insert>
+
+	<!-- 이메일로 아이디 찾기 -->
+	<select id="findIdByEmail" parameterType="map"
+		resultType="com.ict.project.vo.MemberVO">
+		SELECT * FROM member
+		WHERE m_name = #{m_name} AND m_email = #{m_email}
+	</select>
+
+	<!-- 휴대전화로 아이디 찾기 -->
+	<select id="findIdByPhone" parameterType="map"
+		resultType="com.ict.project.vo.MemberVO">
+		SELECT * FROM member
+		WHERE m_name = #{m_name} AND m_tel = #{m_phone}
+	</select>
+
+
+
+
+
+</mapper>

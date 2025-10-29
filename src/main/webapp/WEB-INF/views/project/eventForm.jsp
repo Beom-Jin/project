@@ -5,6 +5,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>축제 · 행사 | VisitKorea</title>
+
+<!-- ✅ CSS 파일 추가 -->
+<link href="/resources/css/top.css" rel="stylesheet">
+<link href="/resources/css/nav.css" rel="stylesheet">
+
 <style>
 .table-container {
   width: 90%;
@@ -81,14 +88,15 @@ tfoot {
   border-color: #eee;
 }
 </style>
-<title>Event Form</title>
 </head>
 <body>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6d94238101cfb7c23687adf0e173a7da"></script>
 	
-	<jsp:include page="top.jsp"></jsp:include>		
+	<!-- ✅ 헤더와 네비게이션 추가 -->
+	<jsp:include page="top.jsp"></jsp:include>
+	<jsp:include page="nav.jsp"></jsp:include>
 
  	<div class="table-container"></div>
 

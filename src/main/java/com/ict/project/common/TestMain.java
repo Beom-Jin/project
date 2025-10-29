@@ -11,7 +11,8 @@ public class TestMain {
 	public static void main(String[] args) {
 
 		RestApiComm r = new RestApiComm();
-		StringBuffer endPoint = new StringBuffer("https://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline");
+		//StringBuffer endPoint = new StringBuffer("https://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline");
+		StringBuffer endPoint = new StringBuffer("https://api.kcisa.kr/openapi/API_CNV_061/request?serviceKey=62f10a79-8a2f-439d-9977-9865b02e7d4e&numOfRows=8&pageNo=1");
 		String reslist = r.sendRecv(endPoint, "GET");
 		
 		System.out.println("reslist = " + reslist.substring(0, 200));

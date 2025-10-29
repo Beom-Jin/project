@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html lang="ko">
 <head>
@@ -13,8 +14,8 @@
       --muted:#6b7684;
       --border:#e5e8eb;
       --input:#f8f9fa;
-      --brand:#12b886;        /* 상단 브랜드 포인트(연한 그린 톤 유지, 필요시 변경) */
-      --btn:#1f6feb;          /* 다음 버튼 파란색 */
+      --brand:#12b886;
+      --btn:#1f6feb;
       --btn-hover:#1b61d3;
       --focus:#4c9aff;
       --shadow:0 10px 25px rgba(0,0,0,.06);
@@ -44,26 +45,24 @@
       background:#fff;
     }
     .brand{
-  text-align:center;
-  font-weight:800;
-  font-size:40px;
-  letter-spacing:.5px;
-  margin:0 0 8px;
-  color:#000;            /* 검정색으로 변경 */
-}
-
-/* 파란 점 추가 */
-.brand::before{
-  content:"";
-  display:inline-block;
-  width:12px;            /* 점 크기 조절 */
-  height:12px;
-  background:#1f6feb;    /* 파란색 */
-  border-radius:50%;
-  margin-right:10px;
-  vertical-align:middle; /* 텍스트 세로 정렬 */
-  transform:translateY(-1px); /* 미세 높이 보정(옵션) */
-}
+      text-align:center;
+      font-weight:800;
+      font-size:40px;
+      letter-spacing:.5px;
+      margin:0 0 8px;
+      color:#000;
+    }
+    .brand::before{
+      content:"";
+      display:inline-block;
+      width:12px;
+      height:12px;
+      background:#1f6feb;
+      border-radius:50%;
+      margin-right:10px;
+      vertical-align:middle;
+      transform:translateY(-1px);
+    }
     .subtitle{
       text-align:center;
       margin:0 0 28px;
@@ -72,7 +71,6 @@
       line-height:1.55;
       font-weight:700;
     }
-
     .field{
       position:relative;
       margin:12px 0 18px;
@@ -130,6 +128,17 @@
     .help a:hover{
       text-decoration:underline;
     }
+    
+    .error-msg{
+      color:#dc2626;
+      font-size:14px;
+      text-align:center;
+      margin-top:12px;
+      display:none;
+    }
+    .error-msg.show{
+      display:block;
+    }
 
     .footer{
       margin-top:42px;
@@ -149,25 +158,22 @@
 <body>
   <main class="wrap">
     <section class="card" aria-labelledby="title">
-   <h1 id="title" class="brand">VisitKorea</h1>
+      <h1 id="title" class="brand">VisitKorea</h1>
       <p class="subtitle">비밀번호를 찾고자 하는 아이디를 입력해주세요.</p>
 
-      <form action="#" method="post" autocomplete="on" novalidate>
+      <form action="/checkIdExists" method="post" autocomplete="off">
         <label class="field" aria-label="아이디 입력">
-          <!-- 간단한 user 아이콘 (SVG) -->
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
             <circle cx="12" cy="8" r="4" fill="currentColor"/>
             <path d="M4 20c0-4 4-6 8-6s8 2 8 6" fill="currentColor"/>
           </svg>
-          <input class="input" type="text" name="userId"
-                 placeholder="아이디 또는 단체 아이디" inputmode="email" />
+          <input class="input" type="text" name="m_id" id="m_id"
+                 placeholder="아이디 또는 단체 아이디" autocomplete="off" required />
         </label>
-		
-		
-		
-     <!-- <button type="submit" class="btn">다음</button> -->
-		
-        <button type="button" class="btn" onclick="location.href='/findpassword'">다음</button>
+        
+        <div class="error-msg" id="errorMsg"></div>
+        
+        <button type="submit" class="btn">다음</button>
         
         <p class="help">
           아이디가 기억나지 않는다면? <a href="/getid">아이디 찾기</a>
@@ -177,5 +183,12 @@
       <p class="footer">VISITKOREA | 회원정보 고객센터</p>
     </section>
   </main>
+  
+  <c:if test="${error == 'notfound'}">
+    <script>
+      document.getElementById('errorMsg').textContent = '유효한 아이디가 아닙니다.';
+      document.getElementById('errorMsg').classList.add('show');
+    </script>
+  </c:if>
 </body>
 </html>

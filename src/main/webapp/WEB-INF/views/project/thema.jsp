@@ -1,15 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>테마별 여행 | VisitKorea</title>
 
-<!-- ✅ 컨텍스트 경로 (예: /프로젝트명). 반드시 style 바깥! -->
-<script>
-  const CTX = '${pageContext.request.contextPath}';
-</script>
+<!-- ✅ CSS 파일 추가 -->
+<link href="/resources/css/top.css" rel="stylesheet">
+<link href="/resources/css/nav.css" rel="stylesheet">
 
 <style>
 :root{
@@ -31,7 +31,6 @@ body{
 a{color:inherit; text-decoration:none}
 img{max-width:100%; display:block}
 .container{max-width:var(--max); margin:0 auto; padding:0 20px}
-
 
 /* 타이틀 */
 .page-title{text-align:center; font-size:34px; font-weight:900; margin:50px 0 30px}
@@ -57,7 +56,9 @@ img{max-width:100%; display:block}
 </head>
 <body>
 
+<!-- ✅ 헤더와 네비게이션 추가 -->
 <jsp:include page="top.jsp"></jsp:include>
+<jsp:include page="nav.jsp"></jsp:include>
 
 <div class="container">
   <h1 class="page-title">테마별 여행 추천</h1>
@@ -101,19 +102,17 @@ img{max-width:100%; display:block}
 <jsp:include page="bottom.jsp"></jsp:include>
 
 <script>
-/* ========= ✅ 추가: 테마 → 상세 JSP 매핑 ========= */
+/* 테마 → 상세 JSP 매핑 */
 const VIEW_BY_THEME = {
-  family:      "thema1",  // 가족여행
-  pet:         "thema2",  // 반려동물
+  family:      "thema1",
+  pet:         "thema2",
   medical:     "thema3",
   healing:     "thema4",
   festival:    "thema5",
   carcamping:  "thema6",
   koreaculture:"thema7"
 };
-/* ========= ✅ 끝 ========= */
 
-/* 기존 데이터 그대로 */
 var themes = {
   family: {
     title:"가족과 함께하는 즐거운 여행",
@@ -155,7 +154,6 @@ var themes = {
 var buttons = document.querySelectorAll(".theme-btn");
 var display = document.getElementById("theme-display");
 
-// 카드 렌더
 function render(themeKey){
   var data = themes[themeKey];
   if (!data) return;
@@ -165,9 +163,8 @@ function render(themeKey){
   var labelEl = document.querySelector('.theme-btn[data-theme="'+ themeKey +'"] span');
   var label = labelEl ? labelEl.innerText : "추천지";
 
-  /* ✅ 변경: a 태그 href를 테마별 상세 페이지로 */
   var view = VIEW_BY_THEME[themeKey] || "thema1";
-  var href = CTX + '/' + view + '?theme=' + encodeURIComponent(themeKey);
+  var href = '/' + view + '?theme=' + encodeURIComponent(themeKey);
 
   setTimeout(function(){
     display.innerHTML =
@@ -188,7 +185,6 @@ function render(themeKey){
   if (target) target.classList.add('active');
 }
 
-// 버튼 클릭 연결 (기존 그대로: 미리보기만 변경)
 for (var i=0; i<buttons.length; i++){
   buttons[i].addEventListener('click', function(){
     var key = this.getAttribute('data-theme');
@@ -196,7 +192,6 @@ for (var i=0; i<buttons.length; i++){
   });
 }
 
-// 초기 렌더 (가족여행)
 document.addEventListener('DOMContentLoaded', function(){
   render('family');
 });
