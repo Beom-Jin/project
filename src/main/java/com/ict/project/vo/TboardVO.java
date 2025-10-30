@@ -17,9 +17,12 @@ public class TboardVO {
 //	b_like_active    ? 	
 	private int b_idx, b_like, b_hits, b_like_active;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	private String	b_title, b_content,	b_loc,	b_lat,	b_lon,	b_img,	b_theme, b_time, b_tel,	b_url;
 	
 =======
+=======
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
 	private String	b_title, b_content,	b_loc,	b_lat,	b_lon,	b_img,	b_theme, b_time, b_tel,	b_url, b_local, b_addr;
 	
 	
@@ -39,7 +42,10 @@ public class TboardVO {
 	{
 		this.b_local = b_local;
 	}
+<<<<<<< HEAD
 >>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
+=======
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
 	public int getB_idx() {
 		return b_idx;
 	}

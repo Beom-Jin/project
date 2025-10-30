@@ -6,14 +6,20 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 <title>테마로 만나는 장소</title>
 =======
+=======
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
 <title>가족 여행 | VisitKorea</title>
 
 <link href="/resources/css/top.css" rel="stylesheet">
 <link href="/resources/css/nav.css" rel="stylesheet">
 
+<<<<<<< HEAD
 >>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
+=======
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
 <style>
 :root{
   --bg:#ffffff;
@@ -64,12 +70,15 @@ a{color:inherit; text-decoration:none}
 .card:hover{transform:translateY(-2px); box-shadow:0 16px 36px rgba(2,6,23,.10), 0 3px 12px rgba(2,6,23,.06)}
 .thumb{
 <<<<<<< HEAD
+<<<<<<< HEAD
   aspect-ratio:4/3; background:var(--skeleton); position:relative;
 }
 .thumb::after{ /* 사진 비워둔 느낌의 플레이스홀더 */
   content:"";
   position:absolute; inset:16px;
 =======
+=======
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
   aspect-ratio:4/3; background:var(--skeleton); position:relative; overflow:hidden;
 }
 /* ✅ 이미지가 있을 때는 ::after 숨김 */
@@ -79,7 +88,10 @@ a{color:inherit; text-decoration:none}
 .thumb::after{ /* 사진 비워둔 느낌의 플레이스홀더 */
   content:"";
   position:absolute; inset:16px; z-index:0;
+<<<<<<< HEAD
 >>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
+=======
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
   border:2px dashed #d1d5db; border-radius:12px;
   background:
     linear-gradient(135deg,#e5e7eb 25%, transparent 25%) -8px 0/16px 16px,
@@ -89,10 +101,15 @@ a{color:inherit; text-decoration:none}
   opacity:.7;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 .thumb.has-image::after{display:none;} /* 이미지 있으면 플레이스홀더 제거 */
 
 >>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
+=======
+.thumb.has-image::after{display:none;} /* 이미지 있으면 플레이스홀더 제거 */
+
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
 .meta{padding:14px 14px 18px}
 .place{font-weight:800; margin:6px 0 8px}
 .tag{
@@ -101,13 +118,19 @@ a{color:inherit; text-decoration:none}
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
 /* 로딩 */
 .loading{
   text-align:center; padding:60px 0; color:var(--muted); font-size:16px;
 }
 
+<<<<<<< HEAD
 >>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
+=======
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
 /* 하단 버튼 */
 .footer-cta{display:flex; justify-content:center; margin:26px 0 6px}
 .ghost-btn{
@@ -121,6 +144,7 @@ a{color:inherit; text-decoration:none}
 <body>
 
 <jsp:include page="top.jsp"></jsp:include>
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 <main class="container">
@@ -196,6 +220,8 @@ a{color:inherit; text-decoration:none}
       </div>
     </article>
 =======
+=======
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
 <jsp:include page="nav.jsp"></jsp:include>
 
 <main class="container">
@@ -207,11 +233,15 @@ a{color:inherit; text-decoration:none}
   <!-- ✅ 카드 컨테이너 (JavaScript가 여기에 카드를 추가) -->
   <section class="grid cols-4" aria-label="추천 장소 목록" id="card-container">
     <!-- 카드들이 동적으로 추가됨 -->
+<<<<<<< HEAD
 >>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
+=======
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
   </section>
 
   <!-- 하단 이동 버튼 -->
   <div class="footer-cta">
+<<<<<<< HEAD
 <<<<<<< HEAD
     <a class="ghost-btn" href="#" role="button" aria-label="여행지도에서 더 많은 추천테마 보기">
       여행지도에서 더 많은 추천테마 보기 →
@@ -219,6 +249,10 @@ a{color:inherit; text-decoration:none}
     <a class="ghost-btn" href="/showMap" role="button" aria-label="지역별 여행 보기">
      지역별 여행 보기
 >>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
+=======
+    <a class="ghost-btn" href="/showMap" role="button" aria-label="지역별 여행 보기">
+     지역별 여행 보기
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
     </a>
   </div>
 </main>
@@ -226,7 +260,10 @@ a{color:inherit; text-decoration:none}
 <jsp:include page="bottom.jsp"></jsp:include>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
 <!-- ✅✅✅ 여기서부터 새로 추가된 부분 ✅✅✅ -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script type="text/javascript">
@@ -322,6 +359,9 @@ function loadFamilyTourData() {
 </script>
 <!-- ✅✅✅ 여기까지 새로 추가된 부분 ✅✅✅ -->
 
+<<<<<<< HEAD
 >>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
+=======
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
 </body>
 </html>
