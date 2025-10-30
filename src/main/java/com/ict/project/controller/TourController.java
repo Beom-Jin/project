@@ -20,6 +20,8 @@ import com.ict.project.common.RestApiComm;
 import com.ict.project.service.CommentService;
 import com.ict.project.service.DetailService;
 import com.ict.project.service.TourService;
+import com.ict.project.vo.EventItemVO;
+import com.ict.project.vo.EventResponseVO;
 import com.ict.project.vo.ItemVO;
 import com.ict.project.vo.MakeupAPIVO;
 import com.ict.project.vo.ResponseVO;
@@ -388,7 +390,71 @@ public class TourController
 		//return mv;
 	}
 	
+	// 여행.축제  
+		@GetMapping("/createDB2")
+		public ModelAndView goCreateDB2()
+		{
+			ModelAndView mv = new ModelAndView();
+			
+	        MapperUtil.addMapping(new PropertyMap<EventItemVO, TboardVO>() {
+	            @Override
+	            protected void configure() {
+	                map().setB_title(source.getTitle());
+	                map().setB_content(source.getDescription());
+	                map().setB_img(source.getReferenceIdentifier());
+	                map().setB_url(source.getUrl());
+	                map().setB_theme(source.getUrl());
+	                map().setB_time(source.getEventPeriod());
+	                map().setB_lat("");
+	                map().setB_lon("");
 
+	            }
+	        });
+			
+			// 서비스 이동여부 결정 필요 
+			RestApiComm r = new RestApiComm();
+			StringBuffer endPoint = new StringBuffer("https://api.kcisa.kr/openapi/service/rest/meta4/getKCPG0504?serviceKey=47525481-4eea-43c2-b595-9435c4fe437c");
+			String reslist = r.sendRecv(endPoint, "GET");
+			System.out.println("reslist = " + reslist.substring(0, 200));
+			
+			String xml = reslist;  // XML 응답 문자열
+
+			JAXBContext jaxbContext;
+			EventResponseVO response = null;
+			try {
+				jaxbContext = JAXBContext.newInstance(EventResponseVO.class);
+				Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+				response = (EventResponseVO) unmarshaller.unmarshal(new StringReader(xml));
+			} catch (JAXBException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			List<EventItemVO> apiList = new ArrayList<>();  
+			for (EventItemVO item : response.getBody().getItems().getItemList()) {
+			    System.out.println(item.getTitle() + " / " + item.getEventPeriod());
+			    apiList.add(item);
+			}		
+			
+			System.out.println("--------------------------------");
+			
+			for (EventItemVO t : apiList) {
+			    System.out.println(t.getTitle() + " / " + t.getAlternativeTitle());
+			}		
+			
+			List<TboardVO> list = MapperUtil.mapList(apiList, TboardVO.class);
+			int result = tourService.goCreateDB(list);
+			return null;
+			
+			//int result = tourService.goCreateDB(apiList);
+			
+			//mv.addObject("list", list);		
+			//mv.addObject("resilt", result);		
+			//mv.setViewName("eventForm");	
+			
+			//return mv;
+		}
+	
 	@GetMapping("/showList")
 	public ModelAndView eventList()
 	{

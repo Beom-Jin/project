@@ -34,13 +34,13 @@ function loadTourList(pageNo) {
 						<thead>
 							<tr>
 								<th>순번</th>
-								<th>b_title</th>
-								<th>b_img</th>
-								<th>b_content</th>
-								<th>b_loc</th>
-								<th>b_time</th>
-								<th>b_url</th>
-								<th>b_hits</th>
+								<th>제목</th>
+								<th>이미지</th>
+								<th>내용</th>
+								<th>위치</th>
+								<th>행사기간</th>
+								<th>홈페이지</th>
+								<th>조회수</th>
 							</tr>
 						</thead>
 				`;

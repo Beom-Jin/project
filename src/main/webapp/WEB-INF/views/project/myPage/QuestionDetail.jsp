@@ -63,7 +63,7 @@
 		<tfoot>
 		<tr>
 		<td colspan="3">
-		<input type="hidden" name="r_idx" value="${qVO.q_idx}">
+		<input type="hidden" name="q_idx" value="${qVO.q_idx}">
 		<input type="button" class="btn" value="목록으로" onclick="showQuestionList(this.form)">
 		<input type="button" class="btn" value="수정하기" onclick="QuestionUpdate(this.form)">
 		<input type="button" class="btn" value="삭제하기" onclick="QuestionDelete(this.form)">

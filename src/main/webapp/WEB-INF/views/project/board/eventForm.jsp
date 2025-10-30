@@ -123,6 +123,9 @@ tfoot {
 
 </style>
 <title>Event Form</title>
+<link href="/resources/css/top.css" rel="stylesheet">
+<link href="/resources/css/nav.css" rel="stylesheet">
+<link href="/resources/css/bottom.css" rel="stylesheet">
 </head>
 <body>
 		
@@ -162,6 +165,8 @@ tfoot {
 	<div class="table-container"></div>	
 
 	<a class="nav-link" href="/createDB">데이터 생성</a>
+	<a class="nav-link" href="/createDB1">데이터 생성1</a>
+	<a class="nav-link" href="/createDB2">데이터 생성2</a>
 	<a class="nav-link" href="/showList">데이터 조회</a>
 	<a class="nav-link" href="/tourInsert">데이터 추가</a>
 	
