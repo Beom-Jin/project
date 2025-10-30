@@ -5,7 +5,15 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<<<<<<< HEAD
 <title>테마로 만나는 장소</title>
+=======
+<title>가족 여행 | VisitKorea</title>
+
+<link href="/resources/css/top.css" rel="stylesheet">
+<link href="/resources/css/nav.css" rel="stylesheet">
+
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 <style>
 :root{
   --bg:#ffffff;
@@ -55,11 +63,23 @@ a{color:inherit; text-decoration:none}
 }
 .card:hover{transform:translateY(-2px); box-shadow:0 16px 36px rgba(2,6,23,.10), 0 3px 12px rgba(2,6,23,.06)}
 .thumb{
+<<<<<<< HEAD
   aspect-ratio:4/3; background:var(--skeleton); position:relative;
 }
 .thumb::after{ /* 사진 비워둔 느낌의 플레이스홀더 */
   content:"";
   position:absolute; inset:16px;
+=======
+  aspect-ratio:4/3; background:var(--skeleton); position:relative; overflow:hidden;
+}
+/* ✅ 이미지가 있을 때는 ::after 숨김 */
+.thumb img{
+  width:100%; height:100%; object-fit:cover; position:relative; z-index:1;
+}
+.thumb::after{ /* 사진 비워둔 느낌의 플레이스홀더 */
+  content:"";
+  position:absolute; inset:16px; z-index:0;
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
   border:2px dashed #d1d5db; border-radius:12px;
   background:
     linear-gradient(135deg,#e5e7eb 25%, transparent 25%) -8px 0/16px 16px,
@@ -68,6 +88,11 @@ a{color:inherit; text-decoration:none}
     linear-gradient(45deg,#e5e7eb 25%, transparent 25%) 0px 0/16px 16px;
   opacity:.7;
 }
+<<<<<<< HEAD
+=======
+.thumb.has-image::after{display:none;} /* 이미지 있으면 플레이스홀더 제거 */
+
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 .meta{padding:14px 14px 18px}
 .place{font-weight:800; margin:6px 0 8px}
 .tag{
@@ -75,6 +100,14 @@ a{color:inherit; text-decoration:none}
   background:#eef2ff; color:#3730a3; font-weight:700;
 }
 
+<<<<<<< HEAD
+=======
+/* 로딩 */
+.loading{
+  text-align:center; padding:60px 0; color:var(--muted); font-size:16px;
+}
+
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 /* 하단 버튼 */
 .footer-cta{display:flex; justify-content:center; margin:26px 0 6px}
 .ghost-btn{
@@ -88,10 +121,15 @@ a{color:inherit; text-decoration:none}
 <body>
 
 <jsp:include page="top.jsp"></jsp:include>
+<<<<<<< HEAD
+=======
+<jsp:include page="nav.jsp"></jsp:include>
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 
 <main class="container">
   <h2 class="page-title">가족들과 여행하기 좋은 곳<span aria-hidden="true">😊</span></h2>
 
+<<<<<<< HEAD
   <!-- 상단 배너 (비워둔 그래픽 영역 + 텍스트 + 버튼) -->
   
 
@@ -161,11 +199,23 @@ a{color:inherit; text-decoration:none}
         <span class="tag">지역8</span>
       </div>
     </article>
+=======
+  <!-- ✅ 로딩 메시지 추가 -->
+  <div class="loading" id="loading">관광 정보를 불러오는 중...</div>
+
+  <!-- ✅ 카드 컨테이너 (JavaScript가 여기에 카드를 추가) -->
+  <section class="grid cols-4" aria-label="추천 장소 목록" id="card-container">
+    <!-- 카드들이 동적으로 추가됨 -->
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
   </section>
 
   <!-- 하단 이동 버튼 -->
   <div class="footer-cta">
+<<<<<<< HEAD
     <a class="ghost-btn" href="#" role="button" aria-label="지역별 여행 보기">
+=======
+    <a class="ghost-btn" href="/showMap" role="button" aria-label="지역별 여행 보기">
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
      지역별 여행 보기
     </a>
   </div>
@@ -173,5 +223,103 @@ a{color:inherit; text-decoration:none}
 
 <jsp:include page="bottom.jsp"></jsp:include>
 
+<<<<<<< HEAD
+=======
+<!-- ✅✅✅ 여기서부터 새로 추가된 부분 ✅✅✅ -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    loadFamilyTourData();
+});
+
+function loadFamilyTourData() {
+    $.ajax({
+        url: "/api/familyTour",
+        method: "post",
+        dataType: "json",
+        success: function(data) {
+            console.log("API 응답:", data);
+            $("#loading").hide();
+            
+            try {
+                const items = data.response.body.items.item;
+                if (!items || items.length === 0) {
+                    $("#card-container").html('<p class="loading">데이터가 없습니다.</p>');
+                    return;
+                }
+                
+                let cardHtml = "";
+                
+                $.each(items, function(index, spot) {
+                    const title = spot.title || "제목 없음";
+                    const addr = spot.addr1 || "주소 정보 없음";
+                    const image = spot.firstimage || "";
+
+                    // 지역명 추출
+                    let region = "기타";
+                    if (addr.includes("서울")) region = "서울";
+                    else if (addr.includes("부산")) region = "부산";
+                    else if (addr.includes("경기")) region = "경기";
+                    else if (addr.includes("강원")) region = "강원";
+                    else if (addr.includes("제주")) region = "제주";
+                    else if (addr.includes("인천")) region = "인천";
+                    else if (addr.includes("대전")) region = "대전";
+                    else if (addr.includes("대구")) region = "대구";
+                    else if (addr.includes("광주")) region = "광주";
+                    else if (addr.includes("울산")) region = "울산";
+                    else if (addr.includes("충청")) region = "충청";
+                    else if (addr.includes("전라")) region = "전라";
+                    else if (addr.includes("경상")) region = "경상";
+                    
+                    cardHtml += '<article class="card">';
+                    cardHtml += '  <div class="thumb has-image" aria-hidden="true">';
+
+                    // ✅ 수정된 부분 시작
+                    const customImages = [
+                        "https://tour.paju.go.kr/upload/tour/open/culture/2012/11/02/13518632207700.jpg",
+                        "https://cdn.3hoursahead.com/v2/content/image-comp/e1847fe0-2b69-40c9-9aa8-6e38809b9f7f.webp",
+                        "https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=6651d26e-9602-40fb-98e3-778bcc7adaf0",
+                        "https://www.snowfestival.net/asset/images/travel/travel_s01_img01.jpg",
+                        "http://www.golftimes.co.kr/news/photo/202504/134968_62751_3340.jpg",
+                        "https://minio.nculture.org/amsweb-opt/multimedia_assets/120/28939/8855/c/28939-medium-size.jpg",
+                        "https://www.dongtuni.com/upload/webzine/148/content/544-745114c37a17.jpg",
+                        "https://bbkk.kr/d/t/4/4513_DSC_0054.jpg",
+                        	
+                        		
+                      ];
+                    const fallbackImage = "/resources/images/map/family_default.jpg";
+                    const customImage = customImages[index] || "";
+                    const finalImage = customImage || image || fallbackImage;
+
+                    cardHtml += '<img src="' + finalImage + '" alt="' + title + 
+                                '" onerror="this.src=\'' + fallbackImage + '\';">';
+                    // ✅ 수정된 부분 끝
+
+                    cardHtml += '  </div>';
+                    cardHtml += '  <div class="meta">';
+                    cardHtml += '    <div class="place">' + title + '</div>';
+                    cardHtml += '    <span class="tag">' + region + '</span>';
+                    cardHtml += '  </div>';
+                    cardHtml += '</article>';
+                });
+                
+                $("#card-container").html(cardHtml);
+                
+            } catch(e) {
+                console.error("데이터 파싱 오류:", e);
+                $("#card-container").html('<p class="loading" style="color:#dc2626;">데이터를 불러오는 중 오류가 발생했습니다.</p>');
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error("AJAX 오류:", status, error);
+            $("#loading").hide();
+            $("#card-container").html('<p class="loading" style="color:#dc2626;">서버 연결에 실패했습니다.</p>');
+        }
+    });
+}
+</script>
+<!-- ✅✅✅ 여기까지 새로 추가된 부분 ✅✅✅ -->
+
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 </body>
 </html>

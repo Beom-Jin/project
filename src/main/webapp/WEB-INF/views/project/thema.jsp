@@ -1,8 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<<<<<<< HEAD
+=======
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
+<<<<<<< HEAD
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>테마별 여행 | VisitKorea</title>
 
@@ -10,6 +15,14 @@
 <script>
   const CTX = '${pageContext.request.contextPath}';
 </script>
+=======
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>테마별 여행 | VisitKorea</title>
+
+<!-- ✅ CSS 파일 추가 -->
+<link href="/resources/css/top.css" rel="stylesheet">
+<link href="/resources/css/nav.css" rel="stylesheet">
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 
 <style>
 :root{
@@ -32,7 +45,10 @@ a{color:inherit; text-decoration:none}
 img{max-width:100%; display:block}
 .container{max-width:var(--max); margin:0 auto; padding:0 20px}
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 /* 타이틀 */
 .page-title{text-align:center; font-size:34px; font-weight:900; margin:50px 0 30px}
 
@@ -57,7 +73,13 @@ img{max-width:100%; display:block}
 </head>
 <body>
 
+<<<<<<< HEAD
 <jsp:include page="top.jsp"></jsp:include>
+=======
+<!-- ✅ 헤더와 네비게이션 추가 -->
+<jsp:include page="top.jsp"></jsp:include>
+<jsp:include page="nav.jsp"></jsp:include>
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 
 <div class="container">
   <h1 class="page-title">테마별 여행 추천</h1>
@@ -101,19 +123,30 @@ img{max-width:100%; display:block}
 <jsp:include page="bottom.jsp"></jsp:include>
 
 <script>
+<<<<<<< HEAD
 /* ========= ✅ 추가: 테마 → 상세 JSP 매핑 ========= */
 const VIEW_BY_THEME = {
   family:      "thema1",  // 가족여행
   pet:         "thema2",  // 반려동물
+=======
+/* 테마 → 상세 JSP 매핑 */
+const VIEW_BY_THEME = {
+  family:      "thema1",
+  pet:         "thema2",
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
   medical:     "thema3",
   healing:     "thema4",
   festival:    "thema5",
   carcamping:  "thema6",
   koreaculture:"thema7"
 };
+<<<<<<< HEAD
 /* ========= ✅ 끝 ========= */
 
 /* 기존 데이터 그대로 */
+=======
+
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 var themes = {
   family: {
     title:"가족과 함께하는 즐거운 여행",
@@ -155,7 +188,10 @@ var themes = {
 var buttons = document.querySelectorAll(".theme-btn");
 var display = document.getElementById("theme-display");
 
+<<<<<<< HEAD
 // 카드 렌더
+=======
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 function render(themeKey){
   var data = themes[themeKey];
   if (!data) return;
@@ -165,9 +201,14 @@ function render(themeKey){
   var labelEl = document.querySelector('.theme-btn[data-theme="'+ themeKey +'"] span');
   var label = labelEl ? labelEl.innerText : "추천지";
 
+<<<<<<< HEAD
   /* ✅ 변경: a 태그 href를 테마별 상세 페이지로 */
   var view = VIEW_BY_THEME[themeKey] || "thema1";
   var href = CTX + '/' + view + '?theme=' + encodeURIComponent(themeKey);
+=======
+  var view = VIEW_BY_THEME[themeKey] || "thema1";
+  var href = '/' + view + '?theme=' + encodeURIComponent(themeKey);
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 
   setTimeout(function(){
     display.innerHTML =
@@ -188,7 +229,10 @@ function render(themeKey){
   if (target) target.classList.add('active');
 }
 
+<<<<<<< HEAD
 // 버튼 클릭 연결 (기존 그대로: 미리보기만 변경)
+=======
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 for (var i=0; i<buttons.length; i++){
   buttons[i].addEventListener('click', function(){
     var key = this.getAttribute('data-theme');
@@ -196,11 +240,18 @@ for (var i=0; i<buttons.length; i++){
   });
 }
 
+<<<<<<< HEAD
 // 초기 렌더 (가족여행)
+=======
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 document.addEventListener('DOMContentLoaded', function(){
   render('family');
 });
 </script>
 
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff

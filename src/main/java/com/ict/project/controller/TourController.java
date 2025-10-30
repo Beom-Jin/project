@@ -6,32 +6,70 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+<<<<<<< HEAD
 import org.springframework.web.servlet.ModelAndView;
+=======
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.ict.project.common.MapperUtil;
 import com.ict.project.common.RestApiComm;
+<<<<<<< HEAD
 import com.ict.project.service.TourService;
 import com.ict.project.vo.MakeupAPIVO;
 import com.ict.project.vo.TboardVO;
+=======
+import com.ict.project.service.CommentService;
+import com.ict.project.service.DetailService;
+import com.ict.project.service.TourService;
+import com.ict.project.vo.MakeupAPIVO;
+import com.ict.project.vo.TboardVO;
+import com.ict.project.vo.TcommnetVO;
+import com.ict.project.vo.TdetailVO;
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 
 
 @Controller
 public class TourController
 {
+<<<<<<< HEAD
 	@Autowired 
 	private TourService tourService;
+=======
+//	@Autowired 
+//	private TourService tourService;
+	
+	@Autowired
+	private DetailService detailService;
+	
+	@Autowired
+	private CommentService commentService;
+	
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 	
 	@GetMapping("/showMain")
 	public ModelAndView goMain()
 	{
 		return new ModelAndView("project/mainHomePage");
+<<<<<<< HEAD
 		
 	}
 	
 	@GetMapping("/writeComments")
 	public ModelAndView goWriteComments()
+=======
+	}
+	
+	
+	@PostMapping("/writeComments")
+	public ModelAndView goWriteComments(@ModelAttribute("area") String area)
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 	{
 		return new ModelAndView("project/writeComments");
 		
@@ -43,11 +81,59 @@ public class TourController
 		return new ModelAndView("project/map");
 	}
 	
+<<<<<<< HEAD
 	
 	@GetMapping("/showDetail")
 	public ModelAndView goDetail(@ModelAttribute("area") String area)
 	{
 		return new ModelAndView("project/detail");
+=======
+	@GetMapping("/getLocalList")
+	public ModelAndView getLocalList(String local)
+	{
+		try {
+			ModelAndView mv = new ModelAndView();
+			List<TdetailVO> list = detailService.getLocalList(local);	
+			mv.addObject("list", list);
+			mv.setViewName("project/localList");
+			return mv;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	@RequestMapping("/showDetail") 
+	public ModelAndView testShowDetail(String area)
+	{
+		try {
+			ModelAndView mv = new ModelAndView();
+			TdetailVO tvo = detailService.getTourList(area);
+			List<TcommnetVO> comList = commentService.getComment(tvo.getD_title());
+			mv.addObject("tvo", tvo);
+			mv.addObject("comList", comList);
+			mv.setViewName("project/detail");
+			return mv;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		
+	}
+	
+	@PostMapping("/comWriteOk")
+	public ModelAndView WriteComment(TcommnetVO tcvo, @ModelAttribute("area") String area)
+	{
+		try {
+			ModelAndView mv = new ModelAndView();
+			int result = commentService.writeComment(tcvo);
+			mv.setViewName("redirect:/showDetail");
+			return mv;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 	}
 
 	@GetMapping("/LoginForm")
@@ -113,6 +199,7 @@ public class TourController
 	}
 	
 	
+<<<<<<< HEAD
 	
 	
 	
@@ -122,6 +209,14 @@ public class TourController
 	{
 		return new ModelAndView("project/registrationForm");
 	}
+=======
+	// ✅ 중복 매핑 제거: /membersJoinForm은 MemberController에서 처리
+	// @GetMapping("/membersJoinForm")  <- 삭제됨
+	// public ModelAndView domembersJoinForm()
+	// {
+	//     return new ModelAndView("project/registrationForm");
+	// }
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 	
 	@GetMapping("/thema1")
 	public ModelAndView goThemadetail()
@@ -182,6 +277,7 @@ public class TourController
 	{
 		return new ModelAndView("project/faq");
 	}
+<<<<<<< HEAD
 	@GetMapping("/showMyPage")
 	public ModelAndView goMyPage()
 	{
@@ -213,6 +309,10 @@ public class TourController
 	public ModelAndView goTravelReviewDetail() {
 		return new ModelAndView("project/myPage/TravelReviewDetail");
 	}
+=======
+	
+	
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 	
 	@GetMapping("/supCategory")
 	public ModelAndView goCategory() {
@@ -307,4 +407,8 @@ public class TourController
 	
 	
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff

@@ -68,7 +68,7 @@
 						<p class="desc">작성한 여행 후기를 볼 수 있습니다.</p>
 					</div>
 				</article>
-				<a href="/showQuestion">
+				<a href="/showQuestionList">
 				<article class="card">
 					<div class="thumb">
 						<img

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,45 +25,49 @@
 		  <a href="#item_img"><button class="tablinks"> <span id="tab_text">사진보기</span></button></a>
 		  <a href="#item_tap"><button class="tablinks"> <span id="tab_text">상세정보 </span></button></a>
 		  <a href="#item_tap2"><button class="tablinks"> <span id="tab_text">지도</span></button></a>
+<<<<<<< HEAD
 		</div>
 		<div class="detail_title">
 			<p><h1>${area}</h1></p>
 			<p><h2> ${area} 여행지 리스트 </h2>	</p>
 			<p id="item_img"><h3>${area} 의 관광지 간략한 소개</h1></p>
+=======
+		  <a href="/getLocalList?local=${tvo.d_local}"><button class="tablinks"> <span id="tab_text">목록</span></button></a>
+		</div>
+		<div class="detail_title">
+			<p><h1>${tvo.d_local}</h1></p>
+			<p id="item_img"><h2>${tvo.d_title}의 간략한 소개</h2></p>
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 		</div>
 		
 		<div class="detail_body">
 			<div class="detail_body_item">
 				<div>
+<<<<<<< HEAD
 					<img alt="" src="/resources/images/bear.jpg">
+=======
+					<img alt="" src="${tvo.d_img}">
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 					<div>
 						<div id="item_tap"><span><h2> 상세정보 </h2></span></div><hr><br>
 						<div id="item_body">
 							<span> 
-								전통을 담은 한방 트리트먼트를 바탕으로 몸과 마음을 회복해
-								 내재된 아름다움을 되찾도록 도와주는 설화수 플래그십 스토어.
-								 설화수가 추구하는 미의 가치를 체험할 수 있는 감각적인 공간이다.
-								 예로부터 우리 조상들은 여성의 아름다움을 가꾸는 데 필요한 지혜를 모으고 그 방법을 기록했다.
-								 대표적으로 전통 고전인 『본초강목』이나 『동의보감』 등의 책에서는
-								 한방 약재를 이용해 아름다움을 가꾸는 다양한 방법을 소개하고 있다.
-								 이렇게 귀한 한방 성분으로 몸과 마음의 아름다움을 동시에 지켜내기 위해
-								 노력해 온 전통의 비법을 담고
-								 그 가치를 이어나가기 위한 곳이 바로 ‘설화수 플래그십 스토어’다.
+								${tvo.d_content}
 						 	</span>
 						 </div>
 						 <div id="item_info">
 							<table>
 								<tr>
 									<th>- 명칭</th>
-									<td><!-- ${명칭값} -->명칭명칭명칭</td>
+									<td>${tvo.d_title}</td>
 									<th>- 영업시간</th>
-									<td><!-- ${영업시간값} -->영업영업영업영업영업</td>
+									<td>${tvo.d_time}</td>
 								</tr>
 								<tr>
 									<th>- 전화번호</th>
-									<td><!-- ${전화번호값} -->전번전번전번전번</td>
-									<th>- 쉬는날</th>
-									<td><!-- ${쉬는날값} -->쉬는쉬는쉬는쉬는</td>
+									<td>${tvo.d_tel}</td>
+									<th>- 주소</th>
+									<td>${tvo.d_addr}</td>
 								</tr>
 							</table>
 						</div> 
@@ -77,7 +81,7 @@
    						<div class="option">
          					<div>
 		                		<form onsubmit="searchPlaces(); return false;">
-				                    키워드 : <input type="text" value="${area}" id="keyword" size="15"> 
+				                    키워드 : <input type="text" value="${tvo.d_local}" id="keyword" size="15"> 
 				                    <button type="submit">검색하기</button> 
 				                </form>
 				            </div>
@@ -86,18 +90,27 @@
 				        <ul id="placesList"></ul>
 				        <div id="pagination"></div>
 					</div>
+<<<<<<< HEAD
 				</div>
 				
 				<jsp:include page="comments.jsp"></jsp:include>
 				
+=======
+				</div>	
+				
+				<jsp:include page="comments.jsp">
+					<jsp:param value="${comList}" name="comList"/>
+					<jsp:param value="${tvo.d_title}" name="area"/>
+				</jsp:include>
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 			</div>
 		</div>
 	</div>
 	<hr>
 	<jsp:include page="bottom.jsp"></jsp:include>
 
+
 	<!-- =============================== 카카오맵 ==================================  -->
-	
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9e684ace65f4252ccaf39ed6a6b1bef1&libraries=services"></script>
 	<script>
 	
@@ -317,12 +330,6 @@
 	        el.removeChild (el.lastChild);
 	    }
 	}
-	 
-	 
-	 function setText()
-	 {
-		 
-	 }
 	</script>
 	
 	

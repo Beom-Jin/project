@@ -143,6 +143,16 @@
 			<version>3.5.19</version>
 		</dependency>
 
+		<!-- JavaMail -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.7</version>
+		</dependency>
+
+
+
+
 		<!-- myBatis-Spring 연결 -->
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
 		<dependency>
@@ -202,9 +212,15 @@
 		</dependency>
 
 		<dependency>
+<<<<<<< HEAD
 		  <groupId>org.modelmapper</groupId>
 		  <artifactId>modelmapper</artifactId>
 		  <version>3.2.0</version>
+=======
+			<groupId>org.modelmapper</groupId>
+			<artifactId>modelmapper</artifactId>
+			<version>3.2.0</version>
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 		</dependency>
 
 
