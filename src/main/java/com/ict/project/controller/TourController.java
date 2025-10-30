@@ -12,10 +12,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-<<<<<<< HEAD
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-=======
->>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -30,25 +26,17 @@ import com.ict.project.vo.ResponseVO;
 import com.ict.project.vo.TboardVO;
 import com.ict.project.vo.TcommnetVO;
 import com.ict.project.vo.TdetailVO;
-<<<<<<< HEAD
-=======
 
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Unmarshaller;
->>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
 
 
 @Controller
 public class TourController
 {
-<<<<<<< HEAD
-//	@Autowired 
-//	private TourService tourService;
-=======
 	@Autowired 
 	private TourService tourService;
->>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
 	
 	@Autowired
 	private DetailService detailService;

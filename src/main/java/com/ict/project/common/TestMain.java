@@ -36,23 +36,8 @@ public class TestMain {
 		});
 
 		RestApiComm r = new RestApiComm();
-<<<<<<< HEAD
-		//StringBuffer endPoint = new StringBuffer("https://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline");
-		StringBuffer endPoint = new StringBuffer("https://api.kcisa.kr/openapi/API_CNV_061/request?serviceKey=62f10a79-8a2f-439d-9977-9865b02e7d4e&numOfRows=8&pageNo=1");
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-		StringBuffer endPoint = new StringBuffer("https://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline");
-=======
-		//StringBuffer endPoint = new StringBuffer("https://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline");
-		StringBuffer endPoint = new StringBuffer("https://api.kcisa.kr/openapi/API_CNV_061/request?serviceKey=62f10a79-8a2f-439d-9977-9865b02e7d4e&numOfRows=8&pageNo=1");
->>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
-=======
-		//StringBuffer endPoint = new StringBuffer("https://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline");
 		StringBuffer endPoint = new StringBuffer("https://api.kcisa.kr/openapi/API_CNV_061/request?serviceKey=62f10a79-8a2f-439d-9977-9865b02e7d4e&numOfRows=8&pageNo=1");
 
->>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
->>>>>>> main
 		String reslist = r.sendRecv(endPoint, "GET");
 		System.out.println("reslist = " + reslist.substring(0, Math.min(200, reslist.length())));
 
