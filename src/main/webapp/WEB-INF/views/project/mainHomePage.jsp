@@ -123,7 +123,6 @@
                 <a href="/gothema">더 알아보기</a>
             </div>
 
-<<<<<<< HEAD
     <!-- 공지 안내 팝업 (가운데 크게) -->
 <div id="popupNotice" class="mini-popup center hidden" role="dialog" aria-label="공지 안내">
   <button class="popup-close" onclick="closePopup('popupNotice')" aria-label="닫기">×</button>
@@ -155,7 +154,6 @@
 
 </body>
 </html>
-=======
             <div class="grid cols-3">
                 <a href="/thema2">
                     <article class="card">
@@ -338,4 +336,3 @@
         <script src="/resources/js/popup.js"></script>
     </body>
 </html>
->>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
