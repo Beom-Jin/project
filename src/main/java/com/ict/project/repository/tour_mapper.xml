@@ -8,7 +8,8 @@
 	    INSERT INTO tboard (b_title, b_content, b_img, b_url, b_theme, b_lat, b_lon, b_time) 
 	    VALUES
 	    <foreach collection="list" item="item" separator=",">
-	        (#{item.b_title}, #{item.b_content}, #{item.b_img}, #{item.b_url}, #{item.b_theme}, #{item.b_lat}, #{item.b_lon}, #{item.b_time})
+	        <!-- (#{item.b_title}, #{item.b_content}, #{item.b_img}, #{item.b_url}, #{item.b_theme}, #{item.b_lat}, #{item.b_lon}, #{item.b_time}) -->
+	        (#{item.b_title}, #{item.b_content}, #{item.b_img}, #{item.b_url}, 1, #{item.b_lat}, #{item.b_lon}, #{item.b_time})	        
 	    </foreach>
 	</insert> 		
 	

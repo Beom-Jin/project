@@ -55,11 +55,6 @@
 
 	<!-- 시작페이지 설정 (옵션) -->
 	<welcome-file-list>
-		<!-- <welcome-file>/WEB-INF/views/project/comments.jsp</welcome-file> -->
-<<<<<<< HEAD
-=======
-		<!--  <welcome-file>/WEB-INF/views/project/mainHomePage.jsp</welcome-file>  -->
->>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 		<welcome-file>/WEB-INF/views/project/mainHomePage.jsp</welcome-file>
 
 	</welcome-file-list>

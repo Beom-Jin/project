@@ -37,21 +37,12 @@
 			    <area onmouseover="on_mouse_area('Gwangju')" onmouseout="off_mouse_area()" target="_self" id="Gwangju" alt="광주" href="" coords="191,651,202,654,216,646,221,654,227,661,225,666,220,673,210,674,198,678,196,672,181,671,179,662,185,657" shape="poly">
 			</map>
 		</div>
-<<<<<<< HEAD
-		 <div class="title">
-			<span id="title_text1">놀러갈곳</span><br>
-			<span id="title_text2"> 여행지 확인하기</span>
-			<div class="title_img_body">
-				<img alt="" id="title_img1" src="/resources/images/example/home1.jpg">
-				<img alt="" id="title_img2" src="/resources/images/example/home2.jpg">
-=======
 		 <div class="map_title">
 			<span id="map_title_text1">놀러갈곳</span><br>
 			<span id="map_title_text2"> 여행지 확인하기</span>
 			<div class="map_title_img_body">
 				<img alt="" id="map_title_img1" src="/resources/images/example/home1.jpg">
 				<img alt="" id="map_title_img2" src="/resources/images/example/home2.jpg">
->>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 			</div>
 		</div>
 	</div>

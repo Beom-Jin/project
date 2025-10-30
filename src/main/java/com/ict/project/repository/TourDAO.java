@@ -9,11 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.ict.project.vo.TboardVO;
-<<<<<<< HEAD
-=======
 import com.ict.project.vo.TcommnetVO;
 import com.ict.project.vo.TdetailVO;
->>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 
 @Repository
 public class TourDAO {

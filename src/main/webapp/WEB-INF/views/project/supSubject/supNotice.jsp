@@ -373,8 +373,4 @@ body {
 </footer>
 
 </body>
-<<<<<<< HEAD
-</html>
-=======
 </html> 
->>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff

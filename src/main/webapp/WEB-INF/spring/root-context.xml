@@ -13,11 +13,6 @@
 		<!-- 		  
 		<bean id="datasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 			<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
-<<<<<<< HEAD
-			<property name="url" value="jdbc:mysql://192.168.0.32:3306/ictedu_db"></property>
-			<property name="username" value="ictedu"></property>
-			<property name="password" value="0612"></property>
-=======
 			<property name="url" value="jdbc:mysql://192.168.0.32:3306/team_project"></property>
 <<<<<<< HEAD
 			<property name="username" value="cho"></property>
@@ -26,18 +21,13 @@
 			<property name="username" value="kbj"></property>
 			<property name="password" value="1234"></property>
 >>>>>>> kbj
->>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 		</bean>
 		-->
 		
 		<bean id="datasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 			<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
 			<property name="url" value="jdbc:mysql://192.168.0.32:3306/team_project"></property>
-<<<<<<< HEAD
-			<property name="username" value="pdm"></property>
-=======
 			<property name="username" value="kbj"></property>
->>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 			<property name="password" value="1234"></property>
 		</bean>
 		

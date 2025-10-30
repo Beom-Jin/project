@@ -25,29 +25,17 @@
 		  <a href="#item_img"><button class="tablinks"> <span id="tab_text">사진보기</span></button></a>
 		  <a href="#item_tap"><button class="tablinks"> <span id="tab_text">상세정보 </span></button></a>
 		  <a href="#item_tap2"><button class="tablinks"> <span id="tab_text">지도</span></button></a>
-<<<<<<< HEAD
-		</div>
-		<div class="detail_title">
-			<p><h1>${area}</h1></p>
-			<p><h2> ${area} 여행지 리스트 </h2>	</p>
-			<p id="item_img"><h3>${area} 의 관광지 간략한 소개</h1></p>
-=======
 		  <a href="/getLocalList?local=${tvo.d_local}"><button class="tablinks"> <span id="tab_text">목록</span></button></a>
 		</div>
 		<div class="detail_title">
 			<p><h1>${tvo.d_local}</h1></p>
 			<p id="item_img"><h2>${tvo.d_title}의 간략한 소개</h2></p>
->>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 		</div>
 		
 		<div class="detail_body">
 			<div class="detail_body_item">
 				<div>
-<<<<<<< HEAD
-					<img alt="" src="/resources/images/bear.jpg">
-=======
 					<img alt="" src="${tvo.d_img}">
->>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 					<div>
 						<div id="item_tap"><span><h2> 상세정보 </h2></span></div><hr><br>
 						<div id="item_body">
@@ -90,19 +78,12 @@
 				        <ul id="placesList"></ul>
 				        <div id="pagination"></div>
 					</div>
-<<<<<<< HEAD
-				</div>
-				
-				<jsp:include page="comments.jsp"></jsp:include>
-				
-=======
 				</div>	
 				
 				<jsp:include page="comments.jsp">
 					<jsp:param value="${comList}" name="comList"/>
 					<jsp:param value="${tvo.d_title}" name="area"/>
 				</jsp:include>
->>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 			</div>
 		</div>
 	</div>
