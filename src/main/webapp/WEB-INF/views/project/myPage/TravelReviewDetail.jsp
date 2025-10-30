@@ -30,8 +30,7 @@
 		text-align: center;
 	}
 	input{
-		display: inline-block;
-		text-align: center;
+		justify-content: center;
 	}
 </style>
 </head>

@@ -112,10 +112,7 @@ const VIEW_BY_THEME = {
   carcamping:  "thema6",
   koreaculture:"thema7"
 };
-<<<<<<< HEAD
-=======
 
->>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
 var themes = {
   family: {
     title:"가족과 함께하는 즐거운 여행",
@@ -201,8 +198,4 @@ document.addEventListener('DOMContentLoaded', function(){
 </script>
 
 </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
