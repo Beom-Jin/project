@@ -23,7 +23,7 @@
     </select>
 		
 	<select id="listpage" parameterType="map" resultType="com.ict.project.vo.TboardVO">
-     	select * from tboard order by b_idx asc limit #{limit} offset #{offset}      
+     	SELECT * FROM tboard WHERE b_img != "" order by b_idx DESC limit #{limit} offset #{offset}      
     </select>
 
 	<select id="listpageThema" parameterType="map" resultType="com.ict.project.vo.TboardVO">
