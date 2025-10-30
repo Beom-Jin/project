@@ -8,6 +8,10 @@ import org.springframework.stereotype.Service;
 import com.ict.project.repository.TourDAO;
 import com.ict.project.vo.TboardVO;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
 @Service
 public class TourServiceImpl implements TourService{
 	
