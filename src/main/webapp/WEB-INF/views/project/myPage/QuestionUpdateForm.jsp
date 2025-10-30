@@ -31,6 +31,7 @@
 		text-align: center;
 	}
 	input{
+		display: inline-block;
 		text-align: center;
 	}
 </style>
