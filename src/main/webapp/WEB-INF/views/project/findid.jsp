@@ -113,8 +113,8 @@
 
             <div class="row">
               <div class="label">인증번호</div>
-              <input class="input" type="text" placeholder="인증번호 6자리 숫자 입력" id="code" maxlength="6" disabled>
-              <button type="button" class="btn" id="verifyBtn" disabled>확인</button>
+              <input class="input" type="text" placeholder="인증번호 6자리 숫자 입력" id="code" maxlength="6">
+              <button type="button" class="btn" id="verifyBtn">확인</button>
             </div>
             <p class="hint">인증번호가 오지 않나요? 스팸함을 확인하거나, 이메일 주소를 다시 확인해 주세요.</p>
           </div>
@@ -185,8 +185,6 @@
         success: function(data){
           if(data === 'success'){
             alert('인증번호가 이메일로 전송되었습니다.');
-            $('#code').prop('disabled', false);
-            $('#verifyBtn').prop('disabled', false);
             $('#sendCodeBtn').text('재발송').prop('disabled', false);
           } else if(data === 'notfound'){
             alert('해당 정보로 가입된 회원이 없습니다.');
@@ -204,35 +202,35 @@
     });
 
     $('#verifyBtn').on('click', function(){
-    	  const code = $('#code').val();
-    	  
-    	  if (!code) {
-    	    alert('인증번호를 입력해주세요.');
-    	    return;
-    	  }
-    	  
-    	  $.ajax({
-    	    url: '/verifyCodeForFindId',
-    	    type: 'post',
-    	    data: { code: code },
-    	    success: function(data){
-    	      if(data.startsWith('match:')){
-    	        const foundId = data.split(':')[1];
-    	        alert('인증 성공!\n회원님의 아이디는 "' + foundId + '" 입니다.');
-    	        location.href = '/gotitle';
-    	      } else if(data === 'mismatch'){
-    	        alert('인증번호가 일치하지 않습니다.');
-    	      } else if(data === 'expired'){
-    	        alert('인증 시간이 초과되었습니다. 다시 시도해주세요.');
-    	      } else {
-    	        alert('인증에 실패했습니다.');
-    	      }
-    	    },
-    	    error: function(){
-    	      alert('서버 오류가 발생했습니다.');
-    	    }
-    	  });
-    	});
+      const code = $('#code').val();
+      
+      if (!code) {
+        alert('인증번호를 입력해주세요.');
+        return;
+      }
+      
+      $.ajax({
+        url: '/verifyCodeForFindId',
+        type: 'post',
+        data: { code: code },
+        success: function(data){
+          if(data.startsWith('match:')){
+            const foundId = data.split(':')[1];
+            alert('인증 성공!\n회원님의 아이디는 "' + foundId + '" 입니다.');
+            location.href = '/gotitle';
+          } else if(data === 'mismatch'){
+            alert('인증번호가 일치하지 않습니다.');
+          } else if(data === 'expired'){
+            alert('인증 시간이 초과되었습니다. 다시 시도해주세요.');
+          } else {
+            alert('인증에 실패했습니다.');
+          }
+        },
+        error: function(){
+          alert('서버 오류가 발생했습니다.');
+        }
+      });
+    });
 
     findIdForm.addEventListener('submit', function(e) {
       if (howPhone.checked) {
