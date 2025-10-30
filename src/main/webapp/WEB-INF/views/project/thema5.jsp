@@ -5,11 +5,27 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<title>테마로 만나는 장소</title>
+=======
+=======
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
+>>>>>>> main
 <title>가족 여행 | VisitKorea</title>
 
 <link href="/resources/css/top.css" rel="stylesheet">
 <link href="/resources/css/nav.css" rel="stylesheet">
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
+=======
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
+>>>>>>> main
 <style>
 :root{
   --bg:#ffffff;
@@ -59,6 +75,19 @@ a{color:inherit; text-decoration:none}
 }
 .card:hover{transform:translateY(-2px); box-shadow:0 16px 36px rgba(2,6,23,.10), 0 3px 12px rgba(2,6,23,.06)}
 .thumb{
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+  aspect-ratio:4/3; background:var(--skeleton); position:relative;
+}
+.thumb::after{ /* 사진 비워둔 느낌의 플레이스홀더 */
+  content:"";
+  position:absolute; inset:16px;
+=======
+=======
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
+>>>>>>> main
   aspect-ratio:4/3; background:var(--skeleton); position:relative; overflow:hidden;
 }
 /* ✅ 이미지가 있을 때는 ::after 숨김 */
@@ -68,6 +97,13 @@ a{color:inherit; text-decoration:none}
 .thumb::after{ /* 사진 비워둔 느낌의 플레이스홀더 */
   content:"";
   position:absolute; inset:16px; z-index:0;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
+=======
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
+>>>>>>> main
   border:2px dashed #d1d5db; border-radius:12px;
   background:
     linear-gradient(135deg,#e5e7eb 25%, transparent 25%) -8px 0/16px 16px,
@@ -76,8 +112,21 @@ a{color:inherit; text-decoration:none}
     linear-gradient(45deg,#e5e7eb 25%, transparent 25%) 0px 0/16px 16px;
   opacity:.7;
 }
+<<<<<<< HEAD
 .thumb.has-image::after{display:none;} /* 이미지 있으면 플레이스홀더 제거 */
 
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+.thumb.has-image::after{display:none;} /* 이미지 있으면 플레이스홀더 제거 */
+
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
+=======
+.thumb.has-image::after{display:none;} /* 이미지 있으면 플레이스홀더 제거 */
+
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
+>>>>>>> main
 .meta{padding:14px 14px 18px}
 .place{font-weight:800; margin:6px 0 8px}
 .tag{
@@ -85,11 +134,26 @@ a{color:inherit; text-decoration:none}
   background:#eef2ff; color:#3730a3; font-weight:700;
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
+>>>>>>> main
 /* 로딩 */
 .loading{
   text-align:center; padding:60px 0; color:var(--muted); font-size:16px;
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
+=======
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
+>>>>>>> main
 /* 하단 버튼 */
 .footer-cta{display:flex; justify-content:center; margin:26px 0 6px}
 .ghost-btn{
@@ -103,6 +167,87 @@ a{color:inherit; text-decoration:none}
 <body>
 
 <jsp:include page="top.jsp"></jsp:include>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+<main class="container">
+  <h2 class="page-title">함께즐기는 축제!<span aria-hidden="true">😊</span></h2>
+
+  <!-- 상단 배너 (비워둔 그래픽 영역 + 텍스트 + 버튼) -->
+  
+
+  <!-- 카드 8개 (이미지 칸은 플레이스홀더) -->
+  <section class="grid cols-4" aria-label="추천 장소 목록">
+    <!-- 1 -->
+    <article class="card">
+      <div class="thumb" aria-hidden="true"></div>
+      <div class="meta">
+        <div class="place">축제1</div>
+        <span class="tag">축제1</span>
+      </div>
+    </article>
+    <!-- 2 -->
+    <article class="card">
+      <div class="thumb" aria-hidden="true"></div>
+      <div class="meta">
+        <div class="place">축제2</div>
+        <span class="tag">축제2</span>
+      </div>
+    </article>
+    <!-- 3 -->
+    <article class="card">
+      <div class="thumb" aria-hidden="true"></div>
+      <div class="meta">
+        <div class="place">축제3</div>
+        <span class="tag">축제3</span>
+      </div>
+    </article>
+    <!-- 4 -->
+    <article class="card">
+      <div class="thumb" aria-hidden="true"></div>
+      <div class="meta">
+        <div class="place">축제4</div>
+        <span class="tag">축제4</span>
+      </div>
+    </article>
+    <!-- 5 -->
+    <article class="card">
+      <div class="thumb" aria-hidden="true"></div>
+      <div class="meta">
+        <div class="place">축제5</div>
+        <span class="tag">축제5</span>
+      </div>
+    </article>
+    <!-- 6 -->
+    <article class="card">
+      <div class="thumb" aria-hidden="true"></div>
+      <div class="meta">
+        <div class="place">축제6</div>
+        <span class="tag">축제6</span>
+      </div>
+    </article>
+    <!-- 7 -->
+    <article class="card">
+      <div class="thumb" aria-hidden="true"></div>
+      <div class="meta">
+        <div class="place">축제7</div>
+        <span class="tag">축제7</span>
+      </div>
+    </article>
+    <!-- 8 -->
+    <article class="card">
+      <div class="thumb" aria-hidden="true"></div>
+      <div class="meta">
+        <div class="place">축제8</div>
+        <span class="tag">축제8</span>
+      </div>
+    </article>
+=======
+=======
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
+>>>>>>> main
 <jsp:include page="nav.jsp"></jsp:include>
 
 <main class="container">
@@ -114,18 +259,48 @@ a{color:inherit; text-decoration:none}
   <!-- ✅ 카드 컨테이너 (JavaScript가 여기에 카드를 추가) -->
   <section class="grid cols-4" aria-label="추천 장소 목록" id="card-container">
     <!-- 카드들이 동적으로 추가됨 -->
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
+=======
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
+>>>>>>> main
   </section>
 
   <!-- 하단 이동 버튼 -->
   <div class="footer-cta">
+<<<<<<< HEAD
     <a class="ghost-btn" href="/showMap" role="button" aria-label="지역별 여행 보기">
      지역별 여행 보기
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <a class="ghost-btn" href="#" role="button" aria-label="여행지도에서 더 많은 추천테마 보기">
+      여행지도에서 더 많은 추천테마 보기 →
+=======
+    <a class="ghost-btn" href="/showMap" role="button" aria-label="지역별 여행 보기">
+     지역별 여행 보기
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
+=======
+    <a class="ghost-btn" href="/showMap" role="button" aria-label="지역별 여행 보기">
+     지역별 여행 보기
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
+>>>>>>> main
     </a>
   </div>
 </main>
 
 <jsp:include page="bottom.jsp"></jsp:include>
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
+>>>>>>> main
 <!-- ✅✅✅ 여기서부터 새로 추가된 부분 ✅✅✅ -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script type="text/javascript">
@@ -221,5 +396,12 @@ function loadFamilyTourData() {
 </script>
 <!-- ✅✅✅ 여기까지 새로 추가된 부분 ✅✅✅ -->
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
+=======
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
+>>>>>>> main
 </body>
 </html>

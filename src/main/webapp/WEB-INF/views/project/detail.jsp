@@ -36,10 +36,14 @@
 			<div class="detail_body_item">
 				<div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 					<img alt="" src="/resources/images/bear.jpg">
 =======
 					<img alt="" src="${tvo.d_img}">
 >>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
+=======
+					<img alt="" src="${tvo.d_img}">
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
 					<div>
 						<div id="item_tap"><span><h2> 상세정보 </h2></span></div><hr><br>
 						<div id="item_body">
@@ -83,18 +87,24 @@
 				        <div id="pagination"></div>
 					</div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 				</div>
 				
 				<jsp:include page="comments.jsp"></jsp:include>
 				
 =======
+=======
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
 				</div>	
 				
 				<jsp:include page="comments.jsp">
 					<jsp:param value="${comList}" name="comList"/>
 					<jsp:param value="${tvo.d_title}" name="area"/>
 				</jsp:include>
+<<<<<<< HEAD
 >>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
+=======
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
 			</div>
 		</div>
 	</div>

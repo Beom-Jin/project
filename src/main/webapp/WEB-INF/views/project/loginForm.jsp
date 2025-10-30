@@ -194,17 +194,49 @@ input[type="reset"]:hover { background: #f1f5f9; }
 	<div id="container">
 		<h2>일반 로그인</h2>
 
+<<<<<<< HEAD
 		<form action="/membersLogin" method="post" autocomplete="off">
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+		<form action="/membersLoginOK" method="post">
+=======
+		<form action="/membersLogin" method="post" autocomplete="off">
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
+=======
+		<form action="/membersLogin" method="post" autocomplete="off">
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
+>>>>>>> main
 			<fieldset>
 				<legend>로그인</legend>
 				<ul>
 					<li>
 						<label for="m_id">ID</label>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+						<input type="text" id="m_id" name="m_id" required>
+					</li>
+					<li>
+						<label for="m_pw">PW</label>
+						<input type="password" id="m_pw" name="m_pw" required>
+=======
+=======
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
+>>>>>>> main
 						<input type="text" id="m_id" name="m_id" autocomplete="off" required>
 					</li>
 					<li>
 						<label for="m_pw">PW</label>
 						<input type="password" id="m_pw" name="m_pw" autocomplete="new-password" required>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
+=======
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
+>>>>>>> main
 					</li>
 				</ul>
 
@@ -247,4 +279,16 @@ input[type="reset"]:hover { background: #f1f5f9; }
 		<script>alert("로그인 후 사용 가능");</script>
 	</c:if>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+</html>
+=======
+</html>
+>>>>>>> cc4b71a9b973bf05af1c99f9f98eaedf5c1c4fff
+=======
+</html>
+>>>>>>> c7928282cd13b86c656f59ca0147341b6c71904d
+>>>>>>> main
