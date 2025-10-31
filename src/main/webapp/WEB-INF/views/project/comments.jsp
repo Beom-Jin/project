@@ -29,11 +29,11 @@
 				<c:forEach var="k" items="${comList}" varStatus="v">
 					<div class="comment_container">
 				  		<div class="comment_container_info">
-					  		<img src="${k.com_img}">
+					  		<img src="${empty k.com_img ? '/resources/images/LoginImg.png' :  k.com_img}">
 							
 							<div class="comment_container_info_user">
 					  			<span>${k.com_id}</span>
-					  			<span id="info_time">  |  ${k.com_time}</span>
+					  			<span id="info_time">&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;${k.com_time}</span>
 							</div>
 				  		</div>
 				  		<div class="comment_container_info_text">
