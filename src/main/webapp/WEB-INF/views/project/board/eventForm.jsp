@@ -130,8 +130,7 @@ tfoot {
 <body>
 		
 	<script type="text/javascript"
-		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9e684ace65f4252ccaf39ed6a6b1bef1&libraries=services"></script>
-	
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=${kakaokey}&libraries=services"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	
 	<!-- /js/tour_functions.js include -->
@@ -164,11 +163,11 @@ tfoot {
 
 	<div class="table-container"></div>	
 
-	<a class="nav-link" href="/createDB">데이터 생성</a>
+	<!-- <a class="nav-link" href="/createDB">데이터 생성</a>
 	<a class="nav-link" href="/createDB1">데이터 생성1</a>
 	<a class="nav-link" href="/createDB2">데이터 생성2</a>
 	<a class="nav-link" href="/showList">데이터 조회</a>
-	<a class="nav-link" href="/tourInsert">데이터 추가</a>
+	<a class="nav-link" href="/tourInsert">데이터 추가</a> -->
 	
 	<!-- 지도를 표시할 div 입니다 -->
 	<div id="map" style="width: 100%; height: 350px;"></div>

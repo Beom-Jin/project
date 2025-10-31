@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.modelmapper.PropertyMap;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -15,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.ict.project.common.ApiKey;
 import com.ict.project.common.MapperUtil;
 import com.ict.project.common.RestApiComm;
 import com.ict.project.service.CommentService;
@@ -45,6 +47,9 @@ public class TourController
 	
 	@Autowired
 	private CommentService commentService;
+	
+	@Autowired
+	private ApiKey apiKey;
 	
 	
 	@GetMapping("/showMain")
@@ -82,6 +87,7 @@ public class TourController
 		}
 	}
 	
+	
 	@RequestMapping("/showDetail") 
 	public ModelAndView testShowDetail(String area)
 	{
@@ -91,6 +97,7 @@ public class TourController
 			List<TcommnetVO> comList = commentService.getComment(tvo.getD_title());
 			mv.addObject("tvo", tvo);
 			mv.addObject("comList", comList);
+			mv.addObject("kakaokey", apiKey.getKakaoApiKey());
 			mv.setViewName("project/detail");
 			return mv;
 		} catch (Exception e) {
@@ -283,7 +290,10 @@ public class TourController
 	@GetMapping("/eventMap")
 	public ModelAndView goEventMap()
 	{
-		return new ModelAndView("project/board/eventForm");
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("kakaokey", apiKey.getKakaoApiKey());
+		mv.setViewName("project/board/eventForm");
+		return mv;
 	}	
 	
 	@GetMapping("/createDB")
@@ -458,7 +468,10 @@ public class TourController
 	@GetMapping("/showList")
 	public ModelAndView eventList()
 	{
-		return new ModelAndView("project/board/eventForm");
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("kakaokey", apiKey.getKakaoApiKey());
+		mv.setViewName("project/board/eventForm");
+		return mv;
 	}	
 
 	@GetMapping("/tourInsert")

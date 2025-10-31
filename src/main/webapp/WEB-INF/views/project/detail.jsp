@@ -92,7 +92,7 @@
 
 
 	<!-- =============================== 카카오맵 ==================================  -->
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9e684ace65f4252ccaf39ed6a6b1bef1&libraries=services"></script>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=${kakaokey}&libraries=services"></script>
 	<script>
 	
 	// 마커를 담을 배열입니다
