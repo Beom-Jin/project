@@ -48,7 +48,7 @@
 		<input type="button" value="댓글 작성하기" onclick="commentsWrite(this.form)">
 	</form>
 	
-	<!-- 로그인중 일때만 작성 가능하게 -->
+	<!--  @@@ 로그인중 일때만 작성 가능하게 -->
 
 <script type="text/javascript">
 	function commentsWrite(f)
