@@ -5,16 +5,11 @@ import java.security.SecureRandom;
 import java.util.Date;
 import java.util.Properties;
 
-import org.springframework.stereotype.Service;
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
-import jakarta.mail.Authenticator;
-import jakarta.mail.Message;
-import jakarta.mail.MessagingException;
-import jakarta.mail.PasswordAuthentication;
-import jakarta.mail.Session;
-import jakarta.mail.Transport;
-import jakarta.mail.internet.InternetAddress;
-import jakarta.mail.internet.MimeMessage;
+import org.springframework.stereotype.Service;
 
 @Service
 public class EmailService {
@@ -31,8 +26,10 @@ public class EmailService {
         props.put("mail.smtp.port", EmailUtil.get("mail.smtp.port"));
         props.put("mail.smtp.auth", EmailUtil.get("mail.smtp.auth"));
         props.put("mail.smtp.starttls.enable", EmailUtil.get("mail.smtp.starttls.enable"));
+        
+        // ✅ Gmail용 SSL 설정 추가
         props.put("mail.smtp.ssl.protocols", "TLSv1.2");
-        props.put("mail.smtp.ssl.trust", "smtp.naver.com");
+        props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
         props.put("mail.smtp.connectiontimeout", "10000");
         props.put("mail.smtp.timeout", "10000");
         props.put("mail.smtp.writetimeout", "10000");

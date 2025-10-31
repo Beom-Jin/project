@@ -2,7 +2,6 @@ package com.ict.project.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,8 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.ict.project.service.EmailService;
 import com.ict.project.service.MemberService;
 import com.ict.project.vo.MemberVO;
-
-import jakarta.mail.MessagingException;
 
 @Controller
 public class MemberController {
@@ -89,9 +86,6 @@ public class MemberController {
             session.setAttribute("findIdName", name);
             
             return "success";
-        } catch (MessagingException e) {
-            e.printStackTrace();
-            return "fail";
         } catch (Exception e) {
             e.printStackTrace();
             return "fail";
@@ -143,7 +137,7 @@ public class MemberController {
         if (foundId != null) {
             mv.addObject("foundId", foundId);
         }
-        mv.setViewName("project/findresult");
+        mv.setViewName("project/findid_result");
         return mv;
     }
     
