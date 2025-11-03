@@ -60,7 +60,7 @@
 	
 	function golist(f)
 	{
-		f.action="/showDetail";	/* f.action 사용하면 get으로 받아야함 */
+		f.action="/showDetail";	
 		f.submit();
 	}
 	</script>

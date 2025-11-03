@@ -12,10 +12,8 @@
 <link href="resources/css/localList.css" rel="stylesheet">
 </head>
 
-
 <body>
 <jsp:include page="top.jsp"></jsp:include>
-
 
 <main class="container">
   <h2 class="page-title">선택 지역의 관광지 목록</h2>
