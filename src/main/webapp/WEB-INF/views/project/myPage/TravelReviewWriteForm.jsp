@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>여행 후기 보기</title>
+<title>여행 후기 작성하기</title>
 <link href="../resources/css/common.css" rel="stylesheet">
 <link href="../resources/css/top.css" rel="stylesheet">
 <link href="../resources/css/nav.css" rel="stylesheet">
@@ -39,8 +39,8 @@
 	<jsp:include page="../nav.jsp"></jsp:include>
 	<h2>여행 후기 쓰기</h2>
 	<section class="container">
-	<table>
 		<form method="get">
+	<table>
 		<tbody>
 			<tr>
 				<th>글 제목</th>
@@ -56,20 +56,23 @@
 				</td>
 			</tr>
 		</tbody>
-		</form>
 		<tfoot>
 		<tr>
 		<td colspan="2">
 		<input type="button" class="btn" value="작성완료" onclick="travelReviewWriteOk(this.form)">
-		<input type="button" class="btn" value="목록으로" onclick="showTravelReview">
+		<input type="button" class="btn" value="목록으로" onclick="showTravelReview()">
 		</tr>
 		</tfoot>
 		</table>
+		</form>
 	</section>
 	<script type="text/javascript">
 		function travelReviewWriteOk(f){
 			f.action="/TravelReviewWriteOk";
 			f.submit();
+		}
+		function showTravelReview(){
+			location.href="/showMyPage";
 		}
 	</script>
 	<jsp:include page="../bottom.jsp"></jsp:include>
