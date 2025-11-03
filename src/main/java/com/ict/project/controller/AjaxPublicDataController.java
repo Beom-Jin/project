@@ -67,19 +67,18 @@ public class AjaxPublicDataController {
 		}
 	}
 	
-	// ✅ thema2: 반려동물 동반 여행지 (새로운 API Key 적용)
-	// 이 메서드는 thema2.jsp에서 데이터를 가져오는 데 사용될 수 있습니다.
+	// ✅ thema2: 반려동물 동반 여행지 (수정된 부분)
 	@RequestMapping(value = "/api/petTour", produces = "application/json; charset=utf-8")
 	@ResponseBody
 	public String getPetFriendlySpots() {
 		BufferedReader rd = null;
 		HttpURLConnection conn = null;
-		// 사용자로부터 제공받은 새로운 API Key
-		final String PET_FRIENDLY_SERVICE_KEY = "62f10a79-8a2f-439d-9977-9865b02e7d4e";
+		// 새로운 반려동물 API Key
+		final String PET_FRIENDLY_SERVICE_KEY = "3ce8f9ba-c91e-4810-9800-8474a671a045";
 		
 		try {
-			// API 주소는 기존과 동일한 형태를 사용하되, 키만 변경합니다.
-			StringBuffer urlBuilder = new StringBuffer("https://api.kcisa.kr/openapi/API_CNV_061/request");
+			// ✅ 반려동물 전용 API 주소로 변경
+			StringBuffer urlBuilder = new StringBuffer("https://api.kcisa.kr/openapi/API_TOU_050/request");
 			urlBuilder.append("?").append("serviceKey=").append(PET_FRIENDLY_SERVICE_KEY);
 			urlBuilder.append("&").append("numOfRows=").append("8");
 			urlBuilder.append("&").append("pageNo=").append("1");
@@ -112,8 +111,7 @@ public class AjaxPublicDataController {
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("반려동물 API 호출 실패, 더미 데이터 반환");
-			// 실패 시 반려동물 더미 데이터 반환
-			return getDummyPetData(); 
+			return getDummyPetData();
 		} finally {
 			try {
 				if(rd != null) rd.close();
