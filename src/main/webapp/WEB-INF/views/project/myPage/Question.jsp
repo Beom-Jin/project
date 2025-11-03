@@ -61,11 +61,27 @@
 			</c:choose>
 		</tbody>
 		<tfoot>
-			<!-- 페이징 -->
+		<tr>
+			<td>
+				
+			</td>
+			<td colspan="2">
+				<button class="btn" onclick="goQuestionWriteForm()">질문 작성하기</button>
+				<button class="btn" onclick="goMyPage()">마이 페이지 가기</button>
+			</td>
+		</tr>
+		
 		</tfoot>
 		</table>
 	</section>
-	
+	<script type="text/javascript">
+		function goQuestionWriteForm(){
+			location.href="/QuestionWriteForm";
+		}
+		function goMyPage(){
+			location.href="/showMyPage";
+		}
+	</script>
 	<jsp:include page="../bottom.jsp"></jsp:include>
 </body>
 </html>
