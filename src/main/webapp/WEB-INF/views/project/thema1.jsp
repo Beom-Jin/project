@@ -177,12 +177,13 @@ function loadFamilyTourData() {
 
                     // ✅ 수정된 부분 시작
                     const customImages = [
-                        "https://tour.paju.go.kr/upload/tour/open/culture/2012/11/02/13518632207700.jpg",
+                        
+                    	"https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=6651d26e-9602-40fb-98e3-778bcc7adaf0",
                         "https://cdn.3hoursahead.com/v2/content/image-comp/e1847fe0-2b69-40c9-9aa8-6e38809b9f7f.webp",
-                        "https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=6651d26e-9602-40fb-98e3-778bcc7adaf0",
-                        "https://www.snowfestival.net/asset/images/travel/travel_s01_img01.jpg",
                         "http://www.golftimes.co.kr/news/photo/202504/134968_62751_3340.jpg",
-                        "https://minio.nculture.org/amsweb-opt/multimedia_assets/120/28939/8855/c/28939-medium-size.jpg",
+                        "https://www.dmzgondola.com/assets/images/sub/sights-imjingak-10.jpg",
+                        "https://www.snowfestival.net/asset/images/travel/travel_s01_img01.jpg",
+                		"https://minio.nculture.org/amsweb-opt/multimedia_assets/120/28939/8855/c/28939-medium-size.jpg",
                         "https://www.dongtuni.com/upload/webzine/148/content/544-745114c37a17.jpg",
                         "https://bbkk.kr/d/t/4/4513_DSC_0054.jpg",
                         	
