@@ -68,8 +68,8 @@
 					<!-- 페이징 추가 -->
 			</td>
 			<td colspan="2">
-				<button  onclick="review_write()">후기 작성하기</button>
-				<button  onclick="goMyPage()">마이 페이지 가기</button>
+				<button class="btn" onclick="review_write()">후기 작성하기</button>
+				<button class="btn" onclick="goMyPage()">마이 페이지 가기</button>
 			</td>
 		</tr>
 		</tfoot>
