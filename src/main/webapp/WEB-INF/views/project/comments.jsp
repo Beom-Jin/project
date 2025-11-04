@@ -46,16 +46,20 @@
 		
 		<input type="hidden" name="area" value="${param.area}">
 		<input type="button" value="댓글 작성하기" onclick="commentsWrite(this.form)">
-	</form>
-	
-	<!--  @@@ 로그인중 일때만 작성 가능하게 -->
+	</form>	
 
 <script type="text/javascript">
+
 	function commentsWrite(f)
-	{
+	{	
+		if("${sessionScope.loginchk}" !== "ok")
+		{
+			alert("로그인 이후 작성 가능합니다.")
+			return;
+		}
+		
 		f.submit();
 	}
-
 </script>
 </body>
 </html>

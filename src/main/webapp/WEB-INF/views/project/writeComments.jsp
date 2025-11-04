@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,31 +10,27 @@
 
 <link href="resources/css/writeComments.css" rel="stylesheet">
 
-<%
-	String loginId = (String)session.getAttribute("m_id");
-	String loginImg = (String)session.getAttribute("m_img");
-
-	if(loginId != null && !loginId.equals(""))
-	{
-		loginId = (String)session.getAttribute("m_id");	// 세션에 저장된 로그인id 가져오기
-	}
-	else 
-	{
-		loginId = "아이디없음";
-	}
-	
-	if(loginImg != null && !loginImg.equals(""))
-	{
-		loginImg = (String)session.getAttribute("m_img");	// 세션에 저장된 로그인 이미지 가져오기
-	}
-	else 
-	{
-		loginImg = "";
-	}
-%>
-
 </head>
 <body>
+	
+	<c:choose>
+		<c:when test="${not empty sessionScope.m_id}">
+			<c:set var="loginId" value="${sessionScope.m_id}" />
+		</c:when>
+		<c:otherwise>
+			<c:set var="loginId" value="아이디없음" />
+		</c:otherwise>
+	</c:choose>
+	
+	<c:choose>
+		<c:when test="${not empty sessionScope.m_img}">
+			<c:set var="loginImg" value="${sessionScope.m_img}" />
+		</c:when>
+		<c:otherwise>
+			<c:set var="loginImg" value="" />
+		</c:otherwise>
+	</c:choose>
+
 	<div><h2>댓글작성</h2></div>
 	
 	<form method="post"> 
@@ -42,8 +40,8 @@
 			</div>
 			<div class="button_div">
 				<input type="hidden" name="area" value="${param.area}">  <!-- 화면 다시 불러올때 필요 -->
-				<input type="hidden" name="com_id" value="<%= loginId %>">
-				<input type="hidden" name="com_img" value="<%= loginImg%>">
+				<input type="hidden" name="com_id" value="${loginId}">
+				<input type="hidden" name="com_img" value="${loginImg}">
 				<input type="hidden" name="detail_board" value="${param.area}">
 				<input type="button" value="댓글작성" onclick="writeOK(this.form)">
 				<input type="button" value="목록" onclick="golist(this.form)">
