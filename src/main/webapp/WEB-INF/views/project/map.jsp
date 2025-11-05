@@ -66,5 +66,12 @@
 		document.getElementById('w_map').src = '/resources/images/map/map-su.png';
 	}
 	</script>
+	
+	
+	<!-- 아래 함수 사용하기 위한 CDN 주소 -->
+	<script src="https://cdn.jsdelivr.net/npm/image-map-resizer@1.0.10/js/imageMapResizer.min.js"></script>
+	<script>
+    	imageMapResize(); // 이미지 축척에 따라 좌표값도 변경해주는 함수
+	</script>
 </body>
 </html>

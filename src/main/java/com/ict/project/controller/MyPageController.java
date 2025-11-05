@@ -68,7 +68,7 @@ public class MyPageController {
 		return mv;
 	}
 
-	@GetMapping("/TravelReviewDelete")
+	@RequestMapping("/TravelReviewDelete")
 	public ModelAndView goTravelReviewDelete(ReviewVO reviewVO) {
 		ModelAndView mv = new ModelAndView();
 		int result = reviewService.getReviewDelete(reviewVO);
@@ -131,7 +131,7 @@ public class MyPageController {
 		return mv;
 	}
 
-	@GetMapping("/QuestionDelete")
+	@RequestMapping("/QuestionDelete")
 	public ModelAndView goQuestionDelete(QuestionVO questionVO) {
 		ModelAndView mv = new ModelAndView();
 		int result = questionService.getQuestionDelete(questionVO);

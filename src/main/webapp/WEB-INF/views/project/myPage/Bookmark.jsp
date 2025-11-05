@@ -45,11 +45,19 @@
 			</tr>
 		</tbody>
 		<tfoot>
-			<!-- 페이징  -->
+			<tr>
+				<td colspan="2">
+					<input type="button" class="btn" value="마이페이지 가기" onclick="goMyPage()">
+				</td>
+			</tr>
 		</tfoot>
 		</table>
 	</section>
-	
+	<script type="text/javascript">
+	function goMyPage(){
+		location.href="/showMyPage";
+	}
+	</script>
 	<jsp:include page="../bottom.jsp"></jsp:include>
 </body>
 </html>

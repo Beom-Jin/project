@@ -5,7 +5,7 @@
   
 <mapper namespace="question">
 	<select id="list" resultType="com.ict.project.vo.QuestionVO">
-		select * from question
+		select * from question where q_active = 0
 	</select>
 	
 	<select id="detail" parameterType="com.ict.project.vo.QuestionVO" resultType="com.ict.project.vo.QuestionVO">

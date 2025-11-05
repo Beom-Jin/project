@@ -81,7 +81,8 @@ body {
 
 /* 지도 이미지 */
 #w_map {
-    max-width: 700px;
+    /* max-width: 700px; */
+    max-width: 100%;
     height: auto;
     border-radius: 12px;
     transition: all 0.4s ease;

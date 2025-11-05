@@ -82,11 +82,11 @@ li {
 				 <input type="checkbox" id="option6"><label for="option6">관심사6</label>
 				 </li>
 			</ul>
-			<input type="submit" value="수정하기" class="btn primary"> <input
-				type="reset" value="취소" class="btn">
+			<input type="submit" value="수정하기" class="btn"> 
+			<input type="reset" value="취소" class="btn">
 		</form>
 	</div>
-
+	
 	<jsp:include page="../bottom.jsp"></jsp:include>
 </body>
 </html>

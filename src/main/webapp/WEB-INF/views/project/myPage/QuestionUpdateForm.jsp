@@ -38,7 +38,7 @@
 <body>
 <jsp:include page="../top.jsp"></jsp:include>
 	<jsp:include page="../nav.jsp"></jsp:include>
-	<h2>여행 후기</h2>
+	<h2>질문 내용 수정하기</h2>
 	<section class="container">
 	<form method="post">
 	<table>

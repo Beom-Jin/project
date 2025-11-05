@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>가족 여행 | VisitKorea</title>
+<title>반려동물 여행 | VisitKorea</title>
 
 <link href="/resources/css/top.css" rel="stylesheet">
 <link href="/resources/css/nav.css" rel="stylesheet">
@@ -106,10 +106,10 @@ a{color:inherit; text-decoration:none}
 <jsp:include page="nav.jsp"></jsp:include>
 
 <main class="container">
-  <h2 class="page-title">반려동물과 여행하기 좋은 곳<span aria-hidden="true">😊</span></h2>
+  <h2 class="page-title">반려동물과 함께하는 여행<span aria-hidden="true">🐾</span></h2>
 
   <!-- ✅ 로딩 메시지 추가 -->
-  <div class="loading" id="loading">관광 정보를 불러오는 중...</div>
+  <div class="loading" id="loading">반려동물 여행지 정보를 불러오는 중...</div>
 
   <!-- ✅ 카드 컨테이너 (JavaScript가 여기에 카드를 추가) -->
   <section class="grid cols-4" aria-label="추천 장소 목록" id="card-container">
@@ -130,16 +130,16 @@ a{color:inherit; text-decoration:none}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-    loadFamilyTourData();
+    loadPetTourData();
 });
 
-function loadFamilyTourData() {
+function loadPetTourData() {
     $.ajax({
-        url: "/api/familyTour",
+        url: "/api/petTour",
         method: "post",
         dataType: "json",
         success: function(data) {
-            console.log("API 응답:", data);
+            console.log("반려동물 API 응답:", data);
             $("#loading").hide();
             
             try {
@@ -175,26 +175,23 @@ function loadFamilyTourData() {
                     cardHtml += '<article class="card">';
                     cardHtml += '  <div class="thumb has-image" aria-hidden="true">';
 
-                    // ✅ 수정된 부분 시작
+                    // ✅ 반려동물 테마 이미지
                     const customImages = [
-                        "https://img.hankyung.com/photo/202409/01.38134138.1.jpg",
-                        "https://cdn.100ssd.co.kr/news/photo/202207/89288_69442_2423.jpg",
-                        "https://img.hankyung.com/photo/202406/06.36988947.1.jpg",
-                        "https://digitalchosun.dizzo.com/site/data/img_dir/2019/05/15/2019051580133_0.jpg",
-                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyDRMq3ieioh7ZVK1F9Fi2ON72oTJ4hhAjpg&s",
-                        "https://www.ikoreanspirit.com/news/photo/202401/74617_81461_2037.jpg",
-                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuf3SmTLsXnUXXCtYSkV9R73kZ4l6_zi9eXw&s",
-                        "https://cdn.newspet.co.kr/news/photo/202307/6441_18425_1924.jpg",
-                        	
-                        		
-                      ];
-                    const fallbackImage = "/resources/images/map/family_default.jpg";
+                        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20240110_204%2F1704853112029UbE1G_JPEG%2F20231207_123933.jpg",
+                        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230814_148%2F1691995244204mF0Sq_JPEG%2FJPEG_20230814_154008_850733867937206141.jpg",
+                        "https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F5392%2F2025%2F03%2F21%2F0000020074_002_20250321115217797.jpg&type=sc960_832",
+                        "https://d1vgkbcgf4kpck.cloudfront.net/pharmacy/409942c1-d8f9-4f15-ae98-468633e0628f.jpeg?w=3840&q=75",
+                        "https://search.pstatic.net/common/?src=https%3A%2F%2Fnaverbooking-phinf.pstatic.net%2F20250604_91%2F1749033167153Jh0kk_PNG%2FKakaoTalk_20250604_162653374.png",
+                        "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230812_264%2F1691816245391GvcbB_JPEG%2F20230812_134658.jpg",
+                        "https://mblogthumb-phinf.pstatic.net/MjAxODA3MTFfMTY3/MDAxNTMxMjQyMzE4MTg3.FN67dgMecq0iNSlZ_w-DJgBvJpG7ANVPRLZG8UzSPkog.Gb2P48h89FMUSew-daUGJhy909AhVuBgsd9_r0II5uYg.JPEG.kimen0410/20180710_181918.jpg?type=w800",
+                        "https://cdn.imweb.me/upload/S20211112dca61c6c1180b/0dbde0865e813.png"
+                    ];
+                    const fallbackImage = "/resources/images/map/pet_default.jpg";
                     const customImage = customImages[index] || "";
                     const finalImage = customImage || image || fallbackImage;
 
                     cardHtml += '<img src="' + finalImage + '" alt="' + title + 
                                 '" onerror="this.src=\'' + fallbackImage + '\';">';
-                    // ✅ 수정된 부분 끝
 
                     cardHtml += '  </div>';
                     cardHtml += '  <div class="meta">';
