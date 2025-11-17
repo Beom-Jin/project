@@ -21,7 +21,10 @@ public class SnSController {
     private MemberService memberService;
     
     // 카카오 로그인 리다이렉트
-    @GetMapping("/kakaologin")
+    @GetMapping("/"
+    		+ ""
+    		+ ""
+    		+ "  ")
     public ModelAndView getKakaoLogin(HttpServletRequest request, HttpSession session) {
         try {
             String code = request.getParameter("code");
