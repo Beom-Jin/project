@@ -14,9 +14,18 @@
 			<a class="nav-link" href="/showMap" target="_self">지역별 여행</a>
 			<a class="nav-link" href="/gothema" target="_self">테마별 여행</a> 
 			<a class="nav-link" href="/eventMap" target="_self">축제⦁ 행사</a> 
-			<a class="nav-link" href="/showSupport" target="_self">고객 지원</a> 
-			<a class="nav-link" href="/showMyPage" target="_self">마이 페이지</a>
 		</div>
 	</nav>
+	<script>
+	function goMyPage(){
+	if("${sessionScope.loginchk}" !== "ok")
+	{
+		alert("로그인 이후 작성 가능합니다.");
+		return;
+	}else{
+		location.href="/showMyPage";
+	}
+	}
+	</script>
 </body>
 </html>
