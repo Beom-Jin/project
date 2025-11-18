@@ -19,7 +19,6 @@
 		overflow: hidden;
 	}
 	th, td{
-		border: 1px 0 1px 0 solid #bebebe;
 		text-align: center;
 	}
 	h2{
@@ -30,16 +29,17 @@
 	}
 	th{
 		width: 30%;
-		border-top-left-radius: 20px;
-		border-bottom-left-radius: 20px;
 		background-color: #4a90e2;
 	}
-	tr{
-		border-top : 1px solid #bebebe;
+	.border-radius-top{
+		border-top-left-radius: 12px;
+	}
+	.border-radius-bottom{
+		border-bottom-left-radius: 12px;
 	}
 	td{
 		width : 70%;
-		border-top-right-radius: 20px;
+		border-top: 1px solid #bebebe;
 		border-right: 1px solid #eee;
 	}
 </style>
@@ -53,7 +53,7 @@
 	<table>
 		<tbody>
 			<tr>
-				<th>질문 제목</th>
+				<th class="border-radius-top">질문 제목</th>
 				<td>${qVO.q_title}</td>
 			</tr>
 			<tr>
@@ -65,7 +65,7 @@
 				<td>2025-10-21</td>
 			</tr>
 			<tr>
-				<th>질문내용</th>
+				<th class="border-radius-bottom">질문내용</th>
 				<td>${qVO.q_content}</td>
 			</tr>
 		
