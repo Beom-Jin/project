@@ -30,16 +30,17 @@
 	}
 	th{
 		width: 30%;
-		border-top-left-radius: 20px;
-		border-bottom-left-radius: 20px;
 		background-color: #4a90e2;
 	}
-	tr{
-		border-top : 1px solid #bebebe;
+	.border-radius-top{
+		border-top-left-radius: 12px;
+	}
+	.border-radius-bottom{
+		border-bottom-left-radius: 12px;
 	}
 	td{
 		width : 70%;
-		border-top-right-radius: 20px;
+		border-top: 1px solid #bebebe;
 		border-right: 1px solid #eee;
 	}
 	
@@ -54,7 +55,7 @@
 	<table>
 		<tbody>
 			<tr>
-				<th >글 제목</th>
+				<th class="border-radius-top">글 제목</th>
 				<td>${rVO.r_title}</td>
 			</tr>
 			<tr>
@@ -66,7 +67,7 @@
 				<td>2025-10-21</td>
 			</tr>
 			<tr>
-				<th >내용</th>
+				<th class="border-radius-bottom">내용</th>
 				<td>${rVO.r_content}</td>
 			</tr>
 		
