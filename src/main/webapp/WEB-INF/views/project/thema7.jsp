@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>가족 여행 | VisitKorea</title>
+<title>한류 | VisitKorea</title>
 
 <link href="/resources/css/top.css" rel="stylesheet">
 <link href="/resources/css/nav.css" rel="stylesheet">

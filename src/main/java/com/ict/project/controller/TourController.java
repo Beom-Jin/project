@@ -107,6 +107,55 @@ public class TourController
 		
 	}
 	
+	
+	// TourController.java에서 showThemaDetail 메서드 수정
+
+	@GetMapping("/showThemaDetail")
+	public ModelAndView goThemaDetail(String local)
+	{
+	    try {
+	        ModelAndView mv = new ModelAndView();
+	        
+	        // ✅ 받은 파라미터 확인
+	        System.out.println("========================================");
+	        System.out.println("🔍 받은 local 파라미터: [" + local + "]");
+	        
+	        // ✅ DB 조회
+	        List<TdetailVO> list = detailService.getLocalList(local);
+	        
+	        System.out.println("📊 조회된 데이터 개수: " + (list != null ? list.size() : 0));
+	        
+	        if (list == null || list.isEmpty()) {
+	            System.out.println("❌ 데이터 없음 - thema1로 리다이렉트");
+	            System.out.println("========================================");
+	            return new ModelAndView("redirect:/thema1");
+	        }
+	        
+	        // ✅ 조회된 데이터 출력
+	        for (TdetailVO vo : list) {
+	            System.out.println("✅ 조회된 데이터: " + vo.getD_title() + " (d_local=" + vo.getD_local() + ")");
+	        }
+	        
+	        TdetailVO tvo = list.get(0);
+	        
+	        mv.addObject("tvo", tvo);
+	        mv.addObject("list", list);
+	        mv.addObject("kakaokey", apiKey.getKakaoApiKey());
+	        mv.setViewName("project/detail1");
+	        
+	        System.out.println("✅ detail1.jsp로 이동");
+	        System.out.println("========================================");
+	        
+	        return mv;
+	        
+	    } catch (Exception e) {
+	        System.out.println("💥 예외 발생: " + e.getMessage());
+	        e.printStackTrace();
+	        return new ModelAndView("redirect:/thema1");
+	    }
+	}
+	
+	
 	@PostMapping("/comWriteOk")
 	public ModelAndView WriteComment(TcommnetVO tcvo, @ModelAttribute("area") String area)
 	{
