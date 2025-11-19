@@ -15,22 +15,32 @@
 		width: var(--max);
 		height: 600px;
 		border-collapse: collapse;
-		border : 1px solid black;
 		margin: auto;
-	}
-	thead{
-		border: 1px solid black;
-		background-color: var(--brand);
+		overflow: hidden;
 	}
 	th, td{
-		border: 1px solid black;
-		align-items: center;
+		text-align: center;
 	}
 	h2{
 		text-align: center;
 	}
 	input{
 		justify-content: center;
+	}
+	th{
+		width: 30%;
+		background-color: #4a90e2;
+	}
+	.border-radius-top{
+		border-top-left-radius: 12px;
+	}
+	.border-radius-bottom{
+		border-bottom-left-radius: 12px;
+	}
+	td{
+		width : 70%;
+		border-top: 1px solid #bebebe;
+		border-right: 1px solid #eee;
 	}
 </style>
 </head>
@@ -43,7 +53,7 @@
 	<table>
 		<tbody>
 			<tr>
-				<th>질문 제목</th>
+				<th class="border-radius-top">질문 제목</th>
 				<td>${qVO.q_title}</td>
 			</tr>
 			<tr>
@@ -55,7 +65,7 @@
 				<td>2025-10-21</td>
 			</tr>
 			<tr>
-				<th>질문내용</th>
+				<th class="border-radius-bottom">질문내용</th>
 				<td>${qVO.q_content}</td>
 			</tr>
 		

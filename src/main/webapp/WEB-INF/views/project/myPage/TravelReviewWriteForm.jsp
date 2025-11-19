@@ -15,23 +15,39 @@
 		width: var(--max);
 		height: 600px;
 		border-collapse: collapse;
-		border : 1px solid black;
 		margin: auto;
-	}
-	thead{
-		border: 1px solid black;
-		background-color: var(--brand);
+		overflow: hidden;
 	}
 	th, td{
-		border: 1px solid black;
-		align-items: center;
+		border: 1px 0 1px 0 solid #eee;
+		text-align: center;
 	}
 	h2{
 		text-align: center;
 	}
 	input{
-		text-align: center;
+		justify-content: center;
 	}
+	th{
+		width: 30%;
+		border-top-left-radius: 20px;
+		border-bottom-left-radius: 20px;
+		background-color: #4a90e2;
+	}
+	td{
+		width : 70%;
+		border-top : 1px solid black;
+		border-bottom: 1px solid black;
+		border-right: 1px solid black;
+	}
+	
+	td input[type="text"],td textarea {
+    width: 80%;
+    height: 80%;
+    margin: 5px 3px;        
+    box-sizing: border-box;
+}
+	
 </style>
 </head>
 <body>

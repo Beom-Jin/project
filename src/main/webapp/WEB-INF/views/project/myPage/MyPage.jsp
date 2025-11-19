@@ -29,7 +29,7 @@
 	<br>
 	<br>
 	<section class="container">
-		<div class="grid cols-4">
+		<div class="grid cols-3">
 			<a href="/showInformationUpdateForm">
 				<article class="card">
 					<div class="thumb">
@@ -43,19 +43,6 @@
 					</div>
 				</article>
 			</a> 
-			<a href="/showBookmark">
-				<article class="card">
-					<div class="thumb">
-						<img
-							src="https://www.shutterstock.com/image-vector/bookmark-symbol-icon-vector-design-600nw-1430282765.jpg"
-							alt="북마크">
-					</div>
-					<div class="meta">
-						<div class="title">북마크 보기</div>
-						<p class="desc">북마크한 관광지를 볼 수 있습니다.</p>
-					</div>
-				</article>
-			</a>
 			<a href="/showTravelReview">
 				<article class="card">
 					<div class="thumb">

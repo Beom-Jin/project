@@ -55,3 +55,4 @@ Servers/
 target/
 
 src/main/resources/kakao.properties
+src/main/resources/mail.properties
