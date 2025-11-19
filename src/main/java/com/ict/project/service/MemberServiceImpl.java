@@ -126,6 +126,14 @@ public class MemberServiceImpl implements MemberService {
             return null;
         }
     }
-    
+    @Override
+    public int getInformationUpdate(MemberVO mvo) {
+    	try {
+			return memberDAO.getInformationUpdate(mvo);
+		} catch (Exception e) {
+			e.printStackTrace();
+            return 0;
+		}
+    }
     
 }

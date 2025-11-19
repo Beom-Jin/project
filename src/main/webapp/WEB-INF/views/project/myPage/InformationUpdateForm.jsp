@@ -122,65 +122,16 @@ hr{border:none; border-top:1px solid var(--line); margin:8px 0 20px}
   .form-grid{ grid-template-columns: 1fr; }
   .form-grid label{ text-align:left; }
 }
+#cancel_button{
+	border-radius: 999px;
+    border: 1px solid var(--line);
+    background: #fff;
+    align-items: center;
+	margin-left : 10px;
+	margin-right : 10px;
+}
 </style>
-<script>
-let idChecked = false;
 
-function checkId() {
-    const m_id = $("#m_id").val();
-    
-    if(m_id.trim() === "") {
-        alert("아이디를 입력하세요.");
-        return;
-    }
-    
-    $.ajax({
-        url: "/checkId",
-        type: "post",
-        data: { m_id: m_id },
-        success: function(data) {
-            if(data === "available") {
-                $("#id-check-result").html("✔ 사용 가능한 아이디입니다.").css("color", "green");
-                idChecked = true;
-            } else if(data === "duplicate") {
-                $("#id-check-result").html("✖ 이미 사용 중인 아이디입니다.").css("color", "red");
-                idChecked = false;
-            } else {
-                alert("오류가 발생했습니다.");
-                idChecked = false;
-            }
-        },
-        error: function() {
-            alert("서버 오류가 발생했습니다.");
-            idChecked = false;
-        }
-    });
-}
-
-function validateForm() {
-    if(!idChecked) {
-        alert("아이디 중복확인을 해주세요.");
-        return false;
-    }
-    
-    const pw = $("#m_pw").val();
-    const pwConfirm = $("#m_pw_confirm").val();
-    
-    if(pw !== pwConfirm) {
-        alert("비밀번호가 일치하지 않습니다.");
-        return false;
-    }
-    
-    return true;
-}
-
-$(document).ready(function() {
-    $("#m_id").on("input", function() {
-        idChecked = false;
-        $("#id-check-result").html("");
-    });
-});
-</script>
 </head>
 <body>
 
@@ -192,7 +143,7 @@ $(document).ready(function() {
     <h2>개인정보 수정</h2>
     <hr>
 
-    <form action="/informationupdateOk" method="post" onsubmit="return validateForm()" autocomplete="off">
+    <form action="/informationupdateOk" method="post" >
       <div class="form-grid">
         <label for="m_name">이름(수정불가)</label>
         <input id="m_name" name="m_name" type="text" value="${mvo.m_name }"  readonly>
@@ -205,41 +156,39 @@ $(document).ready(function() {
 
 
 
-        <label for="m_email">이메일 *</label>
-        <input id="m_email" name="m_email" type="email" value="${mvo.m_email }" autocomplete="off" required>
+        <label for="m_email">이메일(수정불가)</label>
+        <input id="m_email" name="m_email" type="email" value="${mvo.m_email }" autocomplete="off" readonly>
 
         <label for="m_tel">전화번호</label>
         <input id="m_tel" name="m_tel" type="text" value="${mvo.m_tel }" autocomplete="off">
 
         <label for="m_gender">성별</label>
-        <select id="m_gender" name="m_gender" autocomplete="off">
-          <option value="">선택</option>
-          <option value="남">남성</option>
-          <option value="여">여성</option>
+        <select id="m_gender" name="m_gender" autocomplete="off" >
+          <option value="" ${mvo.m_gender == null ? 'selected' : ''}>선택</option>
+          <option value="남" ${mvo.m_gender == '남' ? 'selected' : ''}>남성</option>
+          <option value="여" ${mvo.m_gender == '여' ? 'selected' : ''}>여성</option>
         </select>
 
         <label for="m_age">나이</label>
-        <input id="m_age" name="m_age" type="number" min="1" max="120" placeholder="나이" autocomplete="off">
+        <input id="m_age" name="m_age" type="number" min="1" max="120" placeholder="나이" autocomplete="off" value="${mvo.m_age}">
 
-        <label for="m_int">관심사</label>
-        <input id="m_int" name="m_int" type="text" placeholder="예: 여행, 사진" autocomplete="off">
 
         <label for="m_hobby1">취미 1</label>
-        <input id="m_hobby1" name="m_hobby1" type="text" autocomplete="off">
+        <input id="m_hobby1" name="m_hobby1" type="text" autocomplete="off" value="${mvo.m_hobby1}">
 
         <label for="m_hobby2">취미 2</label>
-        <input id="m_hobby2" name="m_hobby2" type="text" autocomplete="off">
+        <input id="m_hobby2" name="m_hobby2" type="text" autocomplete="off" value="${mvo.m_hobby2}">
 
         <label for="m_hobby3">취미 3</label>
-        <input id="m_hobby3" name="m_hobby3" type="text" autocomplete="off">
+        <input id="m_hobby3" name="m_hobby3" type="text" autocomplete="off" value="${mvo.m_hobby3}">
 
         <label for="m_hobby4">취미 4</label>
-        <input id="m_hobby4" name="m_hobby4" type="text" autocomplete="off">
+        <input id="m_hobby4" name="m_hobby4" type="text" autocomplete="off" value="${mvo.m_hobby4}">
       </div>
 
       <div class="actions">
         <input type="submit" value="개인정보 수정">
-        <button class="btn">취소</button>
+        <button id="cancel_button">취소</button>
       </div>
     </form>
   </div>

@@ -2,31 +2,53 @@ package com.ict.project.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ict.project.service.MemberService;
 import com.ict.project.service.QuestionService;
 import com.ict.project.service.ReviewService;
+import com.ict.project.vo.MemberVO;
 import com.ict.project.vo.QuestionVO;
 import com.ict.project.vo.ReviewVO;
 
 @Controller
 public class MyPageController {
 
-	@GetMapping("/showMyPage")
+	@RequestMapping("/showMyPage")
 	public ModelAndView goMyPage() {
 		return new ModelAndView("project/myPage/MyPage");
 	}
-
+	
+	@Autowired
+	private MemberService memberService;
+	
 	@GetMapping("/showInformationUpdateForm")
-	public ModelAndView goInformationUpdateForm() {
-		return new ModelAndView("project/myPage/InformationUpdateForm");
+	public ModelAndView goInformationUpdateForm(HttpSession session) {
+		ModelAndView mv = new ModelAndView();
+		String m_id = (String) session.getAttribute("m_id");
+		MemberVO mvo = memberService.getMemberById(m_id);
+		mv.addObject("mvo", mvo);
+		mv.setViewName("project/myPage/InformationUpdateForm");
+		return mv;
 	}
-
+	
+	@PostMapping("/informationupdateOk")
+	public ModelAndView goInformationUpdateOk(MemberVO mvo) {
+		ModelAndView mv = new ModelAndView();
+		int result = memberService.getInformationUpdate(mvo);
+		mv.setViewName("redirect:/showMyPage");
+		return mv;
+	}
+	
 	@GetMapping("/showBookmark")
 	public ModelAndView goBookmark() {
 		return new ModelAndView("project/myPage/Bookmark");

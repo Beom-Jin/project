@@ -16,4 +16,5 @@ public interface MemberService {
     MemberVO getMemberById(String m_id);
     MemberVO findIdByEmail(String m_name, String m_email);
     MemberVO findIdByPhone(String m_name, String m_phone);
+    int getInformationUpdate(MemberVO mvo);
 }

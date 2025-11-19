@@ -102,4 +102,13 @@ public class MemberDAO {
         }
     }
     
+    public int getInformationUpdate(MemberVO mvo) {
+    	try {
+			return sessionTemplate.update("member.getInformationUpdate", mvo);
+		} catch (Exception e) {
+			e.printStackTrace();
+            return 0;
+		}
+    }
+    
 }
