@@ -25,10 +25,8 @@ body{margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ap
 a{color:inherit; text-decoration:none}
 .container{max-width:var(--max); margin:0 auto; padding:24px 20px}
 
-/* 헤더 */
 .page-title{font-size:28px; font-weight:800; margin:8px 0 18px}
 
-/* 상단 배너(이미지 대신 비어있는 영역) */
 .hero{
   border:1px solid var(--line); border-radius:var(--radius);
   background:linear-gradient(90deg,#f9fafb,#f8fafc);
@@ -44,14 +42,12 @@ a{color:inherit; text-decoration:none}
 }
 .hero .btn:hover{border-color:#cbd5e1}
 
-/* 카드 그리드 */
 .grid{display:grid; gap:20px; margin-top:24px}
 .grid.cols-4{grid-template-columns:repeat(4,1fr)}
 @media (max-width:1024px){.grid.cols-4{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:780px){.grid.cols-4{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:520px){.grid.cols-4{grid-template-columns:1fr}}
 
-/* 카드 */
 .card{
   background:var(--card); border:1px solid var(--line); border-radius:var(--radius-sm);
   box-shadow:var(--shadow); overflow:hidden;
@@ -61,11 +57,10 @@ a{color:inherit; text-decoration:none}
 .thumb{
   aspect-ratio:4/3; background:var(--skeleton); position:relative; overflow:hidden;
 }
-/* ✅ 이미지가 있을 때는 ::after 숨김 */
 .thumb img{
   width:100%; height:100%; object-fit:cover; position:relative; z-index:1;
 }
-.thumb::after{ /* 사진 비워둔 느낌의 플레이스홀더 */
+.thumb::after{
   content:"";
   position:absolute; inset:16px; z-index:0;
   border:2px dashed #d1d5db; border-radius:12px;
@@ -76,7 +71,7 @@ a{color:inherit; text-decoration:none}
     linear-gradient(45deg,#e5e7eb 25%, transparent 25%) 0px 0/16px 16px;
   opacity:.7;
 }
-.thumb.has-image::after{display:none;} /* 이미지 있으면 플레이스홀더 제거 */
+.thumb.has-image::after{display:none;}
 
 .meta{padding:14px 14px 18px}
 .place{font-weight:800; margin:6px 0 8px}
@@ -85,12 +80,10 @@ a{color:inherit; text-decoration:none}
   background:#eef2ff; color:#3730a3; font-weight:700;
 }
 
-/* 로딩 */
 .loading{
   text-align:center; padding:60px 0; color:var(--muted); font-size:16px;
 }
 
-/* 하단 버튼 */
 .footer-cta{display:flex; justify-content:center; margin:26px 0 6px}
 .ghost-btn{
   display:inline-flex; align-items:center; gap:8px;
@@ -108,15 +101,11 @@ a{color:inherit; text-decoration:none}
 <main class="container">
   <h2 class="page-title">가족들과 여행하기 좋은 곳<span aria-hidden="true">😊</span></h2>
 
-  <!-- ✅ 로딩 메시지 추가 -->
   <div class="loading" id="loading">관광 정보를 불러오는 중...</div>
 
-  <!-- ✅ 카드 컨테이너 (JavaScript가 여기에 카드를 추가) -->
   <section class="grid cols-4" aria-label="추천 장소 목록" id="card-container">
-    <!-- 카드들이 동적으로 추가됨 -->
   </section>
 
-  <!-- 하단 이동 버튼 -->
   <div class="footer-cta">
     <a class="ghost-btn" href="/showMap" role="button" aria-label="지역별 여행 보기">
      지역별 여행 보기
@@ -126,7 +115,6 @@ a{color:inherit; text-decoration:none}
 
 <jsp:include page="bottom.jsp"></jsp:include>
 
-<!-- ✅✅✅ 여기서부터 새로 추가된 부분 ✅✅✅ -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -149,53 +137,68 @@ function loadFamilyTourData() {
                     return;
                 }
                 
+                // ✅ API 데이터와 DB 지역명 정확히 매칭
+                const regionMapping = {
+                    "아산": ["아산시", "염치읍"],
+                    "남원": ["남원시", "어현동", "천거동"],
+                    "산청": ["산청군", "금서면"],
+                    "파주": ["파주시", "문산읍"],
+                    "평창": ["평창군", "대관령"],
+                    "창녕": ["창녕군", "창녕읍"],
+                    /* "성남": ["성남시", "중원구"], */
+                    "동해": ["동해시", "구미동"],
+                    "광주": ["광주", "북구", "동문대로"]
+                 
+                
+                };
+                
+                function extractRegion(spatialCoverage) {
+                    if (!spatialCoverage) return "기타";
+                    
+                    // 각 지역명의 키워드로 매칭
+                    for (let region in regionMapping) {
+                        for (let keyword of regionMapping[region]) {
+                            if (spatialCoverage.includes(keyword)) {
+                                return region;
+                            }
+                        }
+                    }
+                    return "기타";
+                }
+                
                 let cardHtml = "";
                 
                 $.each(items, function(index, spot) {
                     const title = spot.title || "제목 없음";
-                    const addr = spot.addr1 || "주소 정보 없음";
+                    const spatialCoverage = spot.spatialCoverage || "";
                     const image = spot.firstimage || "";
 
-                    // 지역명 추출
-                    let region = "기타";
-                    if (addr.includes("서울")) region = "서울";
-                    else if (addr.includes("부산")) region = "부산";
-                    else if (addr.includes("경기")) region = "경기";
-                    else if (addr.includes("강원")) region = "강원";
-                    else if (addr.includes("제주")) region = "제주";
-                    else if (addr.includes("인천")) region = "인천";
-                    else if (addr.includes("대전")) region = "대전";
-                    else if (addr.includes("대구")) region = "대구";
-                    else if (addr.includes("광주")) region = "광주";
-                    else if (addr.includes("울산")) region = "울산";
-                    else if (addr.includes("충청")) region = "충청";
-                    else if (addr.includes("전라")) region = "전라";
-                    else if (addr.includes("경상")) region = "경상";
+                    // ✅ 정확한 지역명 추출
+                    const region = extractRegion(spatialCoverage);
                     
+                    console.log(`📍 ${index + 1}. ${title} → 지역: ${region} (원본: ${spatialCoverage})`);
+                    
+                    // ✅ d_local을 정확히 전달
+                    cardHtml += '<a href="/showThemaDetail?local=' + encodeURIComponent(region) + '" style="display:block;">';
                     cardHtml += '<article class="card">';
                     cardHtml += '  <div class="thumb has-image" aria-hidden="true">';
 
-                    // ✅ 수정된 부분 시작
                     const customImages = [
-                        
-                    	"https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=6651d26e-9602-40fb-98e3-778bcc7adaf0",
+                        "https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=6651d26e-9602-40fb-98e3-778bcc7adaf0",
                         "https://cdn.3hoursahead.com/v2/content/image-comp/e1847fe0-2b69-40c9-9aa8-6e38809b9f7f.webp",
                         "http://www.golftimes.co.kr/news/photo/202504/134968_62751_3340.jpg",
                         "https://www.dmzgondola.com/assets/images/sub/sights-imjingak-10.jpg",
                         "https://www.snowfestival.net/asset/images/travel/travel_s01_img01.jpg",
-                		"https://minio.nculture.org/amsweb-opt/multimedia_assets/120/28939/8855/c/28939-medium-size.jpg",
+                        "https://minio.nculture.org/amsweb-opt/multimedia_assets/120/28939/8855/c/28939-medium-size.jpg",
                         "https://www.dongtuni.com/upload/webzine/148/content/544-745114c37a17.jpg",
-                        "https://bbkk.kr/d/t/4/4513_DSC_0054.jpg",
-                        	
-                        		
-                      ];
+                        "https://bbkk.kr/d/t/4/4513_DSC_0054.jpg"
+                    ];
                     const fallbackImage = "/resources/images/map/family_default.jpg";
                     const customImage = customImages[index] || "";
                     const finalImage = customImage || image || fallbackImage;
 
                     cardHtml += '<img src="' + finalImage + '" alt="' + title + 
                                 '" onerror="this.src=\'' + fallbackImage + '\';">';
-                    // ✅ 수정된 부분 끝
 
                     cardHtml += '  </div>';
                     cardHtml += '  <div class="meta">';
@@ -203,6 +206,7 @@ function loadFamilyTourData() {
                     cardHtml += '    <span class="tag">' + region + '</span>';
                     cardHtml += '  </div>';
                     cardHtml += '</article>';
+                    cardHtml += '</a>';
                 });
                 
                 $("#card-container").html(cardHtml);
@@ -219,8 +223,8 @@ function loadFamilyTourData() {
         }
     });
 }
+
 </script>
-<!-- ✅✅✅ 여기까지 새로 추가된 부분 ✅✅✅ -->
 
 </body>
 </html>
