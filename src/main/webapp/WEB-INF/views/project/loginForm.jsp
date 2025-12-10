@@ -231,10 +231,10 @@ input[type="reset"]:hover { background: #f1f5f9; }
 
 		<div id="sns_login">
 			<p>SNS 계정으로 로그인</p>
-			<a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=c2ffaab66fa1da745f7177871cb07570&redirect_uri=http://localhost:8090/kakaologin">
+			<a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=c2ffaab66fa1da745f7177871cb07570&redirect_uri=http://138.2.119.75/kakaologin">
 				<img src='<c:url value="/resources/images/kakao_login_medium_narrow.png" />' alt="카카오 로그인">
 			</a>
-			<a href="https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=n4mbOLpaA5uQlZ15nhlp&state=STATE_STRING&redirect_uri=http://localhost:8090/naverlogin">
+			<a href="https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=n4mbOLpaA5uQlZ15nhlp&state=STATE_STRING&redirect_uri=http://138.2.119.75/naverlogin">
 				<img src='<c:url value="/resources/images/login_naver.png" />' alt="네이버 로그인">
 			</a>
 		</div>
