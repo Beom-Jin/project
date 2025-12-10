@@ -287,8 +287,8 @@
             <button class="popup-close" onclick="closePopup('popupNotice')" aria-label="닫기">×</button>
             <h3>공지 안내</h3>
             <p>
-                10월 25일(금) 오전 2시~4시 시스템 점검이 예정되어 있습니다.<br />
-                이용에 불편을 드려 죄송합니다.
+               홈페이지의 관련된 공지사항을 띄우는 팝업창 입니다 .</br>
+                이 팝업은 오늘 하루 안보이기 하면 안보실수 있습니다.               
             </p>
             <div class="mini-footer">
                 <label><input type="checkbox" id="hideNotice" /> 오늘 하루 보지 않기</label>
