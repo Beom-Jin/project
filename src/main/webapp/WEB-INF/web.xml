@@ -54,5 +54,5 @@
 	</filter-mapping>
 
 	<welcome-file>
-	s
+	<welcome-file>/WEB-INF/views/project/mainHomePage.jsp</welcome-file>
 	</welcome-file>
