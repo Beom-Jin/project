@@ -87,7 +87,20 @@
 		WHERE m_name = #{m_name} AND m_tel = #{m_phone}
 	</select>
 
-
+	<update id="getInformationUpdate" parameterType="com.ict.project.vo.MemberVO">
+		UPDATE member SET
+		m_name = #{m_name},
+		m_id = #{m_id},
+		m_email = #{m_email},
+		m_tel = #{m_tel},
+		m_gender = #{m_gender},
+		m_age = #{m_age},
+		m_hobby1 = #{m_hobby1},
+		m_hobby2 = #{m_hobby2},
+		m_hobby3 = #{m_hobby3},
+		m_hobby4 = #{m_hobby4}
+		WHERE m_id = #{m_id}
+	</update>
 
 
 

@@ -173,37 +173,43 @@
                 <!-- 왼쪽 큰 카드(샘플 이미지) -->
                 <div class="big">
                     <div class="thumb">
-                        <img src="https://img.hankyung.com/photo/202411/ZN.38596435.1.jpg" alt="불꽃축제" />
+                    	<a href="/showDetail?area=고사리축제">
+                        	<img src="http://www.mcst.go.kr/attachFiles/cultureInfoCourt/localFestival/notifyFestival/1458871507149.jpg"/>
+                        </a>
                     </div>
                     <div class="overlay" aria-hidden="true"></div>
                     <div class="caption">
-                        <div style="font-weight: 800; font-size: 20px">불꽃 축제 2025</div>
-                        <div style="opacity: 0.9">10.28 · 부산 광안리 해변</div>
+                        <div style="font-weight: 800; font-size: 20px">고사리축제 2016</div>
+                        <div style="opacity: 0.9">제주도</div>
                     </div>
                 </div>
 
                 <div class="grid cols-2">
                     <article class="card">
                         <div class="thumb">
-                            <img src="https://img.etoday.co.kr/pto_db/2019/07/20190726153503_1350707_1200_876.jpg" alt="비빔밥 축제" />
+                        	<a href="/showDetail?area=커피축제">
+                            	<img src="http://www.mcst.go.kr/attachFiles/cultureInfoCourt/localFestival/notifyFestival/1444287990371.JPG" />
+                             </a>
                         </div>
                         <div class="meta">
-                            <span class="tag">전주</span>
-                            <div class="title">비빔밥 축제</div>
-                            <p class="desc">먹거리 공연 체험이 모두 한자리에</p>
+                            <span class="tag">서울</span>
+                            <div class="title">커피 축제</div>
+                            <p class="desc">제4회 대한민국 커피축제는 대중이 소통하고 문화를 나누고 기부로 이웃을 돌아보자는 취지로 시민과 함께 아름다운 이야기를 시작하려 한다.</p>
                         </div>
                     </article>
-
-                    <article class="card">
-                        <div class="thumb">
-                            <img src="http://www.adinews.co.kr/news/photo/202211/60223_108486_229.jpg" alt="탈춤 페스티벌" />
-                        </div>
-                        <div class="meta">
-                            <span class="tag">안동</span>
-                            <div class="title">탈춤 페스티벌</div>
-                            <p class="desc">월영교 야간 산책과 함께 즐기는 공연</p>
-                        </div>
-                    </article>
+                  
+                   <article class="card">
+                       <div class="thumb">
+                       	<a href="/showDetail?area=딸기축제">
+                          	 <img src="http://www.mcst.go.kr/attachFiles/cultureInfoCourt/localFestival/notifyFestival/1391560397505.jpg"/>
+                           </a>
+                       </div>
+                       <div class="meta">
+                           <span class="tag">양평</span>
+                           <div class="title">딸기 축제</div>
+                           <p class="desc">※ 체험은 사전예약제로 진행됩니다.(예약없이 방문시 체험참여 불가) ◆ 준비물 : 운동화, 편한 옷차림 등.</p>
+                       </div>
+                   </article>
                 </div>
             </div>
         </section>

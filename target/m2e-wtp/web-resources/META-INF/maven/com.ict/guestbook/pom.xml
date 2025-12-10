@@ -41,11 +41,6 @@
 			<version>${org.aspectj-version}</version>
 		</dependency>
 
-		<dependency>
-			<groupId>javax.mail</groupId>
-			<artifactId>mail</artifactId>
-			<version>1.4.7</version>
-		</dependency>
 
 
 
@@ -153,12 +148,19 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/jakarta.mail/jakarta.mail-api -->
+		<!-- 기존 API - 그대로 유지 -->
 		<dependency>
 			<groupId>jakarta.mail</groupId>
 			<artifactId>jakarta.mail-api</artifactId>
 			<version>2.1.3</version>
 		</dependency>
 
+
+		<dependency>
+			<groupId>org.eclipse.angus</groupId>
+			<artifactId>angus-mail</artifactId>
+			<version>2.0.3</version>
+		</dependency>
 
 
 		<!-- myBatis-Spring 연결 -->

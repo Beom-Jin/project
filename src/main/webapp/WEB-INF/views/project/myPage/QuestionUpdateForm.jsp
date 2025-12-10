@@ -16,35 +16,53 @@
 		width: var(--max);
 		height: 600px;
 		border-collapse: collapse;
-		border : 1px solid black;
 		margin: auto;
-	}
-	thead{
-		border: 1px solid black;
-		background-color: var(--brand);
+		overflow: hidden;
 	}
 	th, td{
-		border: 1px solid black;
-		align-items: center;
+		border: 1px 0 1px 0 solid #eee;
+		text-align: center;
 	}
 	h2{
 		text-align: center;
 	}
 	input{
-		text-align: center;
+		justify-content: center;
 	}
+	.border-radius-top{
+		border-top-left-radius: 12px;
+	}
+	.border-radius-bottom{
+		border-bottom-left-radius: 12px;
+	}
+	th{
+		width: 30%;
+		background-color: #4a90e2;
+	}
+	td{
+		width : 70%;
+		border-top : 1px solid black;
+		border-bottom: 1px solid black;
+		border-right: 1px solid black;
+	}
+	td input[type="text"],td textarea {
+    width: 80%;
+    height: 80%;
+    margin: 5px 3px;        
+    box-sizing: border-box;
+}
 </style>
 </head>
 <body>
 <jsp:include page="../top.jsp"></jsp:include>
 	<jsp:include page="../nav.jsp"></jsp:include>
-	<h2>여행 후기</h2>
+	<h2>질문 내용 수정하기</h2>
 	<section class="container">
 	<form method="post">
 	<table>
 		<tbody>
 			<tr>
-				<th>질문 제목</th>
+				<th class="border-radius-top">질문 제목</th>
 				<td><input type="text" name="q_title" value="${qVO.q_title}"></td>
 			</tr>
 			<tr>
@@ -56,7 +74,7 @@
 				<td>${qVO.q_regdate}</td>
 			</tr>
 			<tr>
-				<th>질문내용</th>
+				<th class="border-radius-bottom">질문내용</th>
 				<td><textarea name="q_content" cols="40" rows="50">${qVO.q_content}</textarea></td>
 			</tr>
 		</tbody>

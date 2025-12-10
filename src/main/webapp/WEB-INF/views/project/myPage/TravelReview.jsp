@@ -13,19 +13,39 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style type="text/css">
 	table{
-		border : 1px solid black;
+		width : 100%;
 		border-collapse : collapse;
 		margin: auto;
 	}
 	thead{
-		border: 1px solid black;
-		background-color: var(--brand);
+		background-color: #4a90e2;
 	}
 	th, td{
-		border: 1px solid black;
+		border-bottom: 1px solid #eee;
+		text-align : center;
+	}
+	th:first-child{
+		border-top-left-radius: 12px;
+	}
+	th:last-child{
+		border-top-right-radius: 12px;
+	}
+	tr:nth-child(even){
+		background-color: #eee;
+	}
+	tr{
+		border-left: 1px solid #eee;
+		border-right : 1px solid #eee;
 	}
 	h2{
 		text-align: center;
+	}
+	tfoot{
+		background-color : #4a90e2;
+	}
+	tfoot > tr {
+		border-bottom-left-radius : 12px;
+		border-bottom-right-radius : 12px;
 	}
 </style>
 </head>
@@ -64,12 +84,9 @@
 		</tbody>
 		<tfoot>
 		<tr>
-			<td>
-					<!-- 페이징 추가 -->
-			</td>
-			<td colspan="2">
-				<button  onclick="review_write()">후기 작성하기</button>
-				<button  onclick="goMyPage()">마이 페이지 가기</button>
+			<td colspan="3">
+				<button class="btn" onclick="review_write()">후기 작성하기</button>
+				<button class="btn" onclick="goMyPage()">마이 페이지 가기</button>
 			</td>
 		</tr>
 		</tfoot>

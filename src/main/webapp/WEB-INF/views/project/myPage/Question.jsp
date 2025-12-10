@@ -12,17 +12,42 @@
 <link href="../resources/css/bottom.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style type="text/css">
-	table{
+		table{
+		width : 100%;
+		border-collapse : collapse;
 		margin: auto;
-		border: 1px solid black;
-		border-collapse: collapse;
+	}
+	thead{
+		background-color: #4a90e2;
 	}
 	th, td{
-		border: 1px solid black;
+		border-bottom: 1px solid #eee;
+		text-align : center;
+	}
+	th:first-child{
+		border-top-left-radius: 12px;
+	}
+	th:last-child{
+		border-top-right-radius: 12px;
+	}
+	tr:nth-child(even){
+		background-color: #eee;
+	}
+	tr{
+		border-left: 1px solid #eee;
+		border-right : 1px solid #eee;
 	}
 	h2{
 		text-align: center;
 	}
+	tfoot{
+		background-color : #4a90e2;
+	}
+	tfoot > tr {
+		border-bottom-left-radius : 12px;
+		border-bottom-right-radius : 12px;
+	}
+	
 </style>
 </head>
 <body>
@@ -61,11 +86,24 @@
 			</c:choose>
 		</tbody>
 		<tfoot>
-			<!-- 페이징 -->
+		<tr>
+			<td colspan="3">
+				<button class="btn" onclick="goQuestionWriteForm()">질문 작성하기</button>
+				<button class="btn" onclick="goMyPage()">마이 페이지 가기</button>
+			</td>
+		</tr>
+		
 		</tfoot>
 		</table>
 	</section>
-	
+	<script type="text/javascript">
+		function goQuestionWriteForm(){
+			location.href="/QuestionWriteForm";
+		}
+		function goMyPage(){
+			location.href="/showMyPage";
+		}
+	</script>
 	<jsp:include page="../bottom.jsp"></jsp:include>
 </body>
 </html>

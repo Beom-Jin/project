@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>여행 후기 보기</title>
+<title>질문 작성하기</title>
 <link href="../resources/css/common.css" rel="stylesheet">
 <link href="../resources/css/top.css" rel="stylesheet">
 <link href="../resources/css/nav.css" rel="stylesheet">
@@ -15,43 +15,62 @@
 		width: var(--max);
 		height: 600px;
 		border-collapse: collapse;
-		border : 1px solid black;
 		margin: auto;
-	}
-	thead{
-		border: 1px solid black;
-		background-color: var(--brand);
+		overflow: hidden;
 	}
 	th, td{
-		border: 1px solid black;
-		align-items: center;
+		border: 1px 0 1px 0 solid #eee;
+		text-align: center;
 	}
 	h2{
 		text-align: center;
 	}
 	input{
-		text-align: center;
+		justify-content: center;
 	}
+	th{
+		width: 30%;
+		background-color: #4a90e2;
+	}
+	tr:first-child th {
+		border-top-left-radius: 12px;
+	}
+	tr:last-child th {
+		border-bottom-left-radius: 12px;
+	}
+	td{
+		width : 70%;
+		border-top : 1px solid black;
+		border-bottom: 1px solid black;
+		border-right: 1px solid black;
+	}
+	
+	td input[type="text"],td textarea {
+    width: 80%;
+    height: 80%;
+    margin: 5px 3px;        
+    box-sizing: border-box;
+}
 </style>
 </head>
 <body>
 <jsp:include page="../top.jsp"></jsp:include>
 	<jsp:include page="../nav.jsp"></jsp:include>
-	<h2>여행 후기 쓰기</h2>
+	<h2>질문 작성하기</h2>
 	<section class="container">
 		<form method="get">
 	<table>
 		<tbody>
 			<tr>
-				<th>글 제목</th>
+				<th>질문 제목</th>
 				<td>
-					<input type="text" name="r_title">
+					<input type="text" name="q_title">
 				</td>
 			</tr>
 			<tr>
-				<th>내용</th>
+				<th>질문 내용</th>
 				<td>
-					<textarea name="r_content" rows="8" cols="50">
+					<textarea name="q_content" rows="8" cols="50">
 					</textarea>
 				</td>
 			</tr>
@@ -60,7 +79,7 @@
 		<tr>
 		<td colspan="2">
 		<input type="button" class="btn" value="작성완료" onclick="QuestionWriteOk(this.form)">
-		<input type="button" class="btn" value="목록으로" onclick="showQuestionList">
+		<input type="button" class="btn" value="목록으로" onclick="showQuestionList()">
 		</tr>
 		</tfoot>
 		</table>
@@ -72,7 +91,7 @@
 			f.submit();
 		}
 		function showQuestionList(){
-			f.aciton="/showQuestionList";
+			location.href="/showMyPage";
 		}
 	</script>
 	<jsp:include page="../bottom.jsp"></jsp:include>
