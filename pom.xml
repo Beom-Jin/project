@@ -243,6 +243,8 @@
 
 	</dependencies>
 	<build>
+	<!-- 프로젝트의 war 파일 이름 지정  -->
+	<finalName>ROOT</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-eclipse-plugin</artifactId>

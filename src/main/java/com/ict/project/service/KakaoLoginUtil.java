@@ -11,7 +11,8 @@ import com.ict.project.vo.KakaoUserVO;
 public class KakaoLoginUtil {
     
     private static final String CLIENT_ID = "c2ffaab66fa1da745f7177871cb07570";
-    private static final String REDIRECT_URI = "http://localhost:8090/kakaologin";
+//    private static final String REDIRECT_URI = "http://localhost:8090/kakaologin";
+    private static final String REDIRECT_URI = "http://158.180.90.248:8080/kakaologin";
     private static final String CLIENT_SECRET = "Isvklf42t9tTTApGknb7ePxfAilzkIPg";
 
     // Access Token 받기
